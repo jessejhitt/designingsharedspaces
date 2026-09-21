@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case studies — Planning with Religion</title>
+<meta name="description" content="London sites where underused religious infrastructure has already become a place of interaction — filterable by borough, governance, publicness, scale and use.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=12">
+</head>
+<body data-page="case-studies.html">
+
+<main class="page" id="browse">
+  <section class="page-head">
+    <div class="wrap">
+      <h1 class="h-page">Case Studies</h1>
+      <div class="utility-row">
+        <span class="note">
+          <button class="filter-btn" data-rail-toggle type="button" aria-expanded="false" aria-controls="filters">Filters</button>
+          <span data-count style="margin-left:14px"></span>
+        </span>
+        <a class="rule-link" href="map.html?set=case">View on map</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap browse-layout">
+    <div class="filter-rail" id="filters" aria-label="Filters">
+      <div class="filter-rail-inner"><!-- built by filters.js --></div>
+    </div>
+    <div class="active-chips" data-chips aria-live="polite"></div>
+    <div class="card-grid" data-results style="margin-top:0"></div>
+  </div>
+</main>
+
+<script src="js/data.js?v=12"></script>
+<script src="js/detail-data.js?v=12"></script>
+<script src="js/photos.js?v=12"></script>
+<script src="js/ui.js?v=12"></script>
+<script src="js/filters.js?v=12"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  createBrowse({
+    mount: document.getElementById("browse"),
+    data: SITES.filter(s => s.isCaseStudy),
+    renderCard: caseCard,
+    emptyHint: "Try removing a filter or two — rare combinations are exactly the gaps this database wants to fill.",
+    groups: [
+      {
+        title: "Where",
+        subs: [
+          { key: "borough", label: "London borough", type: "multi", options: TAXONOMY.boroughs, get: s => s.borough }
+        ]
+      },
+      {
+        title: "Who runs it",
+        hint: "Stewardship decides who can say yes.",
+        subs: [
+          { key: "governance", label: "Governance", type: "multi", options: TAXONOMY.governance, get: s => s.governance },
+          { key: "faith", label: "Faith tradition", type: "multi", options: TAXONOMY.faith, get: s => s.faith }
+        ]
+      },
+      {
+        title: "How open",
+        hint: "Measured in practice, not policy.",
+        subs: [
+          { key: "publicness", label: "Publicness — minimum level", type: "range", get: s => s.publicness },
+          { key: "sacredness", label: "Sacredness", type: "single", options: TAXONOMY.sacredness, get: s => s.sacredness },
+          { key: "interaction", label: "Levels of interaction", type: "multi", options: ["Low", "Medium", "High"], get: s => s.interaction }
+        ]
+      },
+      {
+        title: "How it happened",
+        hint: "The practical record: scale, money, time.",
+        subs: [
+          { key: "typology", label: "Spatial typology", type: "multi", options: [...new Set(SITES.map(s => s.typology))], get: s => s.typology },
+          { key: "scale", label: "Intervention scale", type: "single", options: TAXONOMY.scale, get: s => s.scale },
+          { key: "permanence", label: "Permanence", type: "multi", options: TAXONOMY.permanence, get: s => s.permanence },
+          { key: "funding", label: "Funding route", type: "multi", options: TAXONOMY.funding, get: s => s.funding },
+          { key: "cost", label: "Cost band", type: "single", options: TAXONOMY.cost, get: s => s.cost },
+          { key: "timescale", label: "Timescale", type: "single", options: TAXONOMY.timescale, get: s => s.timescale }
+        ]
+      },
+      {
+        title: "What happens there",
+        subs: [
+          { key: "uses", label: "Uses", type: "multi", options: TAXONOMY.uses, get: s => s.uses }
+        ]
+      }
+    ]
+  });
+});
+</script>
+</body>
+</html>

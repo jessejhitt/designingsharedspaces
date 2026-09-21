@@ -1,0 +1,806 @@
+{
+  "note": "All photographs by the author, taken on site visits 2025-26.",
+  "caseStudies": {
+    "garden-museum": [
+      {
+        "file": "1.jpg",
+        "source": "13-04 Garden Museum/IMG_0873.jpeg",
+        "caption": "The west door \u2014 the medieval arch fitted with automatic glass doors",
+        "w": 1500,
+        "h": 2000
+      },
+      {
+        "file": "2.jpg",
+        "source": "13-04 Garden Museum/IMG_0894.jpeg",
+        "caption": "The courtyard garden, looked in on from the caf\u00e9 and galleries",
+        "w": 1500,
+        "h": 1125
+      },
+      {
+        "file": "3.jpg",
+        "source": "13-04 Garden Museum/IMG_0893.jpeg",
+        "caption": "The inserted structure seen from above, with the caf\u00e9 below",
+        "w": 1500,
+        "h": 2000
+      },
+      {
+        "file": "4.jpg",
+        "source": "13-04 Garden Museum/IMG_0846.jpeg",
+        "caption": "Permanent history integrated into the space, at the altar",
+        "w": 1500,
+        "h": 1125
+      }
+    ],
+    "sheriff-centre": [
+      {
+        "file": "1.jpg",
+        "source": "WHPO, PC, GJ/DSC02414.JPG",
+        "caption": "St James' from Sherriff Road \u2014 a working parish church",
+        "w": 1500,
+        "h": 1000
+      },
+      {
+        "file": "2.jpg",
+        "source": "WHPO, PC, GJ/DSC02431.JPG",
+        "caption": "'In a church? Yes! Plus much more.' \u2014 the post office sign",
+        "w": 1500,
+        "h": 2250
+      },
+      {
+        "file": "3.jpg",
+        "source": "WHPO, PC, GJ/DSC02423.JPG",
+        "caption": "The Sanctuary Caf\u00e9 in the south aisle",
+        "w": 1500,
+        "h": 1000
+      },
+      {
+        "file": "4.jpg",
+        "source": "WHPO, PC, GJ/DSC02427.JPG",
+        "caption": "Hullabaloo soft play, two storeys in the north aisle",
+        "w": 1500,
+        "h": 2250
+      }
+    ],
+    "grand-junction": [
+      {
+        "file": "1.jpg",
+        "source": "WHPO, PC, GJ/DSC02500.JPG",
+        "caption": "St Mary Magdalene's from the green, with benches along the path",
+        "w": 1500,
+        "h": 1000
+      },
+      {
+        "file": "2.jpg",
+        "source": "WHPO, PC, GJ/DSC02513.JPG",
+        "caption": "The canal-side caf\u00e9 in the new wing",
+        "w": 1500,
+        "h": 1000
+      },
+      {
+        "file": "3.jpg",
+        "source": "WHPO, PC, GJ/DSC02512.JPG",
+        "caption": "This month's programme, posted at the gate",
+        "w": 1500,
+        "h": 1000
+      },
+      {
+        "file": "4.jpg",
+        "source": "WHPO, PC, GJ/DSC02516.JPG",
+        "caption": "Inside the caf\u00e9 \u2014 the building's everyday way in",
+        "w": 1500,
+        "h": 1000
+      }
+    ],
+    "paddington-old-cemetery": [
+      {
+        "file": "1.jpg",
+        "source": "WHPO, PC, GJ/DSC02459.JPG",
+        "caption": "The main avenue \u2014 the site's clearest public route",
+        "w": 1500,
+        "h": 1000
+      },
+      {
+        "file": "2.jpg",
+        "source": "WHPO, PC, GJ/DSC02448.JPG",
+        "caption": "The gates on Willesden Lane",
+        "w": 1500,
+        "h": 1000
+      },
+      {
+        "file": "3.jpg",
+        "source": "WHPO, PC, GJ/DSC02465.JPG",
+        "caption": "The twin chapels, closed and under repair",
+        "w": 1500,
+        "h": 1000
+      },
+      {
+        "file": "4.jpg",
+        "source": "WHPO, PC, GJ/DSC02484.JPG",
+        "caption": "Interpretation at the entrance",
+        "w": 1500,
+        "h": 1000
+      }
+    ],
+    "tower-hamlets-cemetery-park": [
+      {
+        "file": "1.jpg",
+        "source": "THCP and TH site/DSC02659.JPG",
+        "caption": "A path through the burial landscape, with a bench off it",
+        "w": 1500,
+        "h": 1000
+      },
+      {
+        "file": "2.jpg",
+        "source": "THCP and TH site/DSC02652.JPG",
+        "caption": "Wayfinding at the boundary \u2014 the park as a through route",
+        "w": 1500,
+        "h": 2250
+      },
+      {
+        "file": "3.jpg",
+        "source": "THCP and TH site/DSC02718.JPG",
+        "caption": "Graves held in ivy \u2014 remembrance and nature together",
+        "w": 1500,
+        "h": 1000
+      },
+      {
+        "file": "4.jpg",
+        "source": "THCP and TH site/DSC02840.JPG",
+        "caption": "'Plants & People' \u2014 interpretation for an urban nature reserve",
+        "w": 1500,
+        "h": 1000
+      }
+    ],
+    "st-patricks-wapping": [
+      {
+        "file": "1.jpg",
+        "source": "10-4 St Johns Wapping/DSC03583.JPG",
+        "caption": "St Patrick's from Green Bank",
+        "w": 1500,
+        "h": 1000
+      },
+      {
+        "file": "2.jpg",
+        "source": "10-4 St Johns Wapping/DSC03585.JPG",
+        "caption": "The community garden announced on the gate",
+        "w": 1500,
+        "h": 1000
+      },
+      {
+        "file": "3.jpg",
+        "source": "10-4 St Johns Wapping/DSC03593.JPG",
+        "caption": "The nave, in fixed pews",
+        "w": 1500,
+        "h": 1000
+      },
+      {
+        "file": "4.jpg",
+        "source": "10-4 St Johns Wapping/DSC03608.JPG",
+        "caption": "Children's books on the aisle wall \u2014 no seating, no signage",
+        "w": 1500,
+        "h": 1000
+      }
+    ],
+    "st-johns-churchyard-wapping": [
+      {
+        "file": "1.jpg",
+        "source": "10-4 St Johns Wapping/IMG_0705.jpeg",
+        "caption": "The churchyard path, running between two streets",
+        "w": 1500,
+        "h": 1125
+      },
+      {
+        "file": "2.jpg",
+        "source": "10-4 St Johns Wapping/IMG_0706.jpeg",
+        "caption": "Gravestones set against the wall \u2014 an evolution of sacred space",
+        "w": 1500,
+        "h": 1125
+      },
+      {
+        "file": "3.jpg",
+        "source": "10-4 St Johns Wapping/IMG_0709.jpeg",
+        "caption": "The historical plaque on the boundary wall",
+        "w": 1500,
+        "h": 1125
+      },
+      {
+        "file": "4.jpg",
+        "source": "10-4 St Johns Wapping/IMG_0707.jpeg",
+        "caption": "Open grass, unprogrammed",
+        "w": 1500,
+        "h": 1125
+      }
+    ],
+    "st-stephen-walbrook": [
+      {
+        "file": "1.jpg",
+        "source": "City of london/IMG_3772.jpeg",
+        "caption": "St Stephen Walbrook in the City, beside a coffee chain",
+        "w": 1500,
+        "h": 1125
+      },
+      {
+        "file": "2.jpg",
+        "source": "City of london/IMG_3767.jpeg",
+        "caption": "The noticeboard: a warm welcome to all, to visit, to reflect, to pray",
+        "w": 1500,
+        "h": 1125
+      },
+      {
+        "file": "3.jpg",
+        "source": "City of london/IMG_3768.jpeg",
+        "caption": "Lunchtime jazz, advertised on the pavement",
+        "w": 1500,
+        "h": 1125
+      },
+      {
+        "file": "4.jpg",
+        "source": "City of london/IMG_3762.jpeg",
+        "caption": "The churchyard garden \u2014 benches, shade and a fountain",
+        "w": 1500,
+        "h": 1125
+      }
+    ],
+    "lambeth-palace-library": [
+      {
+        "file": "1.jpg",
+        "source": "13-04 Garden Museum/IMG_0944.jpeg",
+        "caption": "The library's street edge on Lambeth Palace Road",
+        "w": 1500,
+        "h": 1125
+      },
+      {
+        "file": "2.jpg",
+        "source": "13-04 Garden Museum/IMG_0945.jpeg",
+        "caption": "Bronze fins and a name \u2014 the public face of an institution",
+        "w": 1500,
+        "h": 1125
+      },
+      {
+        "file": "3.jpg",
+        "source": "13-04 Garden Museum/IMG_0939.jpeg",
+        "caption": "The approach along the main road",
+        "w": 1500,
+        "h": 1125
+      },
+      {
+        "file": "4.jpg",
+        "source": "13-04 Garden Museum/IMG_0938.jpeg",
+        "caption": "The boundary wall, holding the street",
+        "w": 1500,
+        "h": 1125
+      }
+    ]
+  },
+  "interventions": {
+    "open-hours": {
+      "file": "interventions/open-hours.jpg",
+      "source": "Fulham/IMG_2629.jpeg",
+      "place": "Margravine Cemetery",
+      "caption": "Opening hours posted on the gate, month by month",
+      "w": 1000,
+      "h": 1333
+    },
+    "threshold-edge": {
+      "file": "interventions/threshold-edge.jpg",
+      "source": "WHPO, PC, GJ/DSC02432.JPG",
+      "place": "The Sherriff Centre",
+      "caption": "The doors propped open onto the street",
+      "w": 1000,
+      "h": 667
+    },
+    "signage": {
+      "file": "interventions/signage.jpg",
+      "source": "WHPO, PC, GJ/DSC02431.JPG",
+      "place": "The Sherriff Centre",
+      "caption": "'In a church? Yes! Plus much more.'",
+      "w": 1000,
+      "h": 1500
+    },
+    "seating-outside": {
+      "file": "interventions/seating-outside.jpg",
+      "source": "City of london/IMG_3763.jpeg",
+      "place": "St Stephen Walbrook",
+      "caption": "Benches and shade in the churchyard garden",
+      "w": 1000,
+      "h": 750
+    },
+    "lighting": {
+      "file": "interventions/lighting.jpg",
+      "source": "13-04 Garden Museum/IMG_0855.jpeg",
+      "place": "Garden Museum",
+      "caption": "The nave relit for a gallery, warm and layered",
+      "w": 1000,
+      "h": 1333
+    },
+    "acoustics": {
+      "file": "interventions/acoustics.jpg",
+      "source": "13-04 Garden Museum/IMG_0881.jpeg",
+      "place": "Garden Museum",
+      "caption": "Rugs, upholstered chairs and a soft wall in a stone corridor",
+      "w": 1000,
+      "h": 750
+    },
+    "domestic-comfort": {
+      "file": "interventions/domestic-comfort.jpg",
+      "source": "WHPO, PC, GJ/DSC02424.JPG",
+      "place": "The Sherriff Centre",
+      "caption": "An armchair and a fireplace inside the church",
+      "w": 1000,
+      "h": 667
+    },
+    "paths": {
+      "file": "interventions/paths.jpg",
+      "source": "Fulham/IMG_2612.jpeg",
+      "place": "Margravine Cemetery",
+      "caption": "One clear surfaced route, cut through the planting",
+      "w": 1000,
+      "h": 750
+    },
+    "context-fit": {
+      "file": "interventions/context-fit.jpg",
+      "source": "13-04 Garden Museum/IMG_0879.jpeg",
+      "place": "Garden Museum",
+      "caption": "The new extension answering the churchyard it sits in",
+      "w": 1000,
+      "h": 750
+    },
+    "sensory": {
+      "file": "interventions/sensory.jpg",
+      "source": "13-04 Garden Museum/IMG_0840.jpeg",
+      "place": "Garden Museum",
+      "caption": "A quiet corner kept low-stimulus, off the main route",
+      "w": 1000,
+      "h": 750
+    },
+    "transparency": {
+      "file": "interventions/transparency.jpg",
+      "source": "THCP and TH site/DSC02881.JPG",
+      "place": "Bow",
+      "caption": "A glazed frontage that shows the activity inside",
+      "w": 1000,
+      "h": 667
+    },
+    "local-noticeboard": {
+      "file": "interventions/local-noticeboard.jpg",
+      "source": "WHPO, PC, GJ/DSC02514.JPG",
+      "place": "Grand Junction",
+      "caption": "A board that carries the neighbourhood, not only the institution",
+      "w": 1000,
+      "h": 667
+    },
+    "small-welcome": {
+      "file": "interventions/small-welcome.jpg",
+      "source": "13-04 Garden Museum/IMG_0878.jpeg",
+      "place": "Garden Museum",
+      "caption": "Bike stands inside the churchyard",
+      "w": 1000,
+      "h": 750
+    },
+    "community-art": {
+      "file": "interventions/community-art.jpg",
+      "source": "canary wharf/IMG_0734.jpeg",
+      "place": "Canary Wharf",
+      "caption": "A tree of visitors' written notes in a public concourse",
+      "w": 1000,
+      "h": 750
+    },
+    "indoor-green": {
+      "file": "interventions/indoor-green.jpg",
+      "source": "13-04 Garden Museum/IMG_0891.jpeg",
+      "place": "Garden Museum",
+      "caption": "Planting brought inside the church",
+      "w": 1000,
+      "h": 750
+    },
+    "post-office": {
+      "file": "interventions/post-office.jpg",
+      "source": "WHPO, PC, GJ/DSC02440.JPG",
+      "place": "The Sherriff Centre",
+      "caption": "Post office, caf\u00e9 and debt advice, on one wall",
+      "w": 1000,
+      "h": 667
+    },
+    "advice-clinic": {
+      "file": "interventions/advice-clinic.jpg",
+      "source": "10-4 St Johns Wapping/DSC03588.JPG",
+      "place": "St Patrick's Wapping",
+      "caption": "Advice and support leaflets by the door",
+      "w": 1000,
+      "h": 1500
+    },
+    "food-project": {
+      "file": "interventions/food-project.jpg",
+      "source": "WHPO, PC, GJ/DSC02425.JPG",
+      "place": "The Sherriff Centre",
+      "caption": "The community fridge and donation shelves",
+      "w": 1000,
+      "h": 667
+    },
+    "warm-space": {
+      "file": "interventions/warm-space.jpg",
+      "source": "13-04 Garden Museum/IMG_0882.jpeg",
+      "place": "Garden Museum",
+      "caption": "Free seating in the corridor \u2014 no ticket needed",
+      "w": 1000,
+      "h": 750
+    },
+    "servery": {
+      "file": "interventions/servery.jpg",
+      "source": "WHPO, PC, GJ/DSC02426.JPG",
+      "place": "The Sherriff Centre",
+      "caption": "The servery counter in the aisle",
+      "w": 1000,
+      "h": 667
+    },
+    "cafe": {
+      "file": "interventions/cafe.jpg",
+      "source": "WHPO, PC, GJ/DSC02513.JPG",
+      "place": "Grand Junction",
+      "caption": "The canal-side caf\u00e9 in the new wing",
+      "w": 1000,
+      "h": 667
+    },
+    "community-meal": {
+      "file": "interventions/community-meal.jpg",
+      "source": "WHPO, PC, GJ/DSC02423.JPG",
+      "place": "The Sherriff Centre",
+      "caption": "Tables laid in the nave",
+      "w": 1000,
+      "h": 667
+    },
+    "concerts": {
+      "file": "interventions/concerts.jpg",
+      "source": "City of london/IMG_3768.jpeg",
+      "place": "St Stephen Walbrook",
+      "caption": "Lunchtime jazz, advertised on the pavement",
+      "w": 1000,
+      "h": 750
+    },
+    "exhibition": {
+      "file": "interventions/exhibition.jpg",
+      "source": "10-4 St Johns Wapping/DSC03595.JPG",
+      "place": "St Patrick's Wapping",
+      "caption": "A local history banner standing in the aisle",
+      "w": 1000,
+      "h": 667
+    },
+    "hire": {
+      "file": "interventions/hire.jpg",
+      "source": "13-04 Garden Museum/IMG_0869.jpeg",
+      "place": "Garden Museum",
+      "caption": "The nave laid out with tables for an event",
+      "w": 1000,
+      "h": 750
+    },
+    "library-culture": {
+      "file": "interventions/library-culture.jpg",
+      "source": "THCP and TH site/DSC02880.JPG",
+      "place": "Bow",
+      "caption": "Library shelves, visible from the street",
+      "w": 1000,
+      "h": 667
+    },
+    "esol": {
+      "file": "interventions/esol.jpg",
+      "source": "13-04 Garden Museum/IMG_0823.jpeg",
+      "place": "Garden Museum",
+      "caption": "A learning table set up in the nave",
+      "w": 1000,
+      "h": 750
+    },
+    "wellbeing": {
+      "file": "interventions/wellbeing.jpg",
+      "source": "WHPO, PC, GJ/DSC02428.JPG",
+      "place": "The Sherriff Centre",
+      "caption": "A class set up in the chapel",
+      "w": 1000,
+      "h": 667
+    },
+    "creative-workshop": {
+      "file": "interventions/creative-workshop.jpg",
+      "source": "13-04 Garden Museum/IMG_0825.jpeg",
+      "place": "Garden Museum",
+      "caption": "A making station in the middle of the atrium",
+      "w": 1000,
+      "h": 750
+    },
+    "health-outreach": {
+      "file": "interventions/health-outreach.jpg",
+      "source": "10-4 St Johns Wapping/DSC03589.JPG",
+      "place": "St Patrick's Wapping",
+      "caption": "Health and support notices inside the door",
+      "w": 1000,
+      "h": 667
+    },
+    "toddler": {
+      "file": "interventions/toddler.jpg",
+      "source": "10-4 St Johns Wapping/DSC03609.JPG",
+      "place": "St Patrick's Wapping",
+      "caption": "A children's corner in the aisle",
+      "w": 1000,
+      "h": 667
+    },
+    "soft-play": {
+      "file": "interventions/soft-play.jpg",
+      "source": "WHPO, PC, GJ/DSC02427.JPG",
+      "place": "The Sherriff Centre",
+      "caption": "Two-storey soft play in the north aisle",
+      "w": 1000,
+      "h": 1500
+    },
+    "youth-club": {
+      "file": "interventions/youth-club.jpg",
+      "source": "WHPO, PC, GJ/DSC02504.JPG",
+      "place": "Grand Junction",
+      "caption": "The youth club advertised on the railings",
+      "w": 1000,
+      "h": 667
+    },
+    "playground": {
+      "file": "interventions/playground.jpg",
+      "source": "WHPO, PC, GJ/DSC02524.JPG",
+      "place": "Paddington",
+      "caption": "The playground on the green beside the church",
+      "w": 1000,
+      "h": 667
+    },
+    "workspace": {
+      "file": "interventions/workspace.jpg",
+      "source": "THCP and TH site/DSC02879.JPG",
+      "place": "Bow",
+      "caption": "A community centre letting rooms and workspace",
+      "w": 1000,
+      "h": 667
+    },
+    "meeting-rooms": {
+      "file": "interventions/meeting-rooms.jpg",
+      "source": "13-04 Garden Museum/IMG_0950.jpeg",
+      "place": "Garden Museum",
+      "caption": "A small room that can be let by the hour",
+      "w": 1000,
+      "h": 1333
+    },
+    "market": {
+      "file": "interventions/market.jpg",
+      "source": "canary wharf/IMG_0735.jpeg",
+      "place": "Canary Wharf",
+      "caption": "A programmed stall set down in a public concourse",
+      "w": 1000,
+      "h": 750
+    },
+    "quiet-room": {
+      "file": "interventions/quiet-room.jpg",
+      "source": "10-4 St Johns Wapping/IMG_0690.jpeg",
+      "place": "St Patrick's Wapping",
+      "caption": "A side chapel kept quiet and available",
+      "w": 1000,
+      "h": 750
+    },
+    "memorial": {
+      "file": "interventions/memorial.jpg",
+      "source": "THCP and TH site/DSC02816.JPG",
+      "place": "Tower Hamlets Cemetery Park",
+      "caption": "A tended grave inside a public park",
+      "w": 1000,
+      "h": 667
+    },
+    "multifaith": {
+      "file": "interventions/multifaith.jpg",
+      "source": "canary wharf/IMG_3005.jpeg",
+      "place": "Canary Wharf",
+      "caption": "An annual faith events programme in a shared building",
+      "w": 1000,
+      "h": 1333
+    },
+    "churchyard-open": {
+      "file": "interventions/churchyard-open.jpg",
+      "source": "10-4 St Johns Wapping/IMG_0705.jpeg",
+      "place": "St John's Wapping",
+      "caption": "The churchyard used as a route between streets",
+      "w": 1000,
+      "h": 750
+    },
+    "community-garden": {
+      "file": "interventions/community-garden.jpg",
+      "source": "10-4 St Johns Wapping/DSC03585.JPG",
+      "place": "St Patrick's Wapping",
+      "caption": "The community garden announced at the gate",
+      "w": 1000,
+      "h": 667
+    },
+    "nature-reserve": {
+      "file": "interventions/nature-reserve.jpg",
+      "source": "THCP and TH site/DSC02840.JPG",
+      "place": "Tower Hamlets Cemetery Park",
+      "caption": "Interpretation for an urban nature reserve",
+      "w": 1000,
+      "h": 667
+    },
+    "greening": {
+      "file": "interventions/greening.jpg",
+      "source": "13-04 Garden Museum/IMG_0894.jpeg",
+      "place": "Garden Museum",
+      "caption": "A planted courtyard on what was hard standing",
+      "w": 1000,
+      "h": 750
+    },
+    "accessible-wc": {
+      "file": "interventions/accessible-wc.jpg",
+      "source": "13-04 Garden Museum/IMG_0889.jpeg",
+      "place": "Garden Museum",
+      "caption": "The new-build wing \u2014 where the WCs, kitchen and lift went, because the church could not take them",
+      "w": 1000,
+      "h": 1333
+    },
+    "step-free": {
+      "file": "interventions/step-free.jpg",
+      "source": "euston/0f69d28a-ede0-46e0-a9bc-9d04eff219f8.jpg",
+      "place": "St George's Bloomsbury",
+      "caption": "The steps that decide who can get in",
+      "w": 1000,
+      "h": 1333
+    },
+    "movable-seating": {
+      "file": "interventions/movable-seating.jpg",
+      "source": "10-4 St Johns Wapping/DSC03593.JPG",
+      "place": "St Patrick's Wapping",
+      "caption": "Fixed pews \u2014 the starting condition",
+      "w": 1000,
+      "h": 667
+    },
+    "heating": {
+      "file": "interventions/heating.jpg",
+      "source": "13-04 Garden Museum/IMG_0890.jpeg",
+      "place": "Garden Museum",
+      "caption": "One small, well-lined room \u2014 heat this rather than the whole volume",
+      "w": 1000,
+      "h": 1333
+    },
+    "storage": {
+      "file": "interventions/storage.jpg",
+      "source": "10-4 St Johns Wapping/DSC03604.JPG",
+      "place": "St Patrick's Wapping",
+      "caption": "Chairs and tables stacked in the aisle, with nowhere to go",
+      "w": 1000,
+      "h": 1500
+    },
+    "extension": {
+      "file": "interventions/extension.jpg",
+      "source": "13-04 Garden Museum/IMG_0895.jpeg",
+      "place": "Garden Museum",
+      "caption": "The new wing wrapped around the churchyard",
+      "w": 1000,
+      "h": 750
+    },
+    "insertion": {
+      "file": "interventions/insertion.jpg",
+      "source": "13-04 Garden Museum/IMG_0837.jpeg",
+      "place": "Garden Museum",
+      "caption": "A new timber structure standing free inside the church",
+      "w": 1000,
+      "h": 750
+    },
+    "timetable": {
+      "file": "interventions/timetable.jpg",
+      "source": "WHPO, PC, GJ/DSC02512.JPG",
+      "place": "Grand Junction",
+      "caption": "The week, posted where people pass",
+      "w": 1000,
+      "h": 667
+    },
+    "meanwhile": {
+      "file": "interventions/meanwhile.jpg",
+      "source": "chelsea&#x3f; 2/IMG_0988.jpeg",
+      "place": "Chelsea Old Church",
+      "caption": "A churchyard shut behind railings, waiting for a decision",
+      "w": 1000,
+      "h": 1333
+    },
+    "late-opening": {
+      "file": "interventions/late-opening.jpg",
+      "source": "WHPO, PC, GJ/DSC02488.JPG",
+      "place": "Paddington Old Cemetery",
+      "caption": "Closing time chalked up fresh each day",
+      "w": 1000,
+      "h": 667
+    },
+    "trail": {
+      "file": "interventions/trail.jpg",
+      "source": "THCP and TH site/DSC02634.JPG",
+      "place": "Bow",
+      "caption": "A local wayfinding map linking sites together",
+      "w": 1000,
+      "h": 667
+    },
+    "friends-group": {
+      "file": "interventions/friends-group.jpg",
+      "source": "THCP and TH site/DSC02657.JPG",
+      "place": "Tower Hamlets Cemetery Park",
+      "caption": "Held by a charity and its volunteers",
+      "w": 1000,
+      "h": 667
+    },
+    "partnership": {
+      "file": "interventions/partnership.jpg",
+      "source": "WHPO, PC, GJ/DSC02510.JPG",
+      "place": "Grand Junction",
+      "caption": "Parish, diocese and a development trust in one building",
+      "w": 1000,
+      "h": 667
+    },
+    "trading-sub": {
+      "file": "interventions/trading-sub.jpg",
+      "source": "WHPO, PC, GJ/DSC02520.JPG",
+      "place": "Grand Junction",
+      "caption": "The caf\u00e9 bar \u2014 trading income that pays for the free programme",
+      "w": 1000,
+      "h": 667
+    },
+    "digital": {
+      "file": "interventions/digital.jpg",
+      "source": "10-4 St Johns Wapping/DSC03610.JPG",
+      "place": "St Patrick's Wapping",
+      "caption": "A contactless donation point by the door",
+      "w": 1000,
+      "h": 667
+    },
+    "coproduce": {
+      "file": "interventions/coproduce.jpg",
+      "source": "13-04 Garden Museum/IMG_0841.jpeg",
+      "place": "Garden Museum",
+      "caption": "Draft boards for a community exhibition, still being made",
+      "w": 1000,
+      "h": 1333
+    }
+  },
+  "stillFromWikimediaCommons": {
+    "note": "These two sites were not photographed for this project, so they keep the Wikimedia Commons placeholders. Attribution below; replace the files in images/<site-id>/ with your own and delete this block.",
+    "sites": {
+      "st-dunstan-in-the-east": [
+        {
+          "file": "1.jpg",
+          "title": "File:Garden at St. Dunstan-in-the-East - geograph.org.uk - 2353342.jpg",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Garden_at_St._Dunstan-in-the-East_-_geograph.org.uk_-_2353342.jpg"
+        },
+        {
+          "file": "2.jpg",
+          "title": "File:Garden, St Dunstan in the East, St Dunstan's Hill, London - geograph.org.uk - 4716028.jpg",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/4/43/Garden%2C_St_Dunstan_in_the_East%2C_St_Dunstan%27s_Hill%2C_London_-_geograph.org.uk_-_4716028.jpg"
+        },
+        {
+          "file": "3.jpg",
+          "title": "File:St. Dunstan in the East Church Garden - geograph.org.uk - 5213257.jpg",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/St._Dunstan_in_the_East_Church_Garden_-_geograph.org.uk_-_5213257.jpg/1920px-St._Dunstan_in_the_East_Church_Garden_-_geograph.org.uk_-_5213257.jpg"
+        },
+        {
+          "file": "4.jpg",
+          "title": "File:Garden at St. Dunstan-in-the-East (3) - geograph.org.uk - 2353387.jpg",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/6/62/Garden_at_St._Dunstan-in-the-East_%283%29_-_geograph.org.uk_-_2353387.jpg"
+        }
+      ],
+      "st-georges-gardens": [
+        {
+          "file": "1.jpg",
+          "title": "File:Plaque to Zachary Macaulay, St George's Gardens, Bloomsbury, June 2024.jpg",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Plaque_to_Zachary_Macaulay%2C_St_George%27s_Gardens%2C_Bloomsbury%2C_June_2024.jpg/1920px-Plaque_to_Zachary_Macaulay%2C_St_George%27s_Gardens%2C_Bloomsbury%2C_June_2024.jpg"
+        },
+        {
+          "file": "2.jpg",
+          "title": "File:Mortuary Chapel, St Georges Gardens, Bloomsbury, June 2024 01.jpg",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Mortuary_Chapel%2C_St_Georges_Gardens%2C_Bloomsbury%2C_June_2024_01.jpg/1920px-Mortuary_Chapel%2C_St_Georges_Gardens%2C_Bloomsbury%2C_June_2024_01.jpg"
+        },
+        {
+          "file": "3.jpg",
+          "title": "File:Mortuary Chapel, St Georges Gardens, Bloomsbury, June 2024 02.jpg",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Mortuary_Chapel%2C_St_Georges_Gardens%2C_Bloomsbury%2C_June_2024_02.jpg/1920px-Mortuary_Chapel%2C_St_Georges_Gardens%2C_Bloomsbury%2C_June_2024_02.jpg"
+        },
+        {
+          "file": "4.jpg",
+          "title": "File:London - St George's Gardens, Holborn 2016-11-30 (31199130942).jpg",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/London_-_St_George%27s_Gardens%2C_Holborn_2016-11-30_%2831199130942%29.jpg/1920px-London_-_St_George%27s_Gardens%2C_Holborn_2016-11-30_%2831199130942%29.jpg"
+        }
+      ]
+    }
+  }
+}

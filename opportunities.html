@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Opportunities — Planning with Religion</title>
+<meta name="description" content="An interactive map of London sites where underuse has been recognised — filter by the form of underuse, and by use, publicness, interaction and temporality.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="css/style.css?v=12">
+</head>
+<body data-page="opportunities.html">
+
+<main class="page" id="browse">
+  <section class="page-head">
+    <div class="wrap">
+      <h1 class="h-page">Opportunities</h1>
+      <div class="utility-row">
+        <span class="note">
+          <button class="filter-btn" data-rail-toggle type="button" aria-expanded="false" aria-controls="filters">Filters</button>
+          <span data-count style="margin-left:14px"></span>
+        </span>
+        <a class="rule-link" href="#list">See them as a list</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap browse-layout">
+
+    <!-- the primary filter: the form of underuse -->
+    <div class="form-tiles-head">
+      <span class="lbl">Form of underuse</span>
+      <span class="body-sm">Choose one or more — or none to see every site.</span>
+    </div>
+    <div class="form-tiles" id="form-tiles" role="group" aria-label="Filter by form of underuse"></div>
+
+    <div class="filter-rail" id="filters" aria-label="Filters">
+      <div class="filter-rail-inner"><!-- built by filters.js --></div>
+    </div>
+    <div class="active-chips" data-chips aria-live="polite"></div>
+
+    <!-- the map -->
+    <div class="opp-map-shell" id="map-top">
+      <div id="opp-map" role="region" aria-label="Map of opportunity sites"></div>
+      <p class="map-hint" id="map-hint">Select a site to read its opportunity</p>
+      <aside class="map-panel" id="map-panel" hidden aria-live="polite"></aside>
+      <div class="map-legend opp-legend">
+        <b>Scale of opportunity</b>
+        <div><span class="sz" style="width:12px;height:12px"></span>Small</div>
+        <div><span class="sz" style="width:18px;height:18px"></span>Medium</div>
+        <div><span class="sz" style="width:24px;height:24px"></span>Large</div>
+      </div>
+      <div class="map-empty" id="map-empty" hidden>
+        <h3 class="h-block">No sites match this combination — yet</h3>
+        <p><button type="button" class="btn btn--sm" data-clear-from-map>Clear the filters</button></p>
+      </div>
+    </div>
+
+    <!-- the same sites, as a list -->
+    <div class="utility-row" id="list" style="border-top:1px solid var(--ink); padding-top:18px; margin-top:64px; scroll-margin-top:24px">
+      <span class="note"><strong>The same sites, as a list</strong></span>
+      <a class="rule-link" href="#map-top">Back to the map</a>
+    </div>
+    <div class="card-grid" data-results></div>
+  </div>
+</main>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="js/data.js?v=12"></script>
+<script src="js/detail-data.js?v=12"></script>
+<script src="js/photos.js?v=12"></script>
+<script src="js/ui.js?v=12"></script>
+<script src="js/filters.js?v=12"></script>
+<script src="js/basemap.js?v=12"></script>
+<script src="js/opp-map.js?v=12"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const data = SITES.filter(s => s.opportunity);
+  const oppMap = initOppMap(data);
+
+  createBrowse({
+    mount: document.getElementById("browse"),
+    data,
+    renderCard: oppCard,
+    onResults: oppMap.update,
+    emptyHint: "Widen the dimensions or the scale — every gap here is a site nobody has recorded yet.",
+    groups: [
+      {
+        title: "Form of underuse",
+        hint: "Also set by the tiles above the map.",
+        subs: [
+          { key: "currentState", label: "Form", type: "multi", options: TAXONOMY.currentState, get: s => s.opportunity.currentState }
+        ]
+      },
+      {
+        title: "What is missing",
+        hint: "The four dimensions of an opportunity.",
+        subs: [
+          { key: "dimensions", label: "Dimensions", type: "multi", options: TAXONOMY.dimensions, get: s => s.opportunity.dimensions }
+        ]
+      },
+      {
+        title: "Scale of opportunity",
+        hint: "How much would have to change.",
+        subs: [
+          { key: "oppScale", label: "Scale", type: "single", options: TAXONOMY.scale, get: s => s.opportunity.oppScale }
+        ]
+      },
+      {
+        title: "Condition today",
+        subs: [
+          { key: "publicness", label: "Publicness — minimum level", type: "range", get: s => s.publicness },
+          { key: "interaction", label: "Levels of interaction", type: "multi", options: ["Low", "Medium", "High"], get: s => s.interaction }
+        ]
+      },
+      {
+        title: "Who could lead",
+        hint: "Where a charity, funder or faith body could step in.",
+        subs: [
+          { key: "whoCouldLead", label: "Lead", type: "multi", options: ["Council-owned", "Faith-led", "Charity partner needed", "Friends group active", "Operator in place"], get: s => s.opportunity.whoCouldLead }
+        ]
+      },
+      {
+        title: "Where",
+        subs: [
+          { key: "borough", label: "London borough", type: "multi", options: TAXONOMY.boroughs, get: s => s.borough },
+          { key: "typology", label: "Spatial typology", type: "multi", options: [...new Set(SITES.map(s => s.typology))], get: s => s.typology }
+        ]
+      }
+    ]
+  });
+});
+</script>
+</body>
+</html>

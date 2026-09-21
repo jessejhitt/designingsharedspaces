@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Intervention library — Planning with Religion</title>
+<meta name="description" content="Sixty interventions for underused religious spaces, photographed on site. Scroll the board, pick the ones you like, and see which work together.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=12">
+<link rel="stylesheet" href="css/library.css?v=12">
+</head>
+<body data-page="interventions.html">
+
+<main class="page">
+
+  <section class="page-head lib-head">
+    <div class="wrap">
+      <h1 class="h-page">Intervention library</h1>
+      <p class="h-page-sub">Sixty things you could do, photographed where they already happen</p>
+      <p class="lede" style="max-width:66ch; margin-top:16px">
+        Scroll the board. Keep the ones you like. The library then shows you which of them
+        work together, which pull against each other, and what each one takes —
+        scale, permission, funding, and the cheapest way to test it in a week.
+      </p>
+      <p class="body-sm" style="max-width:66ch; margin-top:12px; color:var(--muted)">
+        Every photograph is from a site visit for this project. Nothing is a stock image, and
+        nothing is a render: these are all real rooms, gates and noticeboards in London.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ sticky board controls ============ -->
+  <div class="board-bar" id="board-bar">
+    <div class="wrap board-bar-in">
+      <div class="bb-filters" id="bb-filters"></div>
+      <div class="bb-right">
+        <input type="search" id="lib-q" placeholder="Search — café, pews, signage, youth…"
+               aria-label="Search the intervention library" autocomplete="off">
+        <button type="button" class="bb-kept" id="bb-kept" aria-expanded="false">
+          <span class="heart" aria-hidden="true">♥</span>
+          <span id="kept-n">0</span> kept
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <p class="lib-count" id="lib-count" aria-live="polite"></p>
+  </div>
+
+  <!-- ============ the board ============ -->
+  <div class="wrap">
+    <div class="board" id="board"></div>
+    <p class="lib-empty" id="lib-empty" hidden></p>
+  </div>
+
+  <!-- ============ what you kept ============ -->
+  <section class="wrap tk-section" id="kept-panel" hidden>
+    <h2>What you kept</h2>
+    <p class="lede" id="kept-lede"></p>
+    <div class="kept-grid" id="kept-grid"></div>
+
+    <div class="kept-compat" id="kept-compat"></div>
+
+    <div class="kept-actions">
+      <a class="btn" href="studio.html">Test these on your own site</a>
+      <button type="button" class="btn btn--ghost" id="kept-clear">Clear the board</button>
+    </div>
+  </section>
+
+  <div class="wrap">
+
+    <!-- ============ what every entry carries ============ -->
+    <section class="tk-section" id="standard">
+      <h2>What every card carries</h2>
+      <p class="lede">The same nine things for every intervention, so two ideas of very different
+        size can be compared before anyone falls in love with one.</p>
+      <div class="std-grid">
+        <div class="std"><b>Scale &amp; reversibility</b><p>Small, medium or large — and whether a future generation could undo it.</p></div>
+        <div class="std"><b>Where it fits</b><p>The parts of a site it can occupy, and which sacred conditions it survives.</p></div>
+        <div class="std"><b>What it moves</b><p>Which of the four dimensions it changes: use, publicness, interaction, temporality.</p></div>
+        <div class="std"><b>Design questions</b><p>Which of the ten themes in <a href="#checklist">the design checklist</a> it engages.</p></div>
+        <div class="std"><b>What the site needs first</b><p>Size, noise, openness and facilities on the same 0–5 scale the <a href="studio.html">site studio</a> uses.</p></div>
+        <div class="std"><b>Permissions</b><p>Nothing, a governance decision, a faculty, planning, a change of use, or a licence.</p></div>
+        <div class="std"><b>Funding route</b><p>Funding follows the intervention. Each card names the kind of money it needs.</p></div>
+        <div class="std"><b>The taster</b><p>The cheapest way to test it within a week.</p></div>
+        <div class="std"><b>Works with</b><p>Which other interventions make this one more likely to succeed — and which fight it.</p></div>
+      </div>
+    </section>
+
+    <!-- ============ design checklist ============ -->
+    <section class="tk-section" id="checklist">
+      <h2>The ten design questions</h2>
+      <p class="lede">
+        Every card is tagged against these ten themes, from The Glass-House's
+        <em>Making Buildings Work for Your Community</em> and EDP's <em>Explore Design</em>.
+        Each is answered twice: as the guidance puts it, and as it applies in a building that
+        is also sacred.
+      </p>
+      <div class="theme-list" id="theme-list"></div>
+      <p class="body-sm" style="margin-top:22px; max-width:70ch">
+        The <a href="downloads/design-checklist.html" target="_blank" rel="noopener">printable
+        checklist</a> takes all ten to site on two sides of paper.
+      </p>
+    </section>
+
+    <!-- ============ taster ============ -->
+    <section class="tk-section" id="taster">
+      <h2>If the building is only open on Sundays, start here</h2>
+      <p class="lede" id="taster-why"></p>
+
+      <div class="taster-meta">
+        <div><b>Time</b><span id="taster-time"></span></div>
+        <div><b>Cost</b><span id="taster-cost"></span></div>
+        <div><b>Permission</b><span>None. A taster uses the building as it stands.</span></div>
+      </div>
+
+      <div class="taster-steps" id="taster-steps"></div>
+
+      <div class="panel-note">
+        <h3>Before the doors open</h3>
+        <ul id="taster-watch"></ul>
+      </div>
+
+      <div class="taster-next">
+        <h3>Finding the groups who might come</h3>
+        <p>Step two is the one most groups skip. Three ways to do it with this site:</p>
+        <ol>
+          <li><a href="opportunities.html">The opportunities map</a> — which nearby sites carry
+            which uses, and therefore which local needs are unmet.</li>
+          <li><a href="case-studies.html">The case studies</a> — what has worked in buildings like
+            yours. Search the same use locally and you will usually find a group in a worse room.</li>
+          <li><a href="studio.html">The site studio</a> — ranks the groups most compatible with
+            your site, and names what each would need before saying yes.</li>
+        </ol>
+        <p>Offline: your borough's community directory, the council for voluntary service, the
+          library noticeboard, and the local social media group.</p>
+      </div>
+    </section>
+
+    <!-- ============ before you start ============ -->
+    <section class="tk-section" id="process">
+      <h2>Before you start</h2>
+      <p class="lede">Seven steps that come before any card in this library, whatever its size.
+        From The Glass-House, with the place-of-worship specifics from EDP and Crossing the
+        Threshold.</p>
+      <div class="step-list" id="before-list"></div>
+    </section>
+
+    <!-- ============ what decides it ============ -->
+    <section class="tk-section" id="edp">
+      <h2>What decides whether it works</h2>
+      <p class="lede">Four years of research across community-led projects in historic places of
+        worship found the same four things separating projects that reached their potential from
+        those that stalled. All four are about people, not fabric.</p>
+      <div class="edp-grid" id="edp-list"></div>
+    </section>
+
+    <!-- ============ permissions ============ -->
+    <section class="tk-section" id="permissions">
+      <h2>Permissions</h2>
+      <p class="lede">Which route an intervention takes, who decides, and how long. Pre-application
+        advice from your diocesan body and the planning authority is free or cheap, and tells you
+        what is likely to be approved before you spend money.</p>
+      <div class="matrix">
+        <table>
+          <thead><tr><th>Route</th><th>What needs it</th><th>Who decides</th><th>How long</th></tr></thead>
+          <tbody id="perm-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ============ funding ============ -->
+    <section class="tk-section" id="funding">
+      <h2>Funding routes</h2>
+      <p class="lede">Funding follows the intervention. Work out what needs to change first and the
+        kind of money becomes obvious — the opposite of how most projects begin.</p>
+      <div class="fund-grid" id="fund-list"></div>
+    </section>
+
+    <!-- ============ resources ============ -->
+    <section class="tk-section" id="resources">
+      <h2>Resources</h2>
+      <p class="lede">The published guidance this library stands on.</p>
+      <div class="res-list" id="res-list"></div>
+    </section>
+
+  </div>
+</main>
+
+<!-- ============ the record drawer ============ -->
+<div class="iv-scrim" id="iv-scrim" hidden></div>
+<aside class="iv-drawer" id="iv-drawer" hidden role="dialog" aria-modal="true" aria-labelledby="iv-title">
+  <button type="button" class="iv-close" id="iv-close" aria-label="Close">×</button>
+  <div class="iv-body" id="iv-body"></div>
+</aside>
+
+<script src="js/data.js?v=12"></script>
+<script src="js/detail-data.js?v=12"></script>
+<script src="js/evidence.js?v=12"></script>
+<script src="js/photos.js?v=12"></script>
+<script src="js/interventions.js?v=12"></script>
+<script src="js/ui.js?v=12"></script>
+<script src="js/library.js?v=12"></script>
+</body>
+</html>

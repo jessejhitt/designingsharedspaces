@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Submit — Planning with Religion</title>
+<meta name="description" content="Add a case study or an opportunity site to the database. The form mirrors the toolkit, so your knowledge lands ready to file.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=12">
+</head>
+<body data-page="submit.html">
+
+<main class="page">
+  <section class="page-head">
+    <div class="wrap">
+      <h1 class="h-page">Submit</h1>
+      <p class="h-page-sub">Add a site to the database</p>
+      <div class="utility-row">
+        <span class="note">Case studies prove what works; opportunity sites show where it could work next.</span>
+        <a class="rule-link" href="toolkit.html">Read the toolkit first</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap submit-layout">
+    <div>
+      <div class="mode-switch" role="tablist" aria-label="Submission type">
+        <button type="button" class="active" data-mode="case" role="tab" aria-selected="true">Case study</button>
+        <button type="button" data-mode="opp" role="tab" aria-selected="false">Opportunity site</button>
+      </div>
+
+      <!-- ---------------- the site ---------------- -->
+      <section class="form-section">
+        <h2>The site</h2>
+        <p>Where it is, and what kind of place it is. Two fields are required — the name and the borough.</p>
+        <div class="form-grid">
+          <div class="field">
+            <label for="f-name">Site name</label>
+            <input type="text" id="f-name" placeholder="e.g. St Saviour's Church Hall">
+          </div>
+          <div class="field">
+            <label for="f-borough">Borough</label>
+            <select id="f-borough"></select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-address">Address</label>
+          <input type="text" id="f-address" placeholder="Street, postcode">
+          <span class="help">So the site can be visited and mapped.</span>
+        </div>
+        <div class="form-grid">
+          <div class="field">
+            <label for="f-faith">Faith tradition</label>
+            <select id="f-faith"></select>
+          </div>
+          <div class="field">
+            <label for="f-sacredness">Sacredness</label>
+            <select id="f-sacredness"></select>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------------- case study ---------------- -->
+      <section class="form-section" data-only="case">
+        <h2>The intervention</h2>
+        <p>What has already changed here, who led it, and how open the place is in practice.</p>
+        <div class="form-grid">
+          <div class="field">
+            <label for="f-governance">Who runs it</label>
+            <select id="f-governance"></select>
+          </div>
+          <div class="field">
+            <label for="f-publicness">Publicness level</label>
+            <select id="f-publicness"></select>
+            <span class="help">Use the ladder in the <a class="rule-link" href="toolkit.html#ladder">toolkit</a>.</span>
+          </div>
+        </div>
+        <div class="form-grid">
+          <div class="field">
+            <label for="f-scale">Intervention scale</label>
+            <select id="f-scale"></select>
+          </div>
+          <div class="field">
+            <label for="f-cost">Cost band</label>
+            <select id="f-cost"></select>
+            <span class="help">A rough band is fine.</span>
+          </div>
+        </div>
+        <div class="field">
+          <label>What happens there</label>
+          <div class="choice-grid" id="f-uses"></div>
+        </div>
+        <div class="field">
+          <label for="f-story">The story</label>
+          <textarea id="f-story" placeholder="What changed, who led it, and what made it work. Two or three paragraphs is plenty."></textarea>
+        </div>
+      </section>
+
+      <!-- ---------------- opportunity ---------------- -->
+      <section class="form-section" data-only="opp">
+        <h2>The opportunity</h2>
+        <p>What is missing, how big a change it would be, and who could plausibly lead it.</p>
+        <div class="field">
+          <label>Dimensions of the opportunity</label>
+          <div class="choice-grid" id="f-dimensions"></div>
+        </div>
+        <div class="form-grid">
+          <div class="field">
+            <label for="f-state">Current state</label>
+            <select id="f-state"></select>
+          </div>
+          <div class="field">
+            <label for="f-lead">Who could lead</label>
+            <select id="f-lead"></select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-potential">The potential</label>
+          <textarea id="f-potential" placeholder="What did you notice? What is already in place — a Friends group, a willing owner, funding in the air?"></textarea>
+        </div>
+      </section>
+
+      <!-- ---------------- you ---------------- -->
+      <section class="form-section">
+        <h2>You</h2>
+        <p>Only used for follow-up questions about the entry.</p>
+        <div class="form-grid">
+          <div class="field">
+            <label for="f-contact-name">Your name</label>
+            <input type="text" id="f-contact-name">
+          </div>
+          <div class="field">
+            <label for="f-contact-email">Your email</label>
+            <input type="email" id="f-contact-email">
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-relationship">Your relationship to the site</label>
+          <input type="text" id="f-relationship" placeholder="e.g. churchwarden, local planner, neighbour">
+          <span class="help">Optional.</span>
+        </div>
+      </section>
+
+      <div class="btn-row" style="margin-top:34px">
+        <button type="button" class="btn" id="f-submit">Prepare submission</button>
+      </div>
+
+      <div id="f-result" class="submit-preview" hidden></div>
+    </div>
+
+    <aside>
+      <div class="panel panel--buff">
+        <h2 class="panel-title" style="font-size:1.25rem">What happens next</h2>
+        <ol class="q-body" style="font-size:.9375rem; margin-top:14px">
+          <li>Your submission is reviewed and the site is visited where possible.</li>
+          <li>It is assessed with the toolkit — publicness ladder, interaction test, compatibility check.</li>
+          <li>It is tagged into the shared taxonomy and published with sources.</li>
+        </ol>
+        <p class="body-sm" style="margin-top:16px">
+          Not sure whether a site is a case study or an opportunity? It can be both —
+          <a class="rule-link" href="site.html?id=st-patricks-wapping">St Patrick's Wapping</a> is.
+          Pick whichever you know more about.
+        </p>
+        <p class="body-sm" style="margin-top:12px">
+          This form prepares your submission as a file to send on — it does not transmit
+          anything by itself.
+        </p>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<script src="js/data.js?v=12"></script>
+<script src="js/detail-data.js?v=12"></script>
+<script src="js/photos.js?v=12"></script>
+<script src="js/ui.js?v=12"></script>
+<script src="js/submit.js?v=12"></script>
+</body>
+</html>

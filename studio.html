@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The site studio — Planning with Religion</title>
+<meta name="description" content="Draw your site, place interventions on it, fill in its week, and read its publicness, interaction and compatibility live — with matched uses, a swipeable intervention deck, an editable timetable and funding routes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="css/style.css?v=12">
+<link rel="stylesheet" href="css/library.css?v=12">
+<link rel="stylesheet" href="css/studio.css?v=12">
+</head>
+<body data-page="studio.html">
+
+<main>
+  <section class="page-head">
+    <div class="wrap">
+      <p class="eyebrow">Toolkit · live</p>
+      <h1 class="display">The site studio</h1>
+      <p class="lede">
+        The <a href="toolkit.html">toolkit</a> on paper, made workable on screen.
+        Describe a place — by drawing its plan or by answering the assessment —
+        and the studio reads back its publicness, its interaction, the uses it could
+        hold, the interventions that fit, and how each one tends to be funded.
+        Swipe the deck, drag interventions onto the plan, rewrite the week, then take the
+        brief with you. Nothing is stored or sent.
+      </p>
+      <div class="tk-nav" style="margin-top:22px">
+        <a href="#workbench">Assess the site</a>
+        <a href="#deck">Possible interventions</a>
+        <a href="#week">The week</a>
+        <a href="#deep">Go deeper</a>
+        <a href="#vision">Future vision</a>
+        <a href="interventions.html">Intervention library ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding:44px 0 8px; border-top:none">
+    <div class="wrap">
+      <div class="studio-guide" id="guide">
+        <div class="guide-head">
+          <h3>Start here</h3>
+          <button type="button" class="guide-restart" id="guide-restart">Start over</button>
+        </div>
+        <div class="guide-log" id="guide-log" aria-live="polite"></div>
+        <div class="guide-opts" id="guide-opts"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ seeker results (route 3) ============ -->
+  <section class="wrap seeker-results" id="seeker" hidden>
+    <p class="eyebrow" style="color:var(--brick)">Places that could fit</p>
+    <h2 class="section-title" id="seeker-title">Opportunity sites for you</h2>
+    <p class="lede small" id="seeker-note" style="font-size:17px"></p>
+    <div class="card-grid" id="seeker-grid"></div>
+    <p style="margin-top:26px"><a class="btn ghost" href="opportunities.html">Browse every opportunity site</a></p>
+  </section>
+
+  <!-- ============ workbench (routes 1 & 2) ============ -->
+  <div class="wrap studio-layout" id="workbench" hidden>
+    <div id="tools-col">
+
+      <!-- Mode A: diagnostic -->
+      <div class="tool-block" id="tool-diagnostic" hidden>
+        <h3>The publicness diagnostic</h3>
+        <p class="hint">Score your site as it behaves on an ordinary Tuesday — not as its
+          policy claims. Slide each dimension from closed (0) to fully open (5).</p>
+        <div id="diag-rows"></div>
+      </div>
+
+      <!-- Mode B: builder -->
+      <div class="tool-block" id="tool-builder" hidden>
+        <h3>Draw the plot</h3>
+        <p class="hint">Sketch your site as simple rooms and grounds: drag on the plan to
+          draw a zone, or add one with a button and move it into place. Find your site on
+          the map first and the plan is drawn over the real thing — zones stay pinned to
+          the ground as you pan and zoom, and the studio reads their true size.</p>
+
+        <div class="basemap-bar">
+          <div class="bm-search">
+            <input type="text" id="bm-q" autocomplete="off" spellcheck="false"
+                   placeholder="Find your site — building name, street or postcode"
+                   aria-label="Search for your site to put it under the plan">
+            <button type="button" class="btn" id="bm-go">Find</button>
+          </div>
+          <div class="bm-results" id="bm-results" hidden role="listbox" aria-label="Search results"></div>
+          <p class="bm-msg" id="bm-msg" hidden></p>
+
+          <div class="bm-controls" id="bm-controls" hidden>
+            <div class="bm-group">
+              <span class="lbl">Basemap</span>
+              <button type="button" class="bm-chip is-on" data-layer="satellite">Satellite</button>
+              <button type="button" class="bm-chip" data-layer="street">Street</button>
+              <button type="button" class="bm-chip" data-layer="off">Off</button>
+            </div>
+            <div class="bm-group">
+              <span class="lbl"><label for="bm-fade">Fade</label></span>
+              <input type="range" id="bm-fade" min="15" max="100" value="100"
+                     aria-label="Fade the basemap behind the plan">
+            </div>
+            <button type="button" class="bm-mode" id="bm-mode" aria-pressed="false">
+              Move &amp; zoom map
+            </button>
+          </div>
+        </div>
+
+        <div class="plot-wrap">
+          <div class="plot" id="plot" role="application"
+               aria-label="Site plan. Drag on the empty plan to draw a zone, or use the add buttons below.">
+            <div class="plot-map" id="plot-map"></div>
+            <span class="compass">N ↑</span>
+            <span class="plot-scale" id="plot-scale" hidden></span>
+            <span class="drop-hint" id="drop-hint" hidden>Click anywhere on the plan to place it</span>
+          </div>
+        </div>
+
+        <div class="plot-tools">
+          <span class="lbl">Add a zone</span>
+          <div class="zone-palette" id="zone-palette"></div>
+        </div>
+
+        <div class="type-chips" id="type-chips" hidden>
+          <span class="q">What is this zone?</span>
+          <div class="zone-palette" id="type-palette"></div>
+        </div>
+
+        <p class="plot-note">Click a zone's × to remove it. Interventions you place from the
+          deck below appear as pins on this plan, and both follow the map as you pan.</p>
+
+        <div class="placed-list" id="placed-list" hidden>
+          <h4>Placed on the plan</h4>
+          <div id="placed-rows"></div>
+        </div>
+      </div>
+
+      <!-- shared: facilities -->
+      <div class="tool-block" id="tool-fac" hidden>
+        <h3>Facilities</h3>
+        <p class="hint">The practical blockers to publicness. Tap what the site already has.</p>
+        <div class="toggle-row" id="fac-row"></div>
+      </div>
+
+      <!-- shared: context -->
+      <div class="tool-block" id="tool-ctx" hidden>
+        <h3>Around the site</h3>
+        <p class="hint">Within ten minutes' walk. Context decides which uses find you.</p>
+        <div class="toggle-row context" id="ctx-row"></div>
+      </div>
+    </div>
+
+    <!-- reading rail -->
+    <aside class="studio-rail" id="rail">
+      <div class="panel reading-quadrant">
+        <h3>The reading</h3>
+        <div id="quadrant"></div>
+        <div class="reading-scores">
+          <div class="sc"><b>Publicness</b><span id="score-pub">—</span></div>
+          <div class="sc int"><b>Interaction</b><span id="score-int">—</span></div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3>Where to act first</h3>
+        <div class="tier-list" id="tiers"></div>
+      </div>
+
+      <div class="panel">
+        <h3>Who the site could hold</h3>
+        <div id="matches" aria-live="polite"></div>
+      </div>
+
+      <div class="panel precedent">
+        <h3>A precedent to visit</h3>
+        <div id="precedent"></div>
+        <p class="precedent-why" id="precedent-why"></p>
+      </div>
+
+      <div class="panel">
+        <h3>Take it with you</h3>
+        <p class="small muted" style="margin-bottom:14px">The brief prints as a sheet for a PCC,
+          trustees or a funder, and now carries the interventions, the week and the deeper
+          assessment; the file matches the
+          <a href="submit.html" style="color:var(--yew)">submission form</a>.</p>
+        <div class="studio-actions">
+          <button type="button" class="btn" id="brief-btn">Prepare the brief</button>
+          <button type="button" class="btn ghost" id="json-btn">Download as submission</button>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ============ intervention deck ============ -->
+  <section class="wrap studio-section" id="deck" hidden>
+    <header class="ss-head">
+      <div>
+        <p class="eyebrow">Swipe through</p>
+        <h2 class="section-title">Possible interventions for your site</h2>
+        <p class="lede small" id="deck-note"></p>
+      </div>
+      <div class="deck-filters" id="deck-filters"></div>
+    </header>
+
+    <div class="deck-wrap">
+      <button type="button" class="deck-nav prev" id="deck-prev" aria-label="Previous intervention">‹</button>
+      <div class="deck-rail" id="deck-rail" tabindex="0"
+           aria-label="Interventions matched to your site. Use left and right arrow keys."></div>
+      <button type="button" class="deck-nav next" id="deck-next" aria-label="Next intervention">›</button>
+    </div>
+    <div class="deck-dots" id="deck-dots" aria-hidden="true"></div>
+  </section>
+
+  <!-- ============ the week ============ -->
+  <section class="wrap studio-section" id="week" hidden>
+    <header class="ss-head">
+      <div>
+        <p class="eyebrow">Temporality</p>
+        <h2 class="section-title">The week</h2>
+        <p class="lede small">Click or drag across the grid to fill hours. Empty days are not a
+          failing — they are the opportunity. Switch between the week you have now and the week
+          you are proposing, and the reading follows.</p>
+      </div>
+      <div class="week-modes">
+        <button type="button" class="wm is-on" data-layer="now">The week now</button>
+        <button type="button" class="wm" data-layer="vision">Proposed week</button>
+        <button type="button" class="wm ghost" id="week-copy">Copy now → proposed</button>
+      </div>
+    </header>
+
+    <div class="week-toolbar">
+      <div class="wt-group">
+        <span class="lbl">Load an example</span>
+        <select id="week-preset" aria-label="Load an example timetable">
+          <option value="">Choose…</option>
+        </select>
+      </div>
+      <div class="wt-group">
+        <span class="lbl">Add a row</span>
+        <input type="text" id="week-newrow" placeholder="e.g. Toddler group" aria-label="Name a new timetable row">
+        <select id="week-newkind" aria-label="What kind of activity">
+          <option value="worship">Worship</option>
+          <option value="community" selected>Community</option>
+          <option value="commercial">Commercial</option>
+          <option value="quiet">Quiet</option>
+          <option value="outdoor">Outdoors</option>
+        </select>
+        <button type="button" class="btn ghost" id="week-add">Add</button>
+      </div>
+      <button type="button" class="btn ghost" id="week-clear">Clear this week</button>
+    </div>
+
+    <div class="week-scroll">
+      <div class="tt" id="tt" aria-live="polite"></div>
+    </div>
+
+    <div class="week-legend">
+      <span><i class="k-worship"></i>Worship</span>
+      <span><i class="k-community"></i>Community</span>
+      <span><i class="k-commercial"></i>Commercial</span>
+      <span><i class="k-quiet"></i>Quiet</span>
+      <span><i class="k-outdoor"></i>Outdoors</span>
+      <span class="sep">Four bands a day — M morning, A afternoon, E evening, L late</span>
+    </div>
+
+    <div class="week-read" id="week-read"></div>
+  </section>
+
+  <!-- ============ deeper assessment ============ -->
+  <section class="wrap studio-section" id="deep" hidden>
+    <header class="ss-head">
+      <div>
+        <p class="eyebrow">Stage two</p>
+        <h2 class="section-title">Go deeper</h2>
+        <p class="lede small">The quick read above is a first pass. This is the full design
+          checklist — ten themes drawn from The Glass-House's <em>Making Buildings Work for Your
+          Community</em> and EDP's <em>Explore Design</em>. Score each one honestly, on site if you
+          can, and the studio will tell you where the design work actually is.
+          <a href="interventions.html#checklist">Read the questions in full</a> ·
+          <a href="downloads/design-checklist.html" target="_blank" rel="noopener">print the sheet</a>.</p>
+      </div>
+      <button type="button" class="btn ghost" id="deep-toggle" aria-expanded="false">Open the checklist</button>
+    </header>
+
+    <div class="deep-body" id="deep-body" hidden>
+      <div class="deep-grid" id="deep-grid"></div>
+      <div class="deep-out" id="deep-out"></div>
+    </div>
+  </section>
+
+  <!-- ============ future vision ============ -->
+  <section class="wrap studio-section" id="vision" hidden>
+    <header class="ss-head">
+      <div>
+        <p class="eyebrow">Where this goes</p>
+        <h2 class="section-title">Future vision</h2>
+        <p class="lede small">What the site reads as now, what it would read as with the
+          interventions you have chosen, and the route between the two.</p>
+      </div>
+    </header>
+
+    <div class="vision-grid">
+      <div class="v-col">
+        <h3>Now</h3>
+        <div id="vision-now"></div>
+      </div>
+      <div class="v-arrow" aria-hidden="true">→</div>
+      <div class="v-col v-col--future">
+        <h3>With your chosen interventions</h3>
+        <div id="vision-next"></div>
+      </div>
+    </div>
+
+    <div class="vision-plan">
+      <h3>How to do it</h3>
+      <p class="lede small">Your chosen interventions, ordered by what has to happen first.
+        Each carries its taster version, its permission route and its funding.</p>
+      <div id="vision-steps"></div>
+    </div>
+
+    <div class="vision-rel">
+      <h3>Related case studies — and why they relate</h3>
+      <div class="card-grid" id="vision-cases"></div>
+    </div>
+
+    <div class="vision-res">
+      <h3>Resources for the process</h3>
+      <div id="vision-resources"></div>
+    </div>
+  </section>
+</main>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="js/data.js?v=12"></script>
+<script src="js/detail-data.js?v=12"></script>
+<script src="js/photos.js?v=12"></script>
+<script src="js/evidence.js?v=12"></script>
+<script src="js/interventions.js?v=12"></script>
+<script src="js/ui.js?v=12"></script>
+<script src="js/basemap.js?v=12"></script>
+<script src="js/studio.js?v=12"></script>
+</body>
+</html>
