@@ -419,6 +419,31 @@ in the URL. The href stays as the no-JavaScript fallback, and the handler
 respects prefers-reduced-motion.
 
 
+THE QUICK WEEK, RESTORED
+------------------------
+The small "The week" block under the plot — one row per drawn zone, one cell per
+day, click to cycle empty -> occasional use -> in full use — was removed in the
+second studio pass when the full-width activity timetable was added. It is back,
+in its original place, and the two now sit together:
+
+  The week (under the plot)   quick: how the site is used as drawn, zone by zone
+  The timetable (full width)  fuller: named activities, four bands a day, and a
+                              proposed week alongside the current one
+
+The full-width section was renamed "The timetable" so the page does not carry
+two headings called "The week"; its anchor is still #week.
+
+Both feed the reading. The reading takes the fuller of the two descriptions,
+and a day only counts as empty if both say it is. The quick week also feeds the
+"Now" column of the future vision, and it is back in the printed brief (a Days
+in use column) and in the exported file (daysInUse / daysInFullUse per zone).
+
+Colours: in v1 "occasional" took its warm tone from --gilt, which v2 remapped
+to slate. It is now set from the apricot family directly, so it looks as it did.
+Row labels take their zone's colour from the plan, so a row matches the zone it
+describes.
+
+
 EVIDENCE AND SOURCES
 --------------------
 The second pass made the site's advice traceable. Everything the intervention

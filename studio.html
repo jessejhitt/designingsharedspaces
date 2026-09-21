@@ -9,9 +9,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-<link rel="stylesheet" href="css/style.css?v=12">
-<link rel="stylesheet" href="css/library.css?v=12">
-<link rel="stylesheet" href="css/studio.css?v=12">
+<link rel="stylesheet" href="css/style.css?v=13">
+<link rel="stylesheet" href="css/library.css?v=13">
+<link rel="stylesheet" href="css/studio.css?v=13">
 </head>
 <body data-page="studio.html">
 
@@ -31,7 +31,7 @@
       <div class="tk-nav" style="margin-top:22px">
         <a href="#workbench">Assess the site</a>
         <a href="#deck">Possible interventions</a>
-        <a href="#week">The week</a>
+        <a href="#week">The timetable</a>
         <a href="#deep">Go deeper</a>
         <a href="#vision">Future vision</a>
         <a href="interventions.html">Intervention library ↗</a>
@@ -138,6 +138,21 @@
         </div>
       </div>
 
+      <!-- Mode B: the week, zone by zone -->
+      <div class="tool-block" id="tool-week" hidden>
+        <h3>The week</h3>
+        <p class="hint">Click a day to cycle it: empty → occasional use → in full use.
+          Empty days are not a failing — they're the opportunity.</p>
+        <div class="week-grid" id="week-grid" aria-live="polite"></div>
+        <div class="week-key">
+          <span><i></i>Empty</span>
+          <span><i class="k1"></i>Occasional</span>
+          <span><i class="k2"></i>In full use</span>
+        </div>
+        <p class="plot-note">For a fuller week — named activities, hours of the day, and the
+          week you are proposing — use <a href="#week">the timetable</a> further down.</p>
+      </div>
+
       <!-- shared: facilities -->
       <div class="tool-block" id="tool-fac" hidden>
         <h3>Facilities</h3>
@@ -219,7 +234,7 @@
     <header class="ss-head">
       <div>
         <p class="eyebrow">Temporality</p>
-        <h2 class="section-title">The week</h2>
+        <h2 class="section-title">The timetable</h2>
         <p class="lede small">Click or drag across the grid to fill hours. Empty days are not a
           failing — they are the opportunity. Switch between the week you have now and the week
           you are proposing, and the reading follows.</p>
@@ -334,13 +349,13 @@
 </main>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="js/data.js?v=12"></script>
-<script src="js/detail-data.js?v=12"></script>
-<script src="js/photos.js?v=12"></script>
-<script src="js/evidence.js?v=12"></script>
-<script src="js/interventions.js?v=12"></script>
-<script src="js/ui.js?v=12"></script>
-<script src="js/basemap.js?v=12"></script>
-<script src="js/studio.js?v=12"></script>
+<script src="js/data.js?v=13"></script>
+<script src="js/detail-data.js?v=13"></script>
+<script src="js/photos.js?v=13"></script>
+<script src="js/evidence.js?v=13"></script>
+<script src="js/interventions.js?v=13"></script>
+<script src="js/ui.js?v=13"></script>
+<script src="js/basemap.js?v=13"></script>
+<script src="js/studio.js?v=13"></script>
 </body>
 </html>

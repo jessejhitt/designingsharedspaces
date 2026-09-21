@@ -798,3 +798,13 @@
   background: linear-gradient(to top, rgba(12,14,16,.9), rgba(12,14,16,.45) 60%, transparent);
 }
 .dphoto figcaption b { font-weight: 700; }
+
+/* --------------------------------------------------- the quick week, restored
+   In v1 --gilt was a warm gold, which is what gave "occasional" its colour.
+   v2 remapped --gilt to slate, so the warm tone is set here directly from the
+   apricot family instead. Row labels take their zone's colour from the plan. */
+.week-grid .wz[class*=" c-"] { color: var(--zc); }
+.wcell[data-s="1"], .week-key i.k1 { background: var(--buff-wash); border-color: #D9A078; }
+.wcell:hover { border-color: var(--ink-2); }
+.wcell[data-s="2"]:hover { border-color: var(--yew); filter: brightness(1.06); }
+#tool-week .plot-note a { color: var(--yew); text-decoration: underline; text-underline-offset: 2px; }

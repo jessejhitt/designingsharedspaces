@@ -119,6 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
     dims: { ownership: 3, management: 3, physical: 3, perceptual: 3, social: 3, animation: 3 },
     zones: [],                  // {id, type, x, y, w, h, a, b}
     placed: [],                 // {id, ivId, x, y, a}  interventions pinned to the plan
+    zoneWeek: {},               // zoneId -> [0..2] x 7 — the quick week under the plot
     chosen: new Set(),          // intervention ids taken into the vision
     fac: new Set(),
     ctx: new Set(),
@@ -212,6 +213,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function guideReset() {
     state.mode = null; state.sacredness = null; state.siteName = "";
     state.zones = []; state.placed = []; state.pendingZone = null; state.dropping = null;
+    state.zoneWeek = {};
     state.week = { now: [], vision: [] }; state.weekNextId = 1; state.layer = "now";
     state.chosen.clear(); state.fac.clear(); state.ctx.clear();
     state.deckFilter = "all"; state.deckIndex = 0;
@@ -224,7 +226,7 @@ document.addEventListener("DOMContentLoaded", () => {
     $("workbench").hidden = true;
     $("seeker").hidden = true;
     ["deck", "week", "deep", "vision"].forEach(id => $(id).hidden = true);
-    ["tool-diagnostic", "tool-builder", "tool-fac", "tool-ctx"].forEach(id => $(id).hidden = true);
+    ["tool-diagnostic", "tool-builder", "tool-week", "tool-fac", "tool-ctx"].forEach(id => $(id).hidden = true);
     $("plot").querySelectorAll(".zone, .pin").forEach(z => z.remove());
     $("placed-list").hidden = true;
     $("deep-body").hidden = true;
@@ -246,6 +248,7 @@ document.addEventListener("DOMContentLoaded", () => {
     $("workbench").hidden = false;
     $("tool-diagnostic").hidden = false;
     $("tool-builder").hidden = true;
+    $("tool-week").hidden = true;
     $("tool-fac").hidden = false;
     $("tool-ctx").hidden = false;
     showStudioSections();
@@ -262,6 +265,7 @@ document.addEventListener("DOMContentLoaded", () => {
     $("workbench").hidden = false;
     $("tool-diagnostic").hidden = true;
     $("tool-builder").hidden = false;
+    $("tool-week").hidden = false;
     $("tool-fac").hidden = false;
     $("tool-ctx").hidden = false;
     showStudioSections();
@@ -699,6 +703,7 @@ document.addEventListener("DOMContentLoaded", () => {
       w, h
     };
     state.zones.push(z);
+    state.zoneWeek[z.id] = [0, 0, 0, 0, 0, 0, 0];
     drawZone(z);
     anchorZone(z);
     updateScale();
@@ -745,6 +750,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function removeZone(id) {
     state.zones = state.zones.filter(z => z.id !== id);
+    delete state.zoneWeek[id];
     updateScale();
     if (state.pendingZone && state.pendingZone.id === id) {
       state.pendingZone = null;
@@ -792,6 +798,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (w < 30 || h < 30) return;            // a click, not a drawing
       const z = { id: state.nextId++, type: "pending", x, y, w, h };
       state.zones.push(z);
+      state.zoneWeek[z.id] = [0, 0, 0, 0, 0, 0, 0];
       drawZone(z);
       anchorZone(z);
       state.pendingZone = z;
@@ -964,6 +971,68 @@ document.addEventListener("DOMContentLoaded", () => {
         state.placed = state.placed.filter(p => p.ivId !== id);
         render();
       }));
+  }
+
+  /* ==========================================================
+     THE WEEK, ZONE BY ZONE — the quick version under the plot
+     ----------------------------------------------------------
+     One row per drawn zone, one cell per day, three states:
+     empty → occasional use → in full use. It is the fast way to
+     say how the site is used as drawn; the fuller activity
+     timetable further down the page is for naming what happens
+     and proposing a different week. Both feed the reading.
+     ========================================================== */
+  const ZW_STATES = ["empty", "occasional use", "in full use"];
+
+  function renderZoneWeek() {
+    const grid = $("week-grid");
+    if (!grid) return;
+    const typed = state.zones.filter(z => z.type !== "pending");
+    if (!typed.length) {
+      grid.innerHTML = '<div class="studio-empty" style="grid-column:1/-1">Draw or add a zone above and its week appears here.</div>';
+      return;
+    }
+    let html = '<span></span>' + DAYS.map(d => `<span class="wh">${d}</span>`).join("");
+    typed.forEach(z => {
+      const def = ZONES[z.type];
+      if (!state.zoneWeek[z.id]) state.zoneWeek[z.id] = [0, 0, 0, 0, 0, 0, 0];
+      html += `<span class="wz ${z.type} c-${def.colour}">${def.label}</span>`;
+      state.zoneWeek[z.id].forEach((s, i) => {
+        html += `<button type="button" class="wcell" data-z="${z.id}" data-i="${i}" data-s="${s}"
+                  aria-label="${def.label}, ${DAYS[i]}: ${ZW_STATES[s]}. Click to change."></button>`;
+      });
+    });
+    grid.innerHTML = html;
+    grid.querySelectorAll(".wcell").forEach(c => {
+      c.addEventListener("click", () => {
+        const zid = Number(c.dataset.z), i = Number(c.dataset.i);
+        state.zoneWeek[zid][i] = (state.zoneWeek[zid][i] + 1) % 3;
+        renderZoneWeek();
+        const p = renderReading();
+        renderDeck(p);
+        renderVision();
+        /* keep focus on the cell just clicked, so it can be cycled from the keyboard */
+        grid.querySelector(`.wcell[data-z="${zid}"][data-i="${i}"]`)?.focus();
+      });
+    });
+  }
+
+  /* the timetable's "now" layer with the quick week folded in, for the advice line */
+  function mergedNowStats() {
+    const t = weekStats("now"), zw = zoneWeekStats();
+    const empty = DAYS.map((d, i) => (!zw.days[i] && t.byDay[i] === 0) ? d : null).filter(Boolean);
+    return { ...t,
+      fill: Math.max(t.fill, zw.fill),
+      slots: Math.max(t.slots, zw.any ? 1 : 0),
+      emptyDays: empty.length, emptyDayNames: empty };
+  }
+
+  /* how full the quick week is: 0..1, plus which days anything happens */
+  function zoneWeekStats() {
+    const typed = state.zones.filter(z => z.type !== "pending" && state.zoneWeek[z.id]);
+    const days = DAYS.map((_, i) => typed.some(z => state.zoneWeek[z.id][i] > 0));
+    const sum = typed.reduce((a, z) => a + state.zoneWeek[z.id].reduce((x, y) => x + y, 0), 0);
+    return { fill: typed.length ? sum / (typed.length * 7 * 2) : 0, days, any: sum > 0 };
   }
 
   /* ==========================================================
@@ -1327,8 +1396,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const typed = state.zones.filter(z => z.type !== "pending");
     const zoneTypes = new Set(typed.map(z => z.type));
     const w = weekStats(state.layer);
-    const r = w.fill;                          /* 0..1 fill of the week */
-    const emptyDays = w.emptyDays;
+    /* Two descriptions of the same week: the quick zone-by-zone grid under
+       the plot, and the activity timetable. The reading takes the fuller of
+       the two, and a day only counts as empty if both say it is. */
+    const zw = zoneWeekStats();
+    const r = Math.max(w.fill, zw.fill);       /* 0..1 fill of the week */
+    const emptyDays = DAYS.filter((_, i) => !zw.days[i] && w.byDay[i] === 0).length;
     const L = typed.length
       ? clamp(1 + Math.round(r * 3) + (fac >= 3 ? 1 : 0) + (ctxPublic ? 1 : 0), 1, 5)
       : 1;
@@ -1856,11 +1929,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const active = state.mode === "diagnostic" || state.mode === "builder";
     if (!active) return;
     const p = profile();
-    const nowP = { ...p, weekFill: weekStats("now").fill };
+    /* "now" includes the quick zone-by-zone week, which only ever describes
+       the site as it is */
+    const nowFill = Math.max(weekStats("now").fill, zoneWeekStats().fill);
+    const nowP = { ...p, weekFill: nowFill };
     const nextP = futureProfile({ ...p, weekFill: weekStats("vision").slots ? weekStats("vision").fill : weekStats("now").fill });
 
     $("vision-now").innerHTML = readingCard(nowP) +
-      `<p class="vnote">${weekAdvice(weekStats("now"))}</p>`;
+      `<p class="vnote">${weekAdvice(mergedNowStats())}</p>`;
 
     if (nextP.none) {
       $("vision-next").innerHTML =
@@ -1963,6 +2039,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return p;
   }
   function render() {
+    renderZoneWeek();
     renderWeek();
     renderPlaced();
     const p = renderReading();
@@ -1990,7 +2067,9 @@ document.addEventListener("DOMContentLoaded", () => {
             const n = $("pin-" + pp.id);
             return n && pp.x >= z.x && pp.x <= z.x + z.w && pp.y >= z.y && pp.y <= z.y + z.h;
           }).map(pp => interventionById(pp.ivId).name);
-          return `<tr><td>${ZONES[z.type].label}</td><td>${pins.length ? pins.join(", ") : "—"}</td></tr>`;
+          const wk = state.zoneWeek[z.id] || [];
+          const used = wk.map((v, i) => v ? DAYS[i] + (v === 1 ? " (occasional)" : "") : "").filter(Boolean);
+          return `<tr><td>${ZONES[z.type].label}</td><td>${used.length ? used.join(", ") : "empty all week"}</td><td>${pins.length ? pins.join(", ") : "—"}</td></tr>`;
         }).join("");
 
     const matchRows = matches.map(m =>
@@ -2058,7 +2137,9 @@ document.addEventListener("DOMContentLoaded", () => {
   <p class="big">Publicness <strong>${TAXONOMY.publicnessLabels[p.L]}</strong> · Interaction <strong>${intLabel(p.IS)}</strong> · Where to act first: <strong>${tierName}</strong>${rec ? " — " + rec.why : ""}</p>
 
   <h2>${state.mode === "diagnostic" ? "Diagnostic scores" : "The plot"}</h2>
-  <table><tr><th>${state.mode === "diagnostic" ? "Dimension" : "Zone"}</th><th>${state.mode === "diagnostic" ? "Score" : "Interventions placed here"}</th></tr>${dimsRows}</table>
+  <table><tr>${state.mode === "diagnostic"
+      ? "<th>Dimension</th><th>Score</th>"
+      : "<th>Zone</th><th>Days in use</th><th>Interventions placed here</th>"}</tr>${dimsRows}</table>
   <p style="font-size:13px">Facilities: ${[...state.fac].join(", ") || "none recorded"} · Around the site: ${[...state.ctx].join(", ") || "none recorded"}</p>
 
   <h2>The week as it is</h2>
@@ -2126,7 +2207,12 @@ document.addEventListener("DOMContentLoaded", () => {
       site: state.mode === "diagnostic"
         ? { dimensions: { ...state.dims } }
         : {
-            zones: typed.map(z => ({ type: ZONES[z.type].label, approxSqm: Math.round(zoneArea(z)) || null })),
+            zones: typed.map(z => ({
+              type: ZONES[z.type].label,
+              approxSqm: Math.round(zoneArea(z)) || null,
+              daysInUse: (state.zoneWeek[z.id] || []).map((v, i) => v ? DAYS[i] : null).filter(Boolean),
+              daysInFullUse: (state.zoneWeek[z.id] || []).map((v, i) => v === 2 ? DAYS[i] : null).filter(Boolean)
+            })),
             interventionsOnPlan: state.placed.map(pp => ({
               intervention: interventionById(pp.ivId).name,
               lat: pp.a ? Number(pp.a.lat.toFixed(6)) : null,
