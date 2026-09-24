@@ -1440,7 +1440,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <circle cx="${px(p.L).toFixed(1)}" cy="${py(p.IS).toFixed(1)}" r="10"
         fill="var(--red)" stroke="#FFFFFF" stroke-width="3"/>
       <text x="${px(p.L).toFixed(1)}" y="${(py(p.IS) + (py(p.IS) < MY ? 26 : -16)).toFixed(1)}"
-        text-anchor="middle" font-family="Newsreader,serif" font-style="italic"
+        text-anchor="middle" font-family="Onest,Inter,sans-serif" font-weight="600"
         font-size="14" fill="var(--ink)">your site</text>` : "";
     $("quadrant").innerHTML = `
     <svg viewBox="0 0 470 300" role="img"
@@ -1453,12 +1453,12 @@ document.addEventListener("DOMContentLoaded", () => {
       <line x1="${Lx}" y1="${MY}" x2="${Rx}" y2="${MY}" stroke="#15181B" stroke-width=".6" stroke-dasharray="4 5" opacity=".4"/>
       <line x1="${Lx}" y1="${By}" x2="${Rx}" y2="${By}" stroke="#15181B" stroke-width="1.4"/>
       <line x1="${Lx}" y1="${By}" x2="${Lx}" y2="${Ty}" stroke="#15181B" stroke-width="1.4"/>
-      <text x="${Lx + 8}" y="${Ty + 16}" font-family="Archivo,sans-serif" font-size="10.5" font-weight="700" letter-spacing=".05em" fill="#5E656B">VIBRANT, HIDDEN</text>
-      <text x="${Rx - 8}" y="${Ty + 16}" text-anchor="end" font-family="Archivo,sans-serif" font-size="10.5" font-weight="700" letter-spacing=".05em" fill="#00717E">THRIVING</text>
-      <text x="${Lx + 8}" y="${By - 8}" font-family="Archivo,sans-serif" font-size="10.5" font-weight="700" letter-spacing=".05em" fill="#5E656B">OPPORTUNITY</text>
-      <text x="${Rx - 8}" y="${By - 8}" text-anchor="end" font-family="Archivo,sans-serif" font-size="10.5" font-weight="700" letter-spacing=".05em" fill="#B34E16">OPEN, PASSIVE</text>
-      <text x="${Lx}" y="${By + 26}" font-family="Archivo,sans-serif" font-size="11.5" fill="#15181B">Low publicness</text>
-      <text x="${Rx}" y="${By + 26}" text-anchor="end" font-family="Archivo,sans-serif" font-size="11.5" fill="#15181B">High publicness</text>
+      <text x="${Lx + 8}" y="${Ty + 16}" font-family="Onest,Inter,sans-serif" font-size="10.5" font-weight="700" letter-spacing=".05em" fill="#5E656B">VIBRANT, HIDDEN</text>
+      <text x="${Rx - 8}" y="${Ty + 16}" text-anchor="end" font-family="Onest,Inter,sans-serif" font-size="10.5" font-weight="700" letter-spacing=".05em" fill="#00717E">THRIVING</text>
+      <text x="${Lx + 8}" y="${By - 8}" font-family="Onest,Inter,sans-serif" font-size="10.5" font-weight="700" letter-spacing=".05em" fill="#5E656B">OPPORTUNITY</text>
+      <text x="${Rx - 8}" y="${By - 8}" text-anchor="end" font-family="Onest,Inter,sans-serif" font-size="10.5" font-weight="700" letter-spacing=".05em" fill="#B34E16">OPEN, PASSIVE</text>
+      <text x="${Lx}" y="${By + 26}" font-family="Onest,Inter,sans-serif" font-size="11.5" fill="#15181B">Low publicness</text>
+      <text x="${Rx}" y="${By + 26}" text-anchor="end" font-family="Onest,Inter,sans-serif" font-size="11.5" fill="#15181B">High publicness</text>
       ${peers}${you}
     </svg>`;
     $("score-pub").textContent = active ? TAXONOMY.publicnessLabels[p.L] : "—";
@@ -2109,27 +2109,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
     return `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <title>Site studio brief — Planning with Religion</title>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   * { box-sizing: border-box; margin: 0; }
-  body { font-family: Georgia, serif; color: #15181B; padding: 40px; max-width: 800px; margin: 0 auto; line-height: 1.5; }
-  .mark { border: 1.5px solid #15181B; display: inline-block; padding: 6px 10px; font-family: Arial, sans-serif; max-width: 240px; }
-  .mark b { display: block; font-weight: bold; font-size: 13px; text-transform: uppercase; letter-spacing: .02em; }
-  .mark i { display: block; margin-top: 4px; font-style: normal; font-size: 8.5px; line-height: 1.35; color: #5E656B; }
-  h1 { font-size: 26px; margin: 18px 0 4px; font-weight: 600; }
-  .sub { color: #5E656B; font-style: italic; margin-bottom: 22px; }
-  h2 { font-family: Arial, sans-serif; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; margin: 26px 0 10px; border-bottom: 1px solid #15181B; padding-bottom: 6px; }
+  body { font-family: "Onest", "Inter", -apple-system, "Helvetica Neue", Arial, sans-serif; color: #15181B; padding: 40px; max-width: 800px; margin: 0 auto; line-height: 1.5; }
+  /* the site's boxed wordmark at its header size (see .mark in css/style.css) */
+  .mark { display: block; width: 148px; min-height: 134px; padding: 11px 11px 12px; border: 1px solid #15181B; }
+  .mark b { display: block; font-size: 18.9px; font-weight: 800; line-height: 1.06; letter-spacing: -.032em; text-transform: uppercase; }
+  .mark i { display: block; margin-top: 6px; font-style: normal; font-size: 9.45px; font-weight: 500; line-height: 1.28; letter-spacing: -.005em; white-space: nowrap; }
+  h1 { font-size: 28px; margin: 22px 0 6px; font-weight: 700; line-height: 1.1; letter-spacing: -.028em; }
+  .sub { color: #5E656B; margin-bottom: 22px; }
+  h2 { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; margin: 26px 0 10px; border-bottom: 1px solid #15181B; padding-bottom: 6px; }
   table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-bottom: 6px; }
   th, td { border: 1px solid #999; padding: 7px 9px; text-align: left; vertical-align: top; }
   .tt-print { font-size: 10px; }
   .tt-print th, .tt-print td { padding: 2px 3px; text-align: center; }
   .tt-print td:first-child, .tt-print th:first-child { text-align: left; min-width: 120px; }
   .tt-print td.on { background: #D96629; color: #fff; }
-  th { font-family: Arial, sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: .06em; background: #E3F3F5; }
+  th { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; background: #E3F3F5; }
   .big { font-size: 17px; }
-  footer { margin-top: 28px; font-size: 12px; color: #5E656B; font-family: Arial, sans-serif; }
+  footer { margin-top: 28px; font-size: 12px; color: #5E656B; }
   @media print { body { padding: 0; } }
 </style></head><body>
-  <span class="mark"><b>Planning with Religion</b><i>The creative database for designing interaction in underused religious spaces.</i></span>
+  <span class="mark"><b>Planning<br>with<br>Religion</b><i>${MARK_LINE}</i></span>
   <h1>Site studio brief</h1>
   <p class="sub">A draft for discussion — prepared ${today}. ${modeLine}.</p>
 

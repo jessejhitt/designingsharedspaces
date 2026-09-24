@@ -15,7 +15,8 @@ const NAV_ITEMS = [
 /* One line under the wordmark, everywhere it appears. The header used to carry
    a different, questioning version ("Why do we need a creative database of case
    studies?"); the mark now says the same thing on every page. */
-const MARK_LINE = "The creative database for designing interaction in underused religious spaces.";
+/* The line breaks are fixed so the tagline wraps identically at every size. */
+const MARK_LINE = "The creative database for<br>designing interaction in<br>underused religious<br>spaces.";
 const MARK_TAGLINE = { home: MARK_LINE, inner: MARK_LINE };
 
 /* ---------- the boxed wordmark ---------- */
@@ -35,7 +36,7 @@ function headerHTML(page, inverse, large) {
     return `<a href="${n.href}"${active ? ' class="active" aria-current="page"' : ""}>${n.label}</a>`;
   }).join("");
   return `
-    <div class="wrap head-row${inverse ? " head-row--inverse" : ""}">
+    <div class="wrap head-row${inverse ? " head-row--inverse" : ""}${large ? " head-row--large" : ""}">
       ${markHTML({ inverse, large, href: large ? null : "index.html" })}
       <button class="nav-toggle" aria-expanded="false" aria-controls="mainnav">Menu</button>
       <nav class="site-nav" id="mainnav" aria-label="Main">${links}</nav>
