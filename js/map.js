@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
     markers[site.id] = marker;
     bounds.push(site.coords);
   });
-  if (bounds.length) map.fitBounds(bounds, { padding: [50, 50] });
+  if (bounds.length) map.fitBounds(bounds, { padding: window.innerWidth > 760 ? [50, 50] : [22, 22] });   // phones: frame the sites closely
 
   ["established", "emerging", "opportunity"].forEach(k => {
     const box = document.getElementById(`toggle-${k}`);

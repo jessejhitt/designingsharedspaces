@@ -1,5 +1,5 @@
 /* ============================================================
-   PLANNING WITH RELIGION — the evidence base
+   DESIGNING SHARED SPACES TOGETHER — the evidence base
    ------------------------------------------------------------
    The standardised points that apply to every intervention and
    every site, drawn from published community-led design guidance
@@ -203,150 +203,140 @@ const GH_THEMES = [
     key: "context",
     name: "Context",
     tone: "red",
-    lead: "How the building sits in its street and its neighbourhood.",
+    lead: "How the building sits in its street and neighbourhood.",
     questions: [
-      "How does the building sit within its physical and social context?",
-      "Do the building and the open space around it fit their surroundings?",
-      "Does the use complement — rather than duplicate — other amenities and services nearby?",
-      "Would you rely on passing trade, and is the building actually in a good place for that?"
+      "Does the building fit its surroundings?",
+      "Does its use complement what is nearby, rather than duplicate it?",
+      "Is it well placed for passing trade?"
     ],
-    inPractice: "Burslem School of Art's refurbishment changed the character of a whole street; The Priory Centre was constrained less by its Grade I listing than by having no space around it. Read the site and the street together.",
-    forWorship: "A church's context includes its congregation's travel pattern. A loyal congregation that drives in from a distance is not the same as a local one — it changes who is around the building on a Tuesday.",
+    inPractice: "Burslem School of Art changed a whole street; The Priory Centre was limited more by lack of space around it than by its listing.",
+    forWorship: "A congregation that drives in from afar is not a local one — it changes who is around on a Tuesday.",
     source: "glasshouse"
   },
   {
     key: "identity",
     name: "Identity",
     tone: "buff",
-    lead: "Whether a stranger can tell what this place is and who it is for.",
+    lead: "Can a stranger tell what this place is and who it is for?",
     questions: [
-      "Does the building have a clear identity?",
       "Is it clear what the building is, and who it is for?",
-      "Is there a consistent aesthetic and design language?",
-      "Does the building use branding — signage, symbols, a name — to say so?"
+      "Is there a consistent design language?",
+      "Do signs, symbols and a name say so?"
     ],
-    inPractice: "The Priory Centre made a feature of the old school coat hooks, keeping the building's past legible while giving it a new logo. Identity is as much about what you keep as what you add.",
-    forWorship: "The hardest identity question in a shared church: can people tell it is still a place of worship? At the Sherriff Centre the design is so successful as a centre that the worship reads faintly — the group has since looked for small ways to make the living church visible again.",
+    inPractice: "The Priory Centre kept its old school coat hooks alongside a new logo: identity is what you keep as well as what you add.",
+    forWorship: "Can people still tell it is a place of worship? At the Sherriff Centre the centre is so successful that the worship reads faintly.",
     source: "glasshouse"
   },
   {
     key: "legibility",
     name: "Connectivity & legibility",
     tone: "red",
-    lead: "Whether people can find their way in, and through.",
+    lead: "Can people find their way in, and through?",
     questions: [
-      "Is it clear where people should go when they arrive?",
-      "Is movement inside practical and easy to navigate, with and without signs?",
-      "How well do internal spaces connect and relate to each other — can you see one from another?",
-      "Do you get views that orient you, or does the plan hide what is going on?"
+      "Is it clear where to go on arrival?",
+      "Is it easy to move around, with and without signs?",
+      "Can you see one space from another?"
     ],
-    inPractice: "At Burslem the atrium is light and welcoming but gives no clue to the activity behind the walls, and there is no signage for the organisations inside — tenants find it clear, newcomers do not. At St Paul's, glass between spaces lets you see what is happening and makes the place easy to read.",
-    forWorship: "Churches are legible as churches and illegible as anything else. If a hall, a café or a group meets behind a side door, assume nobody knows.",
+    inPractice: "Burslem's bright atrium hides the activity behind its walls; at St Paul's, glass between spaces makes the building easy to read.",
+    forWorship: "Churches read as churches and nothing else. If a group meets behind a side door, assume nobody knows.",
     source: "glasshouse"
   },
   {
     key: "access",
     name: "Access",
     tone: "green",
-    lead: "Who can get there, get in, and move around.",
+    lead: "Who can get there, get in and move around?",
     questions: [
       "Can people get there easily?",
-      "Can people enter and move around easily once they arrive?",
-      "Are there physical barriers for people with mobility limitations, physical or learning differences, buggies or small children?",
-      "Has the work made it possible for people who previously could not use the building to use it?"
+      "Can they get in and move around easily?",
+      "Are there barriers for wheelchairs, buggies or people with learning differences?"
     ],
-    inPractice: "Burslem reduced its front steps from three to one, ramped one side and raised the pavement outside; an external circulation tower added escape, a lift and accessible toilets. The Priory uses diagrammatic signage for people who find written signs hard.",
-    forWorship: "Aim for everyone arriving through the same door. A separate accessible entrance around the side solves the regulation and not the welcome.",
+    inPractice: "Burslem cut its front steps from three to one and raised the pavement; The Priory uses picture-based signs.",
+    forWorship: "Aim for everyone through the same door. A side entrance meets the rules, not the welcome.",
     source: "glasshouse"
   },
   {
     key: "flexibility",
     name: "Flexibility",
     tone: "green",
-    lead: "Whether one room can be several things.",
+    lead: "Can one room be several things?",
     questions: [
-      "Can internal and external spaces be used in a number of ways, by different groups and for different needs?",
-      "Can spaces be changed temporarily — movable walls, stackable furniture, curtains?",
-      "Is there potential to change spaces and uses again quite easily in future?",
-      "Has the work made it possible to support a broader spectrum of user groups?"
+      "Can spaces serve different groups and needs?",
+      "Can they change quickly — movable walls, stacking chairs, curtains?",
+      "Can they be adapted again in future?"
     ],
-    inPractice: "Soundproof dividers split one large room into two at Burslem; folding computer desks at Manningham Mills let the IT room become a training room for anything. Tremayne Hall's entrance doubles as a reception desk on luncheon club days.",
-    forWorship: "Flexibility is what lets sacred and secular share a building by timetable rather than by partition. Movable seating is usually the single highest-value move in a nave.",
+    inPractice: "Soundproof dividers split a hall in two at Burslem; folding desks let Manningham Mills' IT room host any training.",
+    forWorship: "Flexibility lets sacred and secular share by timetable, not partition. Movable seating is usually the biggest win in a nave.",
     source: "glasshouse"
   },
   {
     key: "resources",
     name: "Resources",
     tone: "green",
-    lead: "Energy, water, waste — and the running cost that decides whether you can stay open.",
+    lead: "Energy, water and waste — and the running cost of staying open.",
     questions: [
-      "Have materials and systems been chosen to lower the use of water, energy and other resources?",
-      "How effectively does the building use or store energy — does it create any?",
-      "Is the building insulated effectively?",
-      "Are there good waste management and recycling systems?"
+      "Do materials and systems cut energy and water use?",
+      "Is the building well insulated?",
+      "Is there good waste and recycling?"
     ],
-    inPractice: "The Acacia Centre insulates heavily, generates geothermal electricity, collects grey water for cisterns and fits waterless urinals. St Paul's carries daylight from space to space with internal windows. Old Lambeth Walk reused as much original material as it could.",
-    forWorship: "Heating a nave to hold a two-hour class is where most shared-use business plans quietly fail. Heat the people, or heat one well-insulated room, before you heat the volume.",
+    inPractice: "The Acacia Centre is heavily insulated, generates geothermal power and reuses grey water.",
+    forWorship: "Heating a nave for a two-hour class sinks most business plans. Heat people, or one warm room, first.",
     source: "glasshouse"
   },
   {
     key: "maintenance",
     name: "Management & maintenance",
     tone: "buff",
-    lead: "Whether ordinary people can run the place on an ordinary week.",
+    lead: "Can ordinary people run it in an ordinary week?",
     questions: [
-      "Is the building easy to manage — are the spaces right for your needs, is storage adequate, can the internal climate be controlled and changed easily?",
-      "Is it easy to maintain — easy to clean, able to take the wear and tear of daily use?",
-      "Can fittings be maintained and replaced without a specialist?",
+      "Is it easy to manage, with enough storage and simple heating controls?",
+      "Is it easy to clean and hard-wearing?",
       "Who holds the keys, and what happens when they are away?"
     ],
-    inPractice: "Acacia's heating controls can change the big hall's temperature within fifteen minutes to suit a different group. Tremayne Hall packs chairs away under the stage in two sets, one for children and one for adults. Elsie Whiteley reclaimed a courtyard the smokers had taken and made it a sculpture garden.",
-    forWorship: "Storage is the most underestimated requirement in a reordering. Every flexible nave needs somewhere the stacked chairs, the play equipment and the trestle tables actually go.",
+    inPractice: "Acacia's heating can change a hall's temperature in fifteen minutes; Tremayne Hall stores its chairs under the stage.",
+    forWorship: "Storage is the most underestimated need. Stacked chairs and play kit must go somewhere.",
     source: "glasshouse"
   },
   {
     key: "security",
     name: "Security",
     tone: "ink",
-    lead: "Feeling safe, and being able to lock up — physical and emotional.",
+    lead: "Feeling safe, and being able to lock up.",
     questions: [
-      "Do people feel safe approaching and inside the building?",
-      "Can the building be secured effectively when it is not in use?",
-      "Can distinct areas be locked down at certain times of day or night, so that one part can open while the rest is shut?",
-      "Does the building look cared for? Neglect invites damage."
+      "Do people feel safe approaching and inside?",
+      "Can parts be locked while others stay open?",
+      "Does the building look cared for?"
     ],
-    inPractice: "Pelton Fell's reception and café look out over the children's playground and give oversight of the whole centre. The Priory has no exterior security on its new entrance, but a shutter behind reception secures the building from inside. Acacia used smooth walls, internal rainwater pipes and a cared-for appearance to address a vandalism problem by design.",
-    forWorship: "Zoned locking is the technical answer to the open-church question: it lets you keep a side chapel, a porch or an aisle open all day when you cannot staff the whole building.",
+    inPractice: "Pelton Fell's café overlooks the playground and the whole centre; Acacia designed out vandalism with smooth walls and a cared-for look.",
+    forWorship: "Zoned locking lets a porch, chapel or aisle stay open all day without staffing the whole building.",
     source: "glasshouse"
   },
   {
     key: "enterprise",
     name: "Enterprise",
     tone: "red",
-    lead: "Whether the design earns anything, and who it earns from.",
+    lead: "Does the design earn anything, and from whom?",
     questions: [
-      "Does the building meet the needs set out in the business plan?",
-      "Has the design created new opportunities for enterprise within the facility?",
-      "Has the refurbished building retained its old user groups?",
-      "Is it attracting new ones?"
+      "Does it meet the business plan's needs?",
+      "Has it created new opportunities for enterprise?",
+      "Has it kept old user groups and attracted new ones?"
     ],
-    inPractice: "Across the projects, some house small businesses and start-ups, some run their own cafés, some rent space to dance classes and lunch clubs. Renewed links with local schools were common, and the quality of the work gave people new pride in the area.",
-    forWorship: "Income streams should be planned together, not stacked one by one. The Sherriff Centre's post office, café, soft play and hire were modelled as a single business from the start, cross-subsidising free debt advice and a community fridge.",
+    inPractice: "Projects house start-ups, run cafés and rent space to classes and lunch clubs.",
+    forWorship: "Plan income together. The Sherriff Centre's post office, café, soft play and hire were planned as one business, funding free debt advice.",
     source: "glasshouse"
   },
   {
     key: "delight",
     name: "Delight",
     tone: "buff",
-    lead: "Whether the place is a pleasure to be in.",
+    lead: "Is it a pleasure to be in?",
     questions: [
-      "Is the building pleasing to look at?",
-      "Do people feel comfortable, exhilarated or inspired by the space?",
-      "Does the design make the most of what is already remarkable here — light, height, acoustics, view?",
-      "Would you choose to spend an hour here with nothing to do?"
+      "Is it pleasing to look at?",
+      "Does it make the most of its light, height and acoustics?",
+      "Would you spend an hour here with nothing to do?"
     ],
-    inPractice: "The guide's argument is that delight should permeate every aspect of the design, not be added at the end — and that the difference between good and bad design is a question of care, creativity and commitment rather than of money.",
-    forWorship: "This is the one theme where religious buildings begin ahead. Height, light and acoustics are already extraordinary; the risk is covering them up with partitions and suspended ceilings in the name of practicality.",
+    inPractice: "Delight should run through the whole design; good design is a matter of care more than money.",
+    forWorship: "Religious buildings start ahead here. The risk is hiding height, light and acoustics behind partitions.",
     source: "glasshouse"
   }
 ];
@@ -363,102 +353,89 @@ const GH_BEFORE = [
   {
     n: 1,
     title: "Get to know the building",
-    lead: "What have the uses been over time, and how has the building changed physically?",
+    lead: "How have its uses and fabric changed over time?",
     points: [
-      "Track the physical history — when it was built, and how it and the spaces around it have changed since.",
-      "Find out whether it is listed, and at what grade.",
-      "Understand how it works structurally and technically: which walls are load-bearing, where the services run, what can move and what must stay.",
-      "Find out what uses it has had and who has managed it.",
-      "Understand its social history — what does it mean to local people?",
-      "Talk to the full range of people involved: clergy, wardens, staff, cleaners, maintenance, every user group.",
-      "Identify the elements that matter — historically, socially or practically — and must be kept."
+      "Research its history, and whether it is listed.",
+      "Learn how it works: structure, services, what can move.",
+      "Talk to everyone involved, from clergy to cleaners.",
+      "Identify what matters and must be kept."
     ],
-    forWorship: "In a Church of England building this research becomes your Statement of Significance, which you will need for a faculty. Writing it yourself, rather than buying it in, is how the whole team learns to make informed decisions.",
+    forWorship: "In a Church of England building this becomes your Statement of Significance, needed for a faculty.",
     source: "glasshouse"
   },
   {
     n: 2,
     title: "Get to know the area",
-    lead: "Map what else is here, and the people who live, work, study and play here.",
+    lead: "Map what is nearby, and who lives, works and plays here.",
     points: [
-      "Map competing and complementary organisations and facilities nearby — what already exists that you would only duplicate?",
-      "Look at how the site relates physically to the other facilities your user groups use.",
-      "Look at transport links and parking.",
-      "Understand the make-up of the local population and the issues that matter to people.",
-      "Ask local people what they feel is missing and what they would like brought in.",
-      "Notice who passes your door, where they are going, and why they do not come in."
+      "Map nearby facilities so you do not duplicate them.",
+      "Check transport links and parking.",
+      "Ask local people what is missing.",
+      "Notice who passes your door, and why they do not come in."
     ],
-    forWorship: "Crossing the Threshold calls this the community audit; EDP calls it knowing your community. Either way it is the evidence a funder will ask for, and the thing that stops a group building a hall nobody needed.",
+    forWorship: "Crossing the Threshold calls this a community audit. Funders will ask for it.",
     source: "glasshouse"
   },
   {
     n: 3,
     title: "Develop a collective vision",
-    lead: "Work with staff, user groups and local people to outline what you want the building to achieve — and how you want it to feel.",
+    lead: "Agree what the building should achieve and how it should feel.",
     points: [
-      "Look at the issues that arise when using the current space, and how design could change behaviour and emotion.",
-      "Think about how emotive reactions affect a building's function: do people feel welcome and encouraged to stay when they walk in? Do they feel safe in and around it?",
-      "Use local knowledge, skills and networks to consider how the building can complement, not duplicate, what already exists.",
-      "Identify high-level objectives first and then find the design to suit them. Put the vision before the brief.",
-      "Ask the long question: what place do we want this building to have in our community over the next twenty-five years?"
+      "Look at how design could change behaviour and feelings.",
+      "Ask whether people feel welcome and safe.",
+      "Set objectives first, then find the design.",
+      "Ask what role the building should play over 25 years."
     ],
-    forWorship: "EDP's clearest finding is that projects without a shared vision drift into piecemeal change, and that a strong vision is what carries a team through the setbacks. Ground it in mission, and get everyone able to tell the same story about it.",
+    forWorship: "Projects without a shared vision drift into piecemeal change. Ground it in mission.",
     source: "edpLeadership"
   },
   {
     n: 4,
     title: "Learn from other projects",
-    lead: "Go and look. Then go and look again with your team.",
+    lead: "Go and look, then go again with your team.",
     points: [
-      "Visit other community buildings and places of worship and be inspired by a range of eras and styles.",
-      "Speak to groups who have been through a refurbishment and learn from their experience — successes and failures.",
-      "Ask them who they went to for advice, and which organisations helped.",
-      "Seek independent advice on the potential for change to your building — which walls are load-bearing, which can move.",
-      "Whenever you visit any public building, look at its facilities, access and energy arrangements. Look at what is not working as hard as what is."
+      "Visit other community buildings and places of worship.",
+      "Ask groups who have done it what worked and what did not.",
+      "Get independent advice on what can change."
     ],
-    forWorship: "Ask your diocesan advisory committee or denominational property adviser which nearby projects you could visit. A completed project will almost always say yes to a tour, and will tell you things no publication will.",
+    forWorship: "Your diocesan advisory committee can suggest nearby projects to visit.",
     source: "glasshouse"
   },
   {
     n: 5,
-    title: "Develop your design brief alongside your business plan",
-    lead: "The brief and the business plan are the same document seen from two sides.",
+    title: "Write the brief alongside the business plan",
+    lead: "They are the same document, seen from two sides.",
     points: [
-      "Build the brief from activities and interactions — who is here, doing what, when — not from a list of rooms.",
-      "Make sure it considers both the potential the work brings and the limitations the building presents.",
-      "Build the management and maintenance plan into the business plan: you will make design decisions later that can make management easier.",
-      "Expect the brief to evolve as you work with the architect. What matters at the start is absolute clarity about the existing building, the context, the vision, the objectives and how you want the building to feel.",
-      "Do not try to solve the problems yourself — that is the architect's job."
+      "Build the brief from activities, not a list of rooms.",
+      "Include management and maintenance in the plan.",
+      "Be clear about the building, vision and objectives; leave the solutions to the architect."
     ],
-    forWorship: "This is where the Statement of Need is written. It has to prove that the parish's needs cannot be met without changing the building, and that these particular changes are the ones that do it.",
+    forWorship: "This becomes the Statement of Need: proof that these changes are necessary.",
     source: "glasshouse"
   },
   {
     n: 6,
-    title: "Check the building is the right one for the project",
-    lead: "Sometimes the honest answer is that it is not.",
+    title: "Check the building is the right one",
+    lead: "Sometimes it is not.",
     points: [
-      "Is it in the right place, with the right links to transport and to other activities?",
-      "Can refurbishment create spaces that work for your group, for local people and for every activity in the business plan?",
-      "Can the refurbished building be managed and maintained by your group or partnership — or will you need additional support?",
-      "If you will need support, find that answer before you go ahead, not after."
+      "Is it in the right place, with good transport links?",
+      "Can it work for every planned activity?",
+      "Can your group manage and maintain it, or will you need help?"
     ],
-    forWorship: "A congregation of twelve cannot run a seven-day community hub on volunteer effort. Either the partnership, the staffing or the ambition has to change — and it is far cheaper to discover which at this stage.",
+    forWorship: "A congregation of twelve cannot run a seven-day hub on volunteers alone.",
     source: "glasshouse"
   },
   {
     n: 7,
-    title: "Get the right professional for you",
-    lead: "Choose someone you can work with for years, not the cheapest fee.",
+    title: "Choose the right professional",
+    lead: "Pick someone you can work with for years, not the cheapest.",
     points: [
-      "Set up a clear selection process with stated criteria.",
-      "Write a clear description of what you are looking for and what you hope to achieve.",
+      "Use a clear selection process and brief.",
       "Interview the strongest candidates.",
-      "Choose the person or team you feel you can work with. Presentation and images matter, but a collaborative rapport matters more.",
-      "Look for working knowledge of places of worship and of your denomination's permission process — your DAC or equivalent can suggest names.",
-      "Be a robust client: question anything you do not understand. Design is iterative, and you will need to keep getting the most out of the relationship."
+      "Look for experience of places of worship and the faculty process.",
+      "Question anything you do not understand."
     ],
-    forWorship: "Decide early whether you want an architect who will take a brief and return a design, or one who will run a participatory process with you. Some practices offer the second explicitly; it costs more in time and returns more in ownership.",
+    forWorship: "Decide early whether you want a design handed to you, or a participatory process.",
     source: "glasshouse"
   }
 ];
@@ -517,62 +494,48 @@ const EDP_AREAS = [
     name: "Leadership",
     lead: "Who runs the project, and how.",
     points: [
-      "A leader's job is to make a shared vision possible, not to supply one — coordinating activity, connecting people and holding relationships with the outside world.",
-      "The strongest leaders empower the team to reach its own potential. The more people who can contribute, the stronger the project.",
-      "It does not have to be the vicar or spiritual leader. It can help if it is not: they are then free to be impartial, to hold difficult conversations, and to be approachable to people who are worried about the change.",
-      "Without a shared vision, change happens piecemeal instead of transforming the building's role in the neighbourhood.",
-      "A project that depends entirely on one person is at risk. Delegate, share information and plan succession — including the shift from project management to running a facility, which needs different skills."
+      "Leaders enable a shared vision rather than impose one.",
+      "It need not be the vicar; an independent lead can hold difficult conversations.",
+      "Do not depend on one person. Delegate and plan succession."
     ],
-    failure: "Two EDP examples show what happens without it: a group doing excellent work whose activities were disconnected from any vision for the building, so they could not see or celebrate their own achievements; and a congregation split over how far to open up, which handed an architect a list of problems instead of a vision and could never move past the first solution.",
+    failure: "Without a shared vision, one group could not see its own achievements, and a divided congregation gave its architect problems instead of a vision.",
     source: "edpLeadership"
   },
   {
     key: "engagement",
     name: "Community engagement",
-    lead: "Developing new relationships for your congregation and your project.",
+    lead: "Building new relationships around the project.",
     points: [
-      "Get the community involved from the beginning and in the decision-making — it avoids conflict later and brings in knowledge, skills and volunteers you do not have.",
-      "Do not present people with a ready-made set of plans. You will only meet resistance.",
-      "Accept that many people who value the building will never join the congregation — and that this is fine. They may value it as heritage, as a quiet space, for family memories, or for the tower on the skyline.",
-      "Ask open questions — what, where, why, when, how, who — so you are not leading the answers.",
-      "Hold some of the consultation inside the building, with tours, so that people form informed opinions about the changes.",
-      "Make the results public. Write them up; funders will ask to see them.",
-      "Get your most vociferous opponents involved and give them a voice in the decision-making.",
-      "Keep in touch afterwards. A Friends group is a way for people with limited time to stay involved."
+      "Involve the community from the start, in the decisions.",
+      "Never present ready-made plans.",
+      "Ask open questions, and publish the results.",
+      "Involve your strongest opponents."
     ],
-    failure: "Sheffield Buddhist Centre engaged thoroughly within the Buddhist community and not with the surrounding streets; replacing the belfry bell with a gold Buddha caused tensions and rumours that an earlier conversation would have prevented. The leader went and listened to the person leading the protest, and new relationships were formed — but later than they needed to be.",
+    failure: "Sheffield Buddhist Centre consulted its own community but not its neighbours; replacing a bell with a gold Buddha caused tensions an earlier conversation would have avoided.",
     source: "edpLeadership"
   },
   {
     key: "scale",
     name: "Scale & style",
-    lead: "Choosing the right size of architectural intervention.",
+    lead: "Choosing the right size of intervention.",
     points: [
-      "Three scales: small (a servery, an accessible WC — little or no construction), medium (removing some pews, remodelling a vestry, a small extension), large (a major extension or an inserted structure, needing feasibility work and serious fundraising).",
-      "Minimise the impact on historic fabric, and always ask how easily reversible an intervention would be.",
-      "Do not fix on one solution early. Always appraise options — one may have less impact and still meet the vision, and another may produce something nobody had thought of.",
-      "Often only minor changes are needed for a building to keep serving worship while offering something new. A major reordering is not always necessary.",
-      "Test before you commit: remove the pews from one aisle first; borrow sample chairs and let people sit on them; use the space differently for a season.",
-      "Decide how the new will read against the old — a clear distinction, or a careful match. Either can work; an unresolved middle rarely does.",
-      "Work through the impact on the sense of sacredness as carefully as the impact on fabric: will it still feel like a spiritual space, and how will people know to give it due respect?"
+      "Small, medium or large: from a servery to a major extension.",
+      "Minimise the impact on historic fabric, and favour reversible changes.",
+      "Weigh the options before fixing on one, and test before committing."
     ],
-    failure: "The Sherriff Centre's design gave each activity its own space with no permanent intervention and no impact on heritage fabric — but the number of people coming through every day now makes it hard to see that it is still a functioning place of worship, and the church is looking for small ways to make that legible again.",
+    failure: "The Sherriff Centre avoided any permanent change to the fabric, but its busy use now makes the worship hard to see.",
     source: "edpLeadership"
   },
   {
     key: "capacity",
     name: "Capacity",
-    lead: "Building skills and resources within your team.",
+    lead: "Building your team's skills and resources.",
     points: [
-      "Capacity is not only money: it is skills, knowledge and the confidence to deal with bureaucracy, funders and professionals.",
-      "Start with a skills audit of your own congregation — finance, project management, communications, IT, admin, local knowledge, history, fundraising, design, practical help, and the specialised knowledge you will need.",
-      "Do not begin by assuming you must buy in expertise. Understand your challenges first; you will then have more control over how the project develops.",
-      "Look outside the congregation for volunteers. People like being asked, and new people bring fresh energy — but give them time to understand how you work.",
-      "Budget for training, before and after the works: fundraising courses, food hygiene for the lunch club, first aid. Volunteers should be as qualified as paid staff.",
-      "Talk to groups who have done it. Ask to be mentored, or at least for a tour and the lessons learned.",
-      "Know which roles legally require a professional, and employ one for those."
+      "Capacity means skills and confidence, not just money.",
+      "Audit your congregation's skills before buying in expertise.",
+      "Recruit volunteers beyond the congregation, and train them."
     ],
-    failure: "Cemetery Road Baptist Church saw another group's successful lottery application at a training workshop, realised their own needed to be at that level, won a small grant from the National Churches Trust and hired that project's officer to advise them. Networks are capacity.",
+    failure: "Cemetery Road Baptist Church learned from another group's lottery bid, won a small grant and hired that project's officer. Networks are capacity.",
     source: "edpLeadership"
   }
 ];
@@ -641,65 +604,65 @@ const ENGAGE_ETHICS = [
    chairs, and Tidworth Mums' Mega Soft Play Day.
    ------------------------------------------------------------ */
 const TASTER_PLAYBOOK = {
-  why: "A taster session is the cheapest possible test of a use. It needs no faculty, no planning permission and no capital. It produces the two things every later stage needs — evidence of demand, and a relationship with a group who might run the thing.",
-  timescale: "Six to eight weeks from decision to doors open.",
-  cost: "Usually under £200: refreshments, a printed sign, insurance check, and someone's Saturday.",
+  why: "A taster is the cheapest test of a use: no permissions, no capital. It gives you evidence of demand, and a relationship with a group who might run it.",
+  timescale: "Six to eight weeks from decision to opening.",
+  cost: "Usually under £200.",
   steps: [
     {
       n: 1,
       title: "Pick one day and name it",
-      d: "Choose a single date when the building is already unlocked — after a service, or a Saturday morning. Give it a plain name people can repeat: not 'community consultation' but 'open morning', 'try the hall', 'bring a chair'.",
-      tip: "Piggy-back on something that already draws people — a fête, a school event, a market, a street stall. Reaching people who already come to church is not the test."
+      d: "Choose a day the building is already open, and give it a plain name like 'open morning'.",
+      tip: "Piggy-back on an existing event to reach people beyond the congregation."
     },
     {
       n: 2,
       title: "Find out who is already out there",
-      d: "Before inviting anyone, list what already runs within ten minutes' walk: toddler groups, ESOL classes, choirs, food projects, repair cafés, scouts, MIND and Age UK branches, the library's activity list, the council's community directory, the local Facebook or Nextdoor group. You are looking for groups with no home, or a bad one.",
-      tip: "Use the Opportunities map and the Case studies on this site to see what has worked in comparable buildings, then search the same use locally. Councils publish a community-group directory; the CVS or council for voluntary service in your borough holds the fullest list."
+      d: "List what runs within ten minutes' walk. Look for groups with no home, or a poor one.",
+      tip: "Your council's community directory and local CVS hold the fullest lists."
     },
     {
       n: 3,
-      title: "Ask an open question, not a closed one",
-      d: "Bow Church ran a competition asking local organisations simply: what would you do with this space? Two winners — Latin dance and karate — ran free community sessions for a day themed around fitness, and the feedback that came back (more open space to dance, a café, another toilet, heating) told the church exactly what its renovation needed.",
-      tip: "An open invitation surfaces uses you would never have listed. A menu of options only confirms what you already thought."
+      title: "Ask an open question",
+      d: "Bow Church asked local groups, 'What would you do with this space?' The answers shaped its renovation.",
+      tip: "Open questions surface uses you would never have listed."
     },
     {
       n: 4,
       title: "Hold a partnership day",
-      d: "Invite local groups and organisations into the building at the same time. Show them the space, and ask two questions: would you use it, and what would have to be in place before you could? The answers — a lockable cupboard, a sink, a 9am start, a hearing loop — are your design brief.",
-      tip: "Ask about times as much as about rooms. A group that needs Tuesday 10–12 and a group that needs Tuesday evening are not competitors."
+      d: "Invite local groups in together. Ask: would you use it, and what would you need first?",
+      tip: "Ask about times as well as rooms."
     },
     {
       n: 5,
-      title: "Build the evidence in while people are enjoying themselves",
-      d: "Decide before the day what you need to know, and who is collecting it. Count people through the door. Put a sticky wall by the tea with one question on it. Put a plan of the building on a table and let people mark where they would go. Vote with jelly beans. Take photographs, with a notice at the door saying so.",
-      tip: "Keep data collection integrated, not disruptive — and keep it simple enough that a volunteer can run it while making tea."
+      title: "Collect evidence as you go",
+      d: "Count visitors, put up a question wall, and let people mark up a plan.",
+      tip: "Keep it simple enough to run while making tea."
     },
     {
       n: 6,
-      title: "Test the physical change too",
-      d: "If the question is whether to remove pews, clear one aisle for the day and see how it feels. If it is which chairs, ask a manufacturer to bring samples and let people sit on them and say which they would rather stack. If it is heating, run the session in the coldest room in February and find out honestly.",
-      tip: "This is the single most useful thing a group can do before spending money, and almost nobody does it."
+      title: "Test physical changes too",
+      d: "Clear an aisle, try sample chairs, or run a session in the coldest room.",
+      tip: "The most useful test before spending money — and the most skipped."
     },
     {
       n: 7,
-      title: "Write it up and give it back",
-      d: "Within two weeks: how many came, who they were, what they said, what you will do next. Put it on the noticeboard, the website and the socials, and send it to everyone who left an address. Funders will ask for this document; neighbours will judge you on whether it appeared.",
-      tip: "Name the things you are not going to do, and why. Nothing builds trust faster than a visibly honest 'no'."
+      title: "Write it up and share it",
+      d: "Within two weeks, share who came, what they said and what happens next.",
+      tip: "Say what you will not do, and why."
     },
     {
       n: 8,
       title: "Turn one taster into a term",
-      d: "Offer the group that worked best a trial term — six or eight weeks, a written agreement on times, keys, heating, insurance, noise and what happens on festival Sundays. A trial term is a decision a PCC or trustees can make in one meeting, and it is reversible.",
-      tip: "Bring the trial to the PCC or trustees with the write-up attached. A proposal with attendance figures behind it is a different conversation."
+      d: "Offer the best group a trial term, with a written agreement on times, keys and costs.",
+      tip: "Take the write-up to the PCC or trustees."
     }
   ],
   watchOut: [
-    "Check the insurance covers the activity and the numbers, and whether you need a licence for music, alcohol or performance.",
-    "Check safeguarding and DBS requirements before inviting anything involving children or vulnerable adults.",
-    "Agree in advance who unlocks, who locks up and what happens if that person is ill.",
-    "Tell the neighbours before, not after — especially about noise and parking.",
-    "Make sure the worshipping community has been asked first. A taster session that surprises the congregation buys you an opponent for the whole project."
+    "Check insurance, and any licence for music, alcohol or performance.",
+    "Check safeguarding and DBS requirements.",
+    "Agree who unlocks and locks up, with cover.",
+    "Tell the neighbours beforehand.",
+    "Ask the congregation first."
   ]
 };
 
@@ -711,45 +674,45 @@ const PERMISSIONS = [
   {
     key: "none",
     name: "No permission needed",
-    d: "Furniture, programming, signage inside the building, opening hours, a trial use of an existing room. Anything you could undo on a Monday morning.",
-    who: "Your own PCC, trustees or management committee.",
+    d: "Furniture, programming, signs inside, opening hours and trial uses — anything easily undone.",
+    who: "Your PCC, trustees or committee.",
     time: "One meeting."
   },
   {
     key: "governance",
     name: "Governance decision",
-    d: "A regular letting, a trial term, a change to opening hours, a licence to occupy, a new charitable activity, a trading subsidiary.",
-    who: "PCC, trustees, church council or equivalent — minuted.",
+    d: "Regular lettings, trial terms, licences to occupy, new activities, a trading subsidiary.",
+    who: "PCC, trustees or equivalent, minuted.",
     time: "One to three months."
   },
   {
     key: "faculty",
     name: "Faculty (or denominational equivalent)",
-    d: "Any permanent change to a Church of England building, its contents or its churchyard, including reordering, new fittings, heating and lighting. Other denominations have their own systems; ecclesiastical exemption means the faculty replaces listed building consent, not planning permission.",
-    who: "Diocesan Advisory Committee then the Chancellor. Ask for pre-application advice — it is free, and it will tell you what is likely to be approved.",
-    time: "Six months to two years. Needs a Statement of Significance and a Statement of Need.",
-    note: "Harm to significance must be clearly and convincingly justified and outweighed by public benefit — the same test the NPPF sets for heritage assets."
+    d: "Any permanent change to a Church of England building, its contents or churchyard. It replaces listed building consent, not planning permission. Other denominations have their own systems.",
+    who: "The Diocesan Advisory Committee, then the Chancellor. Pre-application advice is free.",
+    time: "Six months to two years. Needs Statements of Significance and Need.",
+    note: "Harm to significance must be outweighed by public benefit."
   },
   {
     key: "planning",
     name: "Planning permission",
-    d: "Extensions, external alterations, new buildings, and most changes of use. Ecclesiastical exemption does not cover planning.",
-    who: "Local planning authority. Pre-application advice is worth paying for.",
-    time: "Eight to thirteen weeks after a validated application; longer with a listed building."
+    d: "Extensions, external changes, new buildings and most changes of use.",
+    who: "The local planning authority.",
+    time: "Eight to thirteen weeks after validation; longer for listed buildings."
   },
   {
     key: "changeuse",
     name: "Change of use",
-    d: "Introducing a use outside the building's existing class. Ancillary use — a secondary activity supporting the primary one — often avoids this, which is why cafés and shops inside working churches are frequently lawful without it.",
-    who: "Local planning authority; check first whether the use is genuinely ancillary.",
+    d: "A use outside the building's current class. Ancillary uses, like a café in a working church, often do not need it.",
+    who: "The local planning authority.",
     time: "Varies. A lawful development certificate can settle it."
   },
   {
     key: "licence",
     name: "Licences and regulation",
-    d: "Premises licence for alcohol and regulated entertainment, food hygiene registration, safeguarding and DBS, accessibility duties, fire risk assessment, insurance for each activity and each number of people.",
-    who: "The council's licensing and environmental health teams; your insurer; your safeguarding officer.",
-    time: "Weeks, but start early — it is the most common cause of a launch date slipping."
+    d: "Premises licences, food hygiene, safeguarding, fire risk assessment and insurance.",
+    who: "Council licensing and environmental health, your insurer and your safeguarding officer.",
+    time: "Weeks — start early; it often delays launches."
   }
 ];
 
@@ -760,37 +723,37 @@ const PERMISSIONS = [
 const FUNDING_ROUTES = {
   none: {
     name: "No funding needed",
-    d: "Programming, agreements, opening hours and volunteer effort. The cheapest interventions on this site cost only a decision.",
+    d: "Programming, agreements, opening hours and volunteer time. Only a decision is needed.",
     where: []
   },
   small: {
     name: "Small works & charitable giving",
-    d: "Under about £10,000: signage, seating, lighting, a noticeboard, a kettle and a cupboard. Local giving, a Friends group, a parish appeal, small trusts, crowdfunding.",
+    d: "Under about £10,000: signs, seating, lighting. Local giving, small trusts, crowdfunding.",
     where: ["nationalChurches"]
   },
   development: {
     name: "Project development & feasibility",
-    d: "The stage most groups skip: options appraisal, feasibility study, business plan, community consultation. Funding this properly is what makes the capital bid credible.",
+    d: "Options appraisals, feasibility studies, business plans and consultation — what makes a capital bid credible.",
     where: ["ahf", "nationalChurches", "heritageFund"]
   },
   capital: {
     name: "Capital works & heritage grants",
-    d: "Over about £100,000: extensions, insertions, services, major reordering. Expect to evidence community engagement and an activity plan, not just building works.",
+    d: "Over about £100,000: extensions and major works. Expect to show engagement and an activity plan.",
     where: ["heritageFund", "ahf", "historicEngland", "nationalChurches"]
   },
   council: {
     name: "Council & public funds",
-    d: "Programming, activities and revenue: ward budgets, neighbourhood CIL, public health and adult learning commissioning, Section 106 community facilities money.",
+    d: "Ward budgets, neighbourhood CIL, public health and adult learning funds, and Section 106.",
     where: ["planningAid"]
   },
   trading: {
     name: "Trading income & enterprise",
-    d: "Rent, hire, a café, a shop, a post office, ticketed events. Plan the streams together as one business, and hold them in a trading subsidiary that gifts profit to the charity.",
+    d: "Rent, hire, a café, a shop and events, planned together in a trading subsidiary.",
     where: ["plunkett"]
   },
   volunteer: {
     name: "Volunteer effort & partnership",
-    d: "A Friends group, a partner charity with its own funding, a local business in kind. The cheapest capacity there is — and the easiest to exhaust.",
+    d: "Friends groups, partner charities and in-kind support — cheap, but easy to exhaust.",
     where: ["edpLeadership"]
   }
 };

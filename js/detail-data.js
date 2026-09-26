@@ -1,5 +1,5 @@
 /* ============================================================
-   PLANNING WITH RELIGION — detail-page dataset
+   DESIGNING SHARED SPACES TOGETHER — detail-page dataset
    Everything the site.html template needs beyond data.js:
    tags, hero annotations, the uses timetable, the intervention
    record, and the publicness / interaction assessments.
@@ -19,7 +19,7 @@ const DETAIL = {
     /* Title, address and wording on this page follow the Figma frame (newPWR.pdf, frame 10). */
     pageTitle: "Grand Junction, St Mary Magdalene Paddington",
     pageAddress: "Rowington Cl, London W2 5TF",
-    lastChecked: "Jul 2026",
+    lastChecked: "Sep 2026",
     /* Worship continues in the nave and the undercroft chapel, so the sacredness
        tag reads Active worship, matching data.js. */
     siteTags: ["Westminster", "Grade I", "Mixed-use", "Church", "Active worship"],
@@ -40,18 +40,12 @@ const DETAIL = {
     ],
     usesList: ["Active worship", "Cafe", "Live music venue", "Educational and wellbeing classes",
                "Inclusive club nights", "Private and corporate event hire", "Self guided heritage tours", "Community arts"],
-    captions: { 3: "A view of the cafe (closed)." },
-    context: "Part of a school, next to canal, green pathway, predominantly residential",
+    captions: { 3: "The programme noticeboard on the green" },
+    context: "Joined to a school beside the Grand Union Canal, with a green path and benches around it, in a mainly residential area of one of London's most deprived wards.",
     week: [
-      { label: "Worship", cells: [
-        { start: 0, span: 5, text: "Small Reflective Services (Undercroft chapel)" },
-        { start: 6, span: 1, text: "Mass" } ] },
-      { label: "Cafe", cells: [
-        { start: 0, span: 4, text: "Open 09:00-16:00" },
-        { start: 5, span: 2, text: "Open 09:00-19:00 | 18:00" } ] },
-      { label: "Event Hire", cells: [
-        { start: 0, span: 4, text: "Licensed till 23:30" },
-        { start: 4, span: 2, text: "Licensed till 00:00" } ] }
+      { label: "Worship", cells: [ { start: 0, span: 5, text: "Reflective services (undercroft chapel)" }, { start: 6, span: 1, text: "Mass 9:30" } ] },
+      { label: "Cafe", cells: [ { start: 0, span: 4, text: "Open 08:00–17:00" }, { start: 4, span: 2, text: "Open 08:00–22:00" }, { start: 6, span: 1, text: "10–17" } ] },
+      { label: "Event Hire", cells: [ { start: 0, span: 7, text: "Evening hire — nave till 22:30, undercroft till 23:00" } ] }
     ],
     process: {
       scales: ["Room", "Building", "Site", "Neighbourhood", "5 years"],
@@ -59,37 +53,39 @@ const DETAIL = {
       typologies: ["Nave", "Hall", "Courtyard", "Grounds"],
       typologyNote: "The undercroft chapel also holds small reflective services.",
       delivery: ["Congregation-led", "Charity-led"],
-      deliveryNote: "Paddington Development Trust and parish",
+      deliveryNote: "Paddington Development Trust with the vicar and parochial church council.",
       funding: ["Grant", "Fundraising"],
-      fundingNote: "Heritage Lottery Fund",
+      fundingNote: "£3.6m from the National Lottery Heritage Fund towards a project of about £7m, with support from Power to Change, City Bridge Trust, John Lyon's Charity and others.",
       planning: ["Full planning permission"],
-      planningNote: "Submitted to Westminster City Council.",
-      notes: "Following the appointment of designers in 2014, a planning application was submitted to Westminster council which received over 100 public statements of support. Once accepted, a £3.6m and five year long project began. It was completed in 2019."
+      planningNote: "Approved by Westminster City Council in December 2015, with over 100 statements of support.",
+      notes: "Dow Jones Architects were appointed in 2010. The church interior was restored in 2017–18 and the new wing completed in 2019, when Grand Junction opened."
     },
     publicness: {
       rows: [
-        ["Ownership",         "Low-Medium",  "Church of England freehold"],
-        ["Management",        "Medium",      "Charity-run with parish"],
-        ["Physical access",   "High",        "Step-free throughout, wayfinding"],
-        ["Perceptual access", "Medium-High", "Open and glass doors, cafe as an open entrance, but not clear “hired” signs"],
-        ["Social inclusivity","High",        "Free/pay as you can/inclusive/community workshops and events"],
-        ["Animation",         "High",        "Near daily activities and regular events with weekly worship and activated surrounding public spaces"]
+        ["Ownership",         "Low-Medium",  "Church of England freehold, leased to the Paddington Development Trust"],
+        ["Management",        "Medium",      "Charity-run with the parish"],
+        ["Physical access",   "High",        "Step-free entry from Rowington Close; accessible toilet in the undercroft"],
+        ["Perceptual access", "Medium-High", "Glass doors and the café as an open entrance, but no clear signs for when spaces are hired"],
+        ["Social inclusivity","High",        "Free and pay-what-you-can events, inclusive club nights and community workshops"],
+        ["Animation",         "High",        "Near-daily activity, weekly worship and a well-used green around the church"]
       ],
       overall: "High Publicness",
-      notes: "Inclusive club nights are designed to mix people with and without learning disabilities; the cafe, classes and community-led activities create repeated and relaxed opportunities for strangers to be in the same room doing something together."
+      notes: "The café opens every day, but the church itself is open to drop-in visitors on only a few weekdays, 10am–4pm. Inclusive VIP club nights, run with Learning Disability Network London, welcome adults with learning disabilities, neurodiverse people and everyone else."
     },
     interaction: {
       rows: [
-        ["Activity mix",             "High",        "Offers many different activities, free and paid"],
-        ["Design for engagement",    "High",        "Lots of seating, shared tables, multi-use rooms"],
-        ["Lingering opportunities",  "Medium",      "Cafe and seating, but events/workshops/payment may deter"],
-        ["Multi-faith opportunities","Medium-High", "Different activities"],
-        ["Facilitation",             "High",        "Actively designed, and hosted, with opportunities for organic interaction"]
+        ["Activity mix",             "High",        "Many different activities, free and paid"],
+        ["Design for engagement",    "High",        "Plenty of seating, shared tables and multi-use rooms"],
+        ["Lingering opportunities",  "Medium",      "Café and seating, though ticketed events and hire can deter"],
+        ["Multi-faith opportunities","Medium-High", "Varied activities for a very mixed neighbourhood — 49% of residents were born outside the UK"],
+        ["Facilitation",             "High",        "A large team programmes and hosts events, leaving room for chance encounters"]
       ],
       overall: "Active",
-      notes: "Inclusive club nights are designed to mix people with and without learning disabilities; the cafe, classes and community-led activities create repeated and relaxed opportunities for strangers to be in the same room doing something together."
+      notes: "The café, classes and community events give strangers repeated, relaxed reasons to share a room. Bold, consistent signage and the benches on the green carry this outside."
     },
-    scores: { publicness: .83, interaction: .8 }
+    scores: { publicness: .83, interaction: .8 },
+    /* position on the site-visit graph: familiarity → right, most locals → up (0–1, axes cross at .5) */
+    siteVisitGraph: { familiarity: 0.93, locals: 0.88 },
   },
 
   /* ------------------------------------------------------ 2 */
@@ -102,7 +98,7 @@ const DETAIL = {
        Sherriff, as does the Figma's own address line. Corrected here. */
     pageTitle: "The Sherriff Centre, St James’ Church",
     pageAddress: "2 Sherriff Rd, London NW6 2AP",
-    lastChecked: "Jul 2026",
+    lastChecked: "Sep 2026",
     siteTags: ["Camden", "Grade II", "Mixed-use", "Church", "Active worship"],
     /* Corrections to the Figma row, checked against this project's own research:
        - Sunday worship continues, so sacredness is Active worship, not Semi-secular.
@@ -115,57 +111,58 @@ const DETAIL = {
       { label: "Church",            x: 41.40, y: 49.16, w: 14.40, h: 10.42, kind: "" },
       { label: "High Traffic Road", x: 28.29, y: 62.10, w: 40.67, h: 2.86,  kind: "" }
     ],
-    overview: "A working Victorian parish church opposite West Hampstead station that took in the local post office when it closed in 2012 — and grew a café, a two-storey soft play, a debt advice service and a community fridge around it.",
+    overview: "A Grade II listed Victorian parish church in West Hampstead that took in the local post office in 2014 — and grew a café, soft play, debt advice service and community fridge around it.",
     sacrednessRating: "Medium",
-    context: "Directly opposite a busy interchange station on a high-traffic road, in a dense, mixed residential neighbourhood.",
+    context: "Beside a busy, hard-to-cross road near the high street, with quieter residential streets around it.",
     week: [
-      { label: "Post office", cells: [ { start: 0, span: 6, text: "Open 09:00–17:00", accent: true } ] },
-      { label: "Café", cells: [ { start: 0, span: 6, text: "Sanctuary Café open 09:00–17:00" } ] },
-      { label: "Soft play", cells: [ { start: 0, span: 6, text: "Hullabaloo — sessions all day" } ] },
-      { label: "Worship", cells: [ { start: 6, span: 1, text: "Sunday services — centre closed" } ] },
-      { label: "Prayer", cells: [ { start: 0, span: 7, text: "Lady Chapel quiet through all opening hours", quiet: true } ] }
+      { label: "Post office", cells: [ { start: 0, span: 5, text: "Open 09:00–17:00", accent: true } ] },
+      { label: "Café", cells: [ { start: 0, span: 6, text: "Sanctuary Café & Bar, 09:00–17:00" } ] },
+      { label: "Soft play", cells: [ { start: 0, span: 6, text: "Hullabaloo soft play" } ] },
+      { label: "Worship", cells: [ { start: 6, span: 1, text: "Services" } ] }
     ],
     process: {
       scales: ["Room", "Building"],
       scaleNote: "Medium scale, wholly on-site: the nave was re-planned rather than extended.",
-      typologies: ["Nave", "North aisle", "South aisle", "Crossing", "Lady Chapel"],
+      typologies: ["Nave", "North aisle", "South aisle", "West end"],
       delivery: ["Congregation-led", "Social enterprise"],
-      deliveryNote: "Registered charity with a trading subsidiary.",
-      funding: ["Fundraising", "Loan", "Trading income"],
-      fundingNote: "No major heritage grant — local fundraising, loans and trading.",
-      planning: ["Faculty", "Change of use"],
-      planningNote: "Consent through the Church of England faculty process rather than a full planning application.",
-      notes: "Two years of business planning, fundraising, consultation and legal work preceded building in April 2014. The Sherriff Centre opened that July, reportedly the first full post office to operate inside a working Church of England church."
+      deliveryNote: "Registered charity; each business runs as a separate company.",
+      funding: ["Grant", "Fundraising", "Trading income"],
+      fundingNote: "About £600,000 from Post Office and council grants, the Henry Smith Charity, Garfield Weston, parish savings and private donors.",
+      planning: ["Faculty"],
+      planningNote: "Church of England faculty process; the Church Buildings Council backed the scheme in March 2013.",
+      notes: "The post office opened in July 2014 and the centre was officially opened on 1 August 2014. Within three months it was making a profit, through word of mouth alone."
     },
     publicness: {
       rows: [
         ["Ownership",         "Low-Medium",  "Church of England freehold"],
-        ["Management",        "Medium-High", "Charity with a trading subsidiary, run as a public service"],
-        ["Physical access",   "High",        "Level entry, pushchair and wheelchair accessible throughout"],
-        ["Perceptual access", "High",        "Post office signage reads as a shop, not a church"],
+        ["Management",        "Medium-High", "Charity with trading companies, run as a public service"],
+        ["Physical access",   "High",        "Ramp and automatic doors at the main entrance"],
+        ["Perceptual access", "High",        "A big sign outside lists the post office, soft play, café and debt advice"],
         ["Social inclusivity","High",        "Free entry, everyday errands, debt advice and a community fridge"],
-        ["Animation",         "High",        "Six days a week of ordinary footfall"]
+        ["Animation",         "High",        "Six days a week of everyday footfall"]
       ],
       overall: "High Publicness",
-      notes: "The post office queue is a great equaliser: people who would never attend a service pass through weekly. Sunday closure keeps the sacred rhythm legible rather than hiding it."
+      notes: "The post office brings in people who would never attend a service. Big outer doors open onto glass sliding doors, so you can see in. Sunday closure keeps the rhythm of worship clear."
     },
     interaction: {
       rows: [
-        ["Activity mix",             "High",   "Errands, coffee, play, advice and gigs under one roof"],
-        ["Design for engagement",    "High",   "Café seating in the aisle faces the crossing and the queue"],
-        ["Lingering opportunities",  "High",   "Café and soft play give people a reason to stay for hours"],
-        ["Multi-faith opportunities","Medium", "Draws the whole neighbourhood, though not through explicit interfaith work"],
+        ["Activity mix",             "High",   "Errands, coffee, play and advice under one roof"],
+        ["Design for engagement",    "High",   "Tables, chairs and sofas fill the west end of the nave"],
+        ["Lingering opportunities",  "High",   "Plenty of seating, with no pressure to buy"],
+        ["Multi-faith opportunities","Medium", "Draws the whole neighbourhood; has also hosted Open Table, an LGBTQIA+ worship community"],
         ["Facilitation",             "High",   "Staff and volunteers act as hosts"]
       ],
       overall: "Active",
-      notes: "Very high everyday mixing — parents, pensioners, commuters — with staff and volunteers as hosts. Interaction here is a by-product of usefulness, not of programming."
+      notes: "Children play while others queue for the post office: the distinctions are clear and the pairing works. Interaction here is a by-product of usefulness, not programming."
     },
-    scores: { publicness: .88, interaction: .9 }
+    scores: { publicness: .88, interaction: .9 },
+    /* position on the site-visit graph: familiarity → right, most locals → up (0–1, axes cross at .5) */
+    siteVisitGraph: { familiarity: 0.76, locals: 0.94 },
   },
 
   /* ------------------------------------------------------ 3 */
   "garden-museum": {
-    lastChecked: "Jul 2026",
+    lastChecked: "Sep 2026",
     siteTags: ["Lambeth", "Grade II*", "Cultural", "Deconsecrated church", "Secular"],
     interventionTags: ["Multiple", "Semi-public", "Charity-led", "Institution-led", "Permanent", "On-site", "Heritage Lottery Fund"],
     annoSpace: "image",
@@ -174,56 +171,57 @@ const DETAIL = {
       { label: "Automatic glass doors", x: 26, y: 38, w: 48, h: 36, kind: "red" },
       { label: "Kentish ragstone wall", x: 2, y: 30, w: 16, h: 30, kind: "" }
     ],
-    overview: "A medieval and Victorian church next to Lambeth Palace, deconsecrated in 1972, saved from demolition in 1977 and remade as Britain's museum of gardens — with copper-clad pavilions, a cloister garden and a well-known café.",
+    overview: "A medieval and Victorian church beside Lambeth Palace, deconsecrated in 1972 and saved from demolition to become the world's first museum of garden history in 1977 — now with new galleries, a courtyard garden and a café.",
     sacrednessRating: "Low",
-    context: "On a busy riverside road opposite the Palace of Westminster, wrapped by Archbishop's Park and Lambeth Palace's walls.",
+    context: "Between Lambeth Palace and Archbishop's Park on a busy riverside road; the homes behind are reached through the park.",
     week: [
-      { label: "Galleries", cells: [ { start: 0, span: 7, text: "Open daily 10:30–17:00 (ticketed)" } ] },
-      { label: "Café", cells: [ { start: 0, span: 7, text: "Free to enter — open daily", accent: true } ] },
-      { label: "Learning", cells: [ { start: 0, span: 5, text: "School sessions, term time" } ] },
-      { label: "Events", cells: [ { start: 2, span: 3, text: "Talks, lates and supper clubs" } ] }
+      { label: "Galleries", cells: [ { start: 0, span: 7, text: "Open daily 10:00–17:00 (ticketed)" } ] },
+      { label: "Atrium", cells: [ { start: 0, span: 7, text: "Ground floor free to enter", accent: true } ] },
+      { label: "Learning", cells: [ { start: 0, span: 7, text: "Learning for schools, families and communities" } ] }
     ],
     process: {
       scales: ["Building", "Site", "5 years"],
       scaleNote: "Large scale, on-site, delivered in two phases forty years apart.",
       typologies: ["Nave", "Chancel", "Churchyard", "New pavilions"],
       delivery: ["Charity-led", "Institution-led"],
-      deliveryNote: "Independent charitable trust, founded by Rosemary and John Nicholson.",
+      deliveryNote: "Independent charity, founded as the Tradescant Trust by Rosemary Nicholson.",
       funding: ["Grant", "Fundraising", "Trading income"],
-      fundingNote: "Heritage Lottery Fund — £3.51m towards the 2017 phase.",
+      fundingNote: "£3.51m Heritage Lottery Fund grant (2014) for the second phase.",
       planning: ["Full planning permission", "Listed building consent"],
       planningNote: "London Borough of Lambeth.",
-      notes: "Deconsecrated in 1972 and scheduled for demolition, the church was rescued by a trust founded in 1977. A second phase by Dow Jones Architects doubled display space and added copper-clad pavilions around the Tradescant tomb, reopening in May 2017."
+      notes: "Deconsecrated in 1972 and threatened with demolition, the church became a museum in 1977. A second phase by Dow Jones Architects added galleries, learning spaces and a courtyard garden, reopening in 2017."
     },
     publicness: {
       rows: [
-        ["Ownership",         "Medium",      "Charitable trust freehold"],
+        ["Ownership",         "Medium",      "Charitable trust"],
         ["Management",        "Medium-High", "Independent museum with a public remit"],
-        ["Physical access",   "High",        "Step-free, lift to all galleries"],
-        ["Perceptual access", "Medium-High", "Reads clearly as a public building from the street"],
-        ["Social inclusivity","Medium",      "Galleries are ticketed; café, shop and front garden are free"],
-        ["Animation",         "High",        "Open almost every day, plus an evening programme"]
+        ["Physical access",   "High",        "Level entry through the glass doors"],
+        ["Perceptual access", "Medium-High", "Glass doors in the medieval arch let you see in; the main signs face the river, not the residential side"],
+        ["Social inclusivity","Medium",      "Free ground-floor atrium; galleries ticketed; archive by appointment"],
+        ["Animation",         "High",        "Open daily, with talks and events"]
       ],
       overall: "High Publicness",
-      notes: "The threshold is deliberately soft: you can walk in, sit in the garden and have coffee without buying a ticket. The paywall sits inside the building, not at the door."
+      notes: "The paywall sits inside the building, not at the door: the atrium, with a large shared table and arts and crafts, is free to anyone. The garden is harder to find, reached through the shop."
     },
     interaction: {
       rows: [
         ["Activity mix",             "Medium-High", "Exhibitions, learning, eating, gardening, hire"],
-        ["Design for engagement",    "Medium-High", "The cloister garden gathers people around the tomb"],
-        ["Lingering opportunities",  "High",        "Café and garden seating with no purchase pressure"],
-        ["Multi-faith opportunities","Low",         "Sacred history is interpreted, not practised"],
-        ["Facilitation",             "Medium",      "Learning programmes and talks, less everyday hosting"]
+        ["Design for engagement",    "Medium-High", "The atrium's shared table and the courtyard garden gather people"],
+        ["Lingering opportunities",  "High",        "Atrium, café and garden seating"],
+        ["Multi-faith opportunities","Low",         "Sacred history is interpreted, not practised — though the space still feels reflective"],
+        ["Facilitation",             "Medium",      "Reception staff guide visitors; learning programmes and talks"]
       ],
       overall: "Emerging",
-      notes: "Mostly visitor-to-place rather than stranger-to-stranger, but learning programmes, talks and the café generate steady social overlap. Proposals for Lambeth Green would extend the logic outward to the neighbourhood."
+      notes: "Mostly visitor-to-place rather than stranger-to-stranger, but the free atrium, café and events create steady social overlap. A small play space and craft table welcome families."
     },
-    scores: { publicness: .78, interaction: .6 }
+    scores: { publicness: .78, interaction: .6 },
+    /* position on the site-visit graph: familiarity → right, most locals → up (0–1, axes cross at .5) */
+    siteVisitGraph: { familiarity: 0.76, locals: 0.26 },
   },
 
   /* ------------------------------------------------------ 4 */
   "st-dunstan-in-the-east": {
-    lastChecked: "Jul 2026",
+    lastChecked: "Sep 2026",
     siteTags: ["City of London", "Grade I", "Public garden", "Churchyard & ruin", "Semi-secular"],
     interventionTags: ["Single", "Public", "Council-managed", "Permanent", "On-site", "Council & public funds"],
     annotations: [
@@ -232,55 +230,54 @@ const DETAIL = {
       { label: "Window tracery",  x: 65.43, y: 50.36, w: 13.71, h: 6.76, kind: "buff" },
       { label: "Stepped approach",x: 32.86, y: 65.37, w: 18.86, h: 3.38,  kind: "" }
     ],
-    overview: "A Wren-towered church gutted by the Blitz and never rebuilt. Instead of clearing the ruin, the City of London opened a public garden inside its shell in 1971 — now one of London's best-loved quiet places.",
+    overview: "A Wren-steepled church gutted in the Blitz and never rebuilt. Instead of clearing the ruin, the City of London opened a public garden inside it in 1971 — now one of the City's best-loved quiet places.",
     sacrednessRating: "Low-Medium",
-    context: "A steep, hidden slope between Lower Thames Street and the office blocks of the eastern City, minutes from the river.",
+    context: "On a slope between Lower Thames Street and the offices of the eastern City, entered from St Dunstan's Hill and Idol Lane.",
     week: [
-      { label: "Garden", cells: [ { start: 0, span: 7, text: "Open daily 08:00–dusk — free, no gate", accent: true } ] },
-      { label: "Lunch use", cells: [ { start: 0, span: 5, text: "Peak City-worker use 12:00–14:00" } ] },
-      { label: "Visitors", cells: [ { start: 5, span: 2, text: "Heavy weekend photography and visitor pressure" } ] }
+      { label: "Garden", cells: [ { start: 0, span: 7, text: "Open daily 08:00–19:00 (or dusk) — free", accent: true } ] },
+      { label: "Lunch use", cells: [ { start: 0, span: 5, text: "Busy with City workers at lunchtime" } ] }
     ],
     process: {
       scales: ["Site"],
-      scaleNote: "Small scale by cost, total in effect: planting, paths and seats inside an existing ruin.",
+      scaleNote: "Small in cost, large in effect: planting, paths and seats inside an existing ruin.",
       typologies: ["Nave", "Tower", "Churchyard"],
       delivery: ["Council-managed"],
       deliveryNote: "City of London Corporation, as one of the City's public gardens.",
       funding: ["Council & public funds"],
-      fundingNote: "Public maintenance budget; no capital campaign.",
-      planning: ["Listed building consent"],
-      planningNote: "Scheduled ruin retained and stabilised rather than restored.",
-      notes: "German bombing in 1941 gutted the church; the parish was never re-formed. Rather than clearance, the Corporation kept the ruin and in 1971 opened a garden within it — climbing plants over gothic tracery, a fountain in the nave, lawns and benches among the walls."
+      fundingNote: "Maintained by the City of London as a public garden.",
+      planning: [],
+      planningNote: "Grade I listed ruin, kept and stabilised rather than rebuilt.",
+      notes: "Bombed in 1941 and never rebuilt, the ruin became a garden: the City decided in 1967 and opened it in 1971, with a lawn, trees and a low fountain in the nave."
     },
     publicness: {
       rows: [
         ["Ownership",         "High",        "City of London Corporation — public ownership"],
-        ["Management",        "High",        "Managed as public realm, not as a venue"],
-        ["Physical access",   "Medium",      "Steep site with steps; step-free entry from one side only"],
-        ["Perceptual access", "High",        "No gate, no threshold, no permission needed"],
-        ["Social inclusivity","High",        "Free, unconditional, open to anyone at any hour of daylight"],
-        ["Animation",         "Medium",      "Constant presence but no programming or interpretation"]
+        ["Management",        "High",        "Managed as a public garden, also hired for events"],
+        ["Physical access",   "Medium",      "Sloping site with steps"],
+        ["Perceptual access", "High",        "Open gateways, no ticket, no permission needed"],
+        ["Social inclusivity","High",        "Free and open daily 8am–7pm (or dusk)"],
+        ["Animation",         "Medium",      "Constant use but no regular programme or interpretation"]
       ],
       overall: "High Publicness",
-      notes: "The archetype of civic publicness on former church land: fully open daily with no threshold at all. The one real barrier is the topography."
+      notes: "The archetype of civic publicness on former church land: free, open every day, and used by people with no connection to the church. The garden can also be hired for events."
     },
     interaction: {
       rows: [
         ["Activity mix",             "Low",         "Sitting, eating, photographing — nothing programmed"],
-        ["Design for engagement",    "Medium",      "Benches face each other within the nave walls"],
+        ["Design for engagement",    "Medium",      "Benches ring the fountain in the nave"],
         ["Lingering opportunities",  "High",        "People stay for a whole lunch hour without spending"],
-        ["Multi-faith opportunities","Low",         "No religious practice, though the ground stays consecrated"],
-        ["Facilitation",             "Low",         "No staff, volunteers or friends group on site"]
+        ["Multi-faith opportunities","Low",         "Occasional services continue; otherwise open to all"],
+        ["Facilitation",             "Low",         "No regular hosting or programme on site"]
       ],
       overall: "Passive",
-      notes: "Deliberately low-key: people come to be quiet alongside strangers rather than to meet them. Interaction is ambient, not designed — which is exactly where its opportunity sits."
+      notes: "People come to be quiet alongside strangers rather than to meet them — at lunchtime the benches around the fountain fill with workers."
     },
     scores: { publicness: .9, interaction: .34 }
   },
 
   /* ------------------------------------------------------ 5 */
   "st-georges-gardens": {
-    lastChecked: "Jul 2026",
+    lastChecked: "Sep 2026",
     siteTags: ["Camden", "Grade II* landscape", "Public garden", "Burial ground", "Semi-secular"],
     interventionTags: ["Multiple", "Public", "Friends & volunteers", "Council-managed", "Permanent", "On-site", "Heritage Lottery Fund"],
     annotations: [
@@ -289,13 +286,12 @@ const DETAIL = {
       { label: "Walled edge",     x: 60.29, y: 55.62, w: 22.29, h: 3.00,  kind: "buff" },
       { label: "Lawn & benches",  x: 32.86, y: 63.12, w: 24.00, h: 5.25, kind: "green" }
     ],
-    overview: "One of London's first detached burial grounds, opened 1714, converted to a public garden by the Kyrle Society in the 1880s, then rescued from decline by a Friends group and a lottery-funded restoration completed in 2001. The ground remains consecrated.",
+    overview: "A burial ground opened in 1714 for two Bloomsbury parishes, made a public garden in 1884, then rescued from decline by a Friends group and a Heritage Lottery Fund restoration completed in 2001. The ground remains consecrated.",
     sacrednessRating: "Low-Medium",
-    context: "A walled garden entered from quiet Bloomsbury side streets, in a district where most green squares are gated and private.",
+    context: "A walled garden entered from Handel Street, Heathcote Street and Sidmouth Street, in a district where many green squares are locked and private.",
     week: [
-      { label: "Gardens", cells: [ { start: 0, span: 7, text: "Open daily dawn–dusk", accent: true } ] },
-      { label: "Volunteering", cells: [ { start: 5, span: 1, text: "Friends' planting mornings (seasonal)" } ] },
-      { label: "Events", cells: [ { start: 4, span: 3, text: "Open days, history walks, summer garden party" } ] }
+      { label: "Gardens", cells: [ { start: 0, span: 7, text: "Open daily in daylight hours", accent: true } ] },
+      { label: "Spring party", cells: [ { start: 5, span: 1, text: "Yearly" } ] }
     ],
     process: {
       scales: ["Site", "Neighbourhood", "5 years"],
@@ -304,40 +300,40 @@ const DETAIL = {
       delivery: ["Friends & volunteers", "Council-managed"],
       deliveryNote: "Friends of St George's Gardens with the London Borough of Camden.",
       funding: ["Grant", "Council & public funds", "Volunteer effort"],
-      fundingNote: "Heritage Lottery Fund Urban Parks Programme, bid 1997.",
-      planning: ["Listed building consent", "Registered landscape consent"],
-      planningNote: "Grade II* on the national register of historic landscapes.",
-      notes: "By the early 1990s the gardens were overgrown and unsafe. Neighbours formed the Friends in 1994 and persuaded Camden to bid to the Heritage Lottery Fund in 1997; the restored gardens reopened in spring 2001 and are maintained by Camden with the Friends as active stewards."
+      fundingNote: "Heritage Lottery Fund Urban Parks Programme (1997).",
+      planning: [],
+      planningNote: "Grade II* on the national register of historic parks and gardens.",
+      notes: "By the 1990s the gardens were overgrown and neglected. Local residents formed the Friends, Camden won lottery funding in 1997, and the restored gardens reopened in spring 2001."
     },
     publicness: {
       rows: [
         ["Ownership",         "High",        "Camden-owned public open space"],
-        ["Management",        "High",        "Council maintenance with an organised Friends group"],
-        ["Physical access",   "High",        "Level, three gates, step-free"],
+        ["Management",        "High",        "Council maintenance with an active Friends group"],
+        ["Physical access",   "High",        "Three gates; main entrance on Handel Street"],
         ["Perceptual access", "Medium-High", "Walled and quiet — rewards local knowledge but excludes no one"],
-        ["Social inclusivity","High",        "Free and unconditional in an area of gated squares"],
-        ["Animation",         "Medium-High", "Everyday use plus a seasonal Friends programme"]
+        ["Social inclusivity","High",        "Free, in an area where many squares are private"],
+        ["Animation",         "Medium-High", "Everyday use, watched over by the Friends"]
       ],
       overall: "High Publicness",
-      notes: "Enclosure works in its favour here: walls and side-street gates make protected calm rather than exclusion. Three modest entrances knit it into the surrounding streets."
+      notes: "Walls and side-street gates create calm rather than exclusion, and three entrances knit the garden into the surrounding streets."
     },
     interaction: {
       rows: [
         ["Activity mix",             "Medium",      "Lunches, dog walks, children, occasional events"],
-        ["Design for engagement",    "Medium-High", "Benches, lawn and paths shaped around the monuments"],
-        ["Lingering opportunities",  "High",        "Comfortable, shaded, safe to stay in"],
-        ["Multi-faith opportunities","Low-Medium",  "Consecrated ground used by an entirely mixed neighbourhood"],
-        ["Facilitation",             "Medium-High", "The Friends host events, walks and planting days"]
+        ["Design for engagement",    "Medium-High", "Benches, lawn and paths laid out around the monuments"],
+        ["Lingering opportunities",  "High",        "Comfortable, shaded and safe to stay in"],
+        ["Multi-faith opportunities","Low-Medium",  "Consecrated ground used by a mixed neighbourhood"],
+        ["Facilitation",             "Medium-High", "The Friends keep watch and run a yearly community party"]
       ],
       overall: "Emerging",
-      notes: "Everyday co-presence lifted beyond the passive by a Friends group that programmes lightly and consistently — the cheapest form of animation in this database."
+      notes: "Everyday co-presence — lunches, dog walks, children — supported by a Friends group that keeps watch over the garden: the cheapest form of stewardship in this database."
     },
     scores: { publicness: .84, interaction: .6 }
   },
 
   /* ------------------------------------------------------ 6 */
   "tower-hamlets-cemetery-park": {
-    lastChecked: "Jul 2026",
+    lastChecked: "Sep 2026",
     siteTags: ["Tower Hamlets", "Local Nature Reserve", "Public park", "Cemetery", "Semi-secular"],
     interventionTags: ["Multiple", "Public", "Friends & volunteers", "Council-managed", "Evolving", "On-site", "Off-site"],
     annoSpace: "image",
@@ -346,56 +342,58 @@ const DETAIL = {
       { label: "Bench and bin", x: 61, y: 58, w: 33, h: 22, kind: "buff" },
       { label: "Meadow left unmown", x: 2, y: 50, w: 31, h: 27, kind: "green" }
     ],
-    overview: "A 'Magnificent Seven' Victorian cemetery closed to burials in 1966 and allowed to re-grow as woodland. Now a Local Nature Reserve and East London's outdoor classroom, co-managed by a substantial charity of Friends.",
+    overview: "A 'Magnificent Seven' Victorian cemetery closed to burials in 1966 and left to grow into woodland. Now Tower Hamlets' first Local Nature Reserve, cared for by the Friends of Tower Hamlets Cemetery Park.",
     sacrednessRating: "Low-Medium",
-    context: "Twenty-seven acres of woodland in a dense, park-poor borough, entered from several surrounding residential streets.",
+    context: "Thirty-one acres of woodland beside the railway in Mile End, entered from several surrounding streets.",
     week: [
-      { label: "Park", cells: [ { start: 0, span: 7, text: "Open daily, free, multiple gates", accent: true } ] },
-      { label: "Learning", cells: [ { start: 0, span: 5, text: "School science at the Soanes Centre (term time)" } ] },
-      { label: "Volunteering", cells: [ { start: 2, span: 1, text: "Conservation" }, { start: 5, span: 2, text: "Weekend conservation days" } ] },
-      { label: "Events", cells: [ { start: 4, span: 3, text: "Bat walks, history tours, seasonal festivals" } ] }
+      { label: "Park", cells: [ { start: 0, span: 7, text: "Open daily 08:00 to an hour before dusk — free", accent: true } ] },
+      { label: "Learning", cells: [ { start: 0, span: 5, text: "STEM workshops for schools at the Soanes Centre" } ] },
+      { label: "Volunteering", cells: [ { start: 0, span: 7, text: "Conservation volunteering, including all-ability sessions" } ] },
+      { label: "Events", cells: [ { start: 0, span: 7, text: "Talks, tours and the annual summer fair" } ] }
     ],
     process: {
       scales: ["Site", "Neighbourhood", "5 years"],
-      scaleNote: "Large scale, on-site and off-site — fifty years of managed change.",
+      scaleNote: "Large scale, on-site and off-site — decades of managed change.",
       typologies: ["Cemetery", "Woodland", "Learning building", "Trails"],
       delivery: ["Friends & volunteers", "Council-managed"],
-      deliveryNote: "Friends of Tower Hamlets Cemetery Park (est. 1990) with the borough.",
+      deliveryNote: "Friends of Tower Hamlets Cemetery Park (founded 1990) with the borough.",
       funding: ["Council & public funds", "Charitable giving", "Volunteer effort"],
-      fundingNote: "Mixed public and charitable income; extensive volunteer labour.",
+      fundingNote: "Council and charitable income, National Lottery Heritage Fund support and extensive volunteer labour.",
       planning: ["Local Nature Reserve designation"],
-      planningNote: "Closure to burials and transfer to public ownership, 1966.",
-      notes: "Rather than being cleared or manicured, the cemetery was allowed — and later deliberately managed — to become woodland. Time itself was the design tool: fifty years of managed re-wilding produced a landscape no capital project could buy."
+      planningNote: "Closed to burials in 1966; Tower Hamlets' first Local Nature Reserve (2001).",
+      notes: "Rather than being cleared or manicured, the cemetery was allowed to become woodland, now managed for both wildlife and heritage."
     },
     publicness: {
       rows: [
         ["Ownership",         "High",        "Publicly owned since 1966"],
-        ["Management",        "High",        "Charity–council partnership with daily presence"],
-        ["Physical access",   "Medium-High", "Level main paths; some rough woodland routes"],
-        ["Perceptual access", "High",        "Multiple gates knitted into surrounding streets"],
-        ["Social inclusivity","High",        "Free, open round the clock, used by the whole borough"],
-        ["Animation",         "High",        "Schools, volunteering, walks and festivals year-round"]
+        ["Management",        "High",        "Charity–council partnership, with a Friends office on site"],
+        ["Physical access",   "Medium-High", "Gravel main paths; rougher woodland routes"],
+        ["Perceptual access", "High",        "Most entrances have a Friends sign with a map and opening times"],
+        ["Social inclusivity","High",        "Free and open daily to the whole borough"],
+        ["Animation",         "High",        "Volunteering, talks, tours and events year-round"]
       ],
       overall: "High Publicness",
-      notes: "True civic infrastructure for a dense, park-poor borough: no gates, no fees, and enough acreage that quiet solitary use and busy programmed use rarely conflict."
+      notes: "Open 8am to an hour before dusk, with several entrances linking it to surrounding streets. Quiet solitary visits and programmed activity rarely clash on a site this size."
     },
     interaction: {
       rows: [
         ["Activity mix",             "High",        "Learning, conservation, walking, remembrance, events"],
-        ["Design for engagement",    "Medium-High", "Clearings, benches and the Soanes Centre as a base"],
-        ["Lingering opportunities",  "High",        "27 acres with room to stay all day"],
-        ["Multi-faith opportunities","Medium-High", "Burial ground of many faiths; used by an exceptionally mixed borough"],
-        ["Facilitation",             "High",        "A large volunteer body and paid education staff"]
+        ["Design for engagement",    "Medium-High", "Clear paths and sections; benches mostly near the entrances"],
+        ["Lingering opportunities",  "High",        "Room to stay all day, though seating thins out inside"],
+        ["Multi-faith opportunities","Medium-High", "Burials of many faiths; used by a very mixed borough"],
+        ["Facilitation",             "High",        "Friends staff and a large volunteer body"]
       ],
       overall: "Active",
-      notes: "Strong programmed interaction sits on top of quiet solitary use. Remembrance, ecology and everyday recreation coexist because the site is large enough to hold all three."
+      notes: "Programmed activity sits alongside walking, dog walking and quiet visits. Small signs, lidless bins and a lack of dog facilities are easy fixes."
     },
-    scores: { publicness: .88, interaction: .74 }
+    scores: { publicness: .88, interaction: .74 },
+    /* position on the site-visit graph: familiarity → right, most locals → up (0–1, axes cross at .5) */
+    siteVisitGraph: { familiarity: 0.59, locals: 0.64 },
   },
 
   /* ------------------------------------------------------ 7 */
   "lambeth-palace-library": {
-    lastChecked: "Jul 2026",
+    lastChecked: "Sep 2026",
     siteTags: ["Lambeth", "Grade I setting", "Institutional", "New building on faith land", "Semi-secular"],
     /* The £23.5m building was commissioned and funded by the Church Commissioners,
        so the funding tag is institutional capital rather than charitable giving. */
@@ -406,56 +404,57 @@ const DETAIL = {
       { label: "Lambeth Palace Road", x: 1, y: 54, w: 23, h: 31, kind: "" },
       { label: "A hard street edge", x: 24, y: 62, w: 36, h: 20, kind: "red" }
     ],
-    overview: "The Church of England's archive rehoused in a new brick 'occupied wall' at the edge of the Archbishop's garden — the first new building on the Grade I site in 185 years, and a study in carefully rationed publicness on sacred land.",
+    overview: "The Church of England's library and archive, rehoused in a new building at the edge of the Archbishop's garden — the first new building on the site in 185 years, and a study in carefully rationed publicness.",
     sacrednessRating: "Medium-High",
-    context: "A hard, traffic-heavy edge between the Thames, Archbishop's Park and one of London's largest private gardens.",
+    context: "A hard, traffic-heavy road edge between the Thames, Archbishop's Park and the Lambeth Palace garden.",
     week: [
-      { label: "Reading room", cells: [ { start: 0, span: 5, text: "Open to registered researchers" } ] },
-      { label: "Foyer", cells: [ { start: 0, span: 5, text: "Free exhibitions — no appointment needed", accent: true } ] },
-      { label: "Tours", cells: [ { start: 2, span: 2, text: "Guided building tours, select days" } ] },
-      { label: "Garden", cells: [ { start: 5, span: 1, text: "Occasional open days", quiet: true } ] }
+      { label: "Reading room", cells: [ { start: 0, span: 5, text: "Registered readers" } ] },
+      { label: "Exhibitions", cells: [ { start: 0, span: 5, text: "Free, 09:30–17:00", accent: true }, { start: 5, span: 1, text: "Monthly" } ] },
+      { label: "Thursday lates", cells: [ { start: 3, span: 1, text: "Some" } ] }
     ],
     process: {
       scales: ["Building", "Site", "5 years"],
       scaleNote: "Large scale, on-site: a wholly new 5,400 m² building.",
       typologies: ["Archive", "Reading room", "Foyer & exhibition", "Terrace", "Garden edge"],
       delivery: ["Institution-led"],
-      deliveryNote: "Church Commissioners; Wright & Wright Architects, competition-winning 2015.",
-      funding: ["Charitable giving", "Institutional capital"],
-      fundingNote: "£23.5m project completed 2020, opened 2021.",
+      deliveryNote: "Church Commissioners; Wright & Wright Architects, selected in December 2015.",
+      funding: ["Institutional capital"],
+      fundingNote: "£23.5m, paid in full by the Church Commissioners; completed 2020, opened 2021.",
       planning: ["Full planning permission", "Listed building consent"],
       planningNote: "Development within the curtilage of a Grade I listed palace.",
-      notes: "The wall does double duty: it protects the Archbishop's ten-acre garden from traffic noise and pollution, channels rainwater to a new biodiverse pond, and gives passers-by framed glimpses of the garden through the entrance."
+      notes: "The building shields the Palace garden from traffic, and its roofs feed a new pond and wetland by Dan Pearson Studio. Solar panels supply nearly half its electricity."
     },
     publicness: {
       rows: [
         ["Ownership",         "Low",         "Church Commissioners — institutional freehold"],
         ["Management",        "Low-Medium",  "Run as an archive with a controlled visitor offer"],
-        ["Physical access",   "High",        "Fully accessible new building"],
-        ["Perceptual access", "Medium",      "A generous entrance, but the building still reads as institutional"],
-        ["Social inclusivity","Medium",      "Free foyer and exhibitions; reading room requires registration"],
-        ["Animation",         "Low-Medium",  "Weekday only, with no café or everyday reason to enter"]
+        ["Physical access",   "High",        "Step-free entrance with automatic doors"],
+        ["Perceptual access", "Medium",      "Tight to the pavement; the name only reads from a distance; door sensors didn't open for pedestrians"],
+        ["Social inclusivity","Medium",      "Free exhibition; the reading room requires registration"],
+        ["Animation",         "Low-Medium",  "No café or everyday reason to go in"]
       ],
       overall: "Medium Publicness",
-      notes: "Programmed publicness, stated plainly: free foyer and exhibitions, a registered reading room, occasional open days. Critics noted the absence of a café or everyday garden access — which is exactly what makes it useful as a study in how institutions calibrate openness."
+      notes: "Publicness is real but rationed: a free exhibition, a reading room with 12 seats for registered readers, and events on the terrace. Security and a closed-looking street edge make even the free parts feel hard to reach."
     },
     interaction: {
       rows: [
         ["Activity mix",             "Low",        "Research, exhibitions and occasional events"],
-        ["Design for engagement",    "Low-Medium", "The terrace gathers people, but only at events"],
-        ["Lingering opportunities",  "Low",        "Nowhere to sit without a purpose"],
+        ["Design for engagement",    "Low-Medium", "The terrace and Bancroft Room host events for up to 70"],
+        ["Lingering opportunities",  "Low",        "A readers' lounge for registered users; nowhere for passers-by"],
         ["Multi-faith opportunities","Low-Medium", "A shared scholarly resource open to researchers of any faith"],
         ["Facilitation",             "Medium",     "Staffed and hosted, but for a narrow public"]
       ],
       overall: "Passive",
-      notes: "Low by design; the library trades in quiet. Social life concentrates on events and the ninth-floor terrace, leaving the street edge as the site's real public gesture."
+      notes: "Low by design — the library trades in quiet. Social life gathers at events and on the terrace."
     },
-    scores: { publicness: .5, interaction: .3 }
+    scores: { publicness: .5, interaction: .3 },
+    /* position on the site-visit graph: familiarity → right, most locals → up (0–1, axes cross at .5) */
+    siteVisitGraph: { familiarity: 0.13, locals: 0.16 },
   },
 
   /* ------------------------------------------------------ 8 */
   "st-stephen-walbrook": {
-    lastChecked: "Jul 2026",
+    lastChecked: "Sep 2026",
     siteTags: ["City of London", "Grade I", "Worship & culture", "Church", "Active worship"],
     interventionTags: ["Single", "Semi-public", "Congregation-led", "Permanent", "On-site", "Charitable giving"],
     annoSpace: "image",
@@ -464,56 +463,56 @@ const DETAIL = {
       { label: "Coffee shop on the frontage", x: 35, y: 44, w: 27, h: 29, kind: "buff" },
       { label: "The church behind", x: 62, y: 36, w: 26, h: 32, kind: "" }
     ],
-    overview: "Wren's domed masterpiece of 1672–79, reordered in 1987 around a round Henry Moore altar with seating gathered beneath the dome. Birthplace of the Samaritans, and a working church that keeps reinventing how a sacred room serves the city.",
+    overview: "Wren's domed church of 1672–79, reordered in 1987 around a round Henry Moore altar. Birthplace of the Samaritans, and a working church that keeps finding new ways for a sacred room to serve the City.",
     sacrednessRating: "High",
-    context: "A compact City parish room among office blocks, minutes from Mansion House, with a non-residential congregation of workers.",
+    context: "A compact City church among offices near Mansion House, next to a coffee shop, serving a congregation of workers rather than residents.",
     week: [
-      { label: "Open door", cells: [ { start: 0, span: 5, text: "Open to visitors ~10:00–16:00", accent: true } ] },
-      { label: "Concerts", cells: [ { start: 1, span: 1, text: "Free lunchtime" }, { start: 4, span: 1, text: "Free lunchtime" } ] },
-      { label: "Worship", cells: [ { start: 3, span: 1, text: "Sung Eucharist" } ] },
-      { label: "Weekend", cells: [ { start: 5, span: 2, text: "Closed — no residential parish", quiet: true } ] }
+      { label: "Open door", cells: [ { start: 0, span: 5, text: "Open to visitors 10:30–15:30", accent: true } ] },
+      { label: "Music", cells: [ { start: 1, span: 1, text: "Recital" }, { start: 2, span: 1, text: "Choir" }, { start: 4, span: 1, text: "Organ" } ] },
+      { label: "Worship", cells: [ { start: 3, span: 1, text: "Eucharist" } ] },
+      { label: "Weekend", cells: [ { start: 5, span: 2, text: "Closed at weekends", quiet: true } ] }
     ],
     process: {
       scales: ["Room"],
       scaleNote: "Small scale, on-site: a furniture-scale reordering, not an extension.",
       typologies: ["Nave", "Dome", "Vestry"],
       delivery: ["Congregation-led"],
-      deliveryNote: "Parish, with patron Peter Palumbo commissioning the altar.",
+      deliveryNote: "Parish, with churchwarden Peter Palumbo commissioning the altar.",
       funding: ["Charitable giving", "Patronage"],
       fundingNote: "Privately commissioned artwork and parish funds.",
-      planning: ["Faculty", "Listed building consent"],
-      planningNote: "Moore altar installed in 1987 after an ecclesiastical court case.",
-      notes: "In 1953 the rector, Chad Varah, answered the first telephone helpline for the suicidal from the vestry here, founding the Samaritans — arguably the most consequential piece of social infrastructure ever launched from a London church."
+      planning: ["Faculty"],
+      planningNote: "The Moore altar needed approval from the Court of Ecclesiastical Causes Reserved; installed 1987.",
+      notes: "In 1953 the rector, Dr Chad Varah, founded the Samaritans at the church — one of the most far-reaching pieces of social infrastructure launched from a London church."
     },
     publicness: {
       rows: [
         ["Ownership",         "Low-Medium",  "Church of England freehold, active parish"],
-        ["Management",        "Medium",      "Congregation-run with an open-door policy"],
-        ["Physical access",   "Medium",      "Steps at the historic entrance; level access via the side"],
-        ["Perceptual access", "Medium-High", "The Walbrook door is genuinely unlatched on weekdays"],
+        ["Management",        "Medium",      "Parish-run with a weekday open door"],
+        ["Physical access",   "Medium",      "Steps up to the historic entrance"],
+        ["Perceptual access", "Medium-High", "The noticeboard welcomes all 'to visit, to reflect, to pray'; events are advertised on the pavement"],
         ["Social inclusivity","High",        "Free entry and free concerts, no expectation of belief"],
-        ["Animation",         "Medium-High", "Weekday visiting plus a regular free concert programme"]
+        ["Animation",         "Medium-High", "Weekday visiting plus a weekly music programme"]
       ],
       overall: "Medium Publicness",
-      notes: "Open weekdays to anyone; the weekend closure reflects a non-residential parish rather than a closed attitude. Publicness here is a matter of liturgy and furniture as much as of extensions and cafés."
+      notes: "Open weekdays to anyone; closed at weekends, reflecting a parish of workers rather than residents. Publicness here is a matter of opening hours and furniture as much as extensions and cafés."
     },
     interaction: {
       rows: [
-        ["Activity mix",             "Medium",      "Worship, quiet visiting, concerts, heritage"],
+        ["Activity mix",             "Medium",      "Worship, quiet visiting, music, heritage"],
         ["Design for engagement",    "High",        "Seating in the round is a spatial argument for gathering as equals"],
         ["Lingering opportunities",  "Medium",      "Comfortable to sit in, but nothing to buy or do"],
-        ["Multi-faith opportunities","Low-Medium",  "Open to all, though the register stays Anglican"],
-        ["Facilitation",             "Medium",      "Volunteer welcomers and a concert host"]
+        ["Multi-faith opportunities","Low-Medium",  "Open to all, though the setting stays Anglican"],
+        ["Facilitation",             "Medium",      "A weekly programme of recitals, choir and services"]
       ],
       overall: "Emerging",
-      notes: "Concerts and services gather people in the round; between events, use is contemplative and solitary. The reordering shows how small a move can be and still change how a room holds people."
+      notes: "Music and services gather people in the round; between events, use is quiet and solitary. The reordering shows how small a move can change how a room holds people."
     },
     scores: { publicness: .58, interaction: .55 }
   },
 
   /* ------------------------------------------------------ 9 */
   "st-patricks-wapping": {
-    lastChecked: "Jul 2026",
+    lastChecked: "Sep 2026",
     siteTags: ["Tower Hamlets", "Grade II", "Mixed-use precinct", "Church precinct", "Active worship"],
     interventionTags: ["Multiple", "By arrangement", "Congregation-led", "Evolving", "On-site", "Volunteer effort"],
     annoSpace: "image",
@@ -522,56 +521,59 @@ const DETAIL = {
       { label: "Portico and main door", x: 61, y: 30, w: 33, h: 47, kind: "buff" },
       { label: "Steps — no level entry", x: 35, y: 64, w: 31, h: 20, kind: "" }
     ],
-    overview: "A Grade II 'Tuscan barn' parish church growing public life organically — artists' studios in the closed parish school, a volunteer kitchen garden on waste ground — with a precinct masterplan now underway.",
+    overview: "A Grade II 'Tuscan barn' parish church with artists' studios in its closed school and a volunteer kitchen garden on former waste ground — with repair and extension plans in development.",
     sacrednessRating: "High",
-    context: "A quiet Wapping back street between the river and the old dock walls, in a neighbourhood short of shared space.",
+    context: "Across the road from a busy park and playground, near Wapping's shops, in a neighbourhood with many families.",
     week: [
-      { label: "Mass", cells: [ { start: 0, span: 5, text: "Weekday mass" }, { start: 6, span: 1, text: "Sunday mass", accent: true } ] },
-      { label: "Studios", cells: [ { start: 0, span: 6, text: "Working studios — visits by arrangement", quiet: true } ] },
-      { label: "Garden", cells: [ { start: 5, span: 2, text: "Volunteer growing days (seasonal)" } ] },
-      { label: "Restoration", cells: [ { start: 0, span: 5, text: "Phase 1 works in progress" } ] }
+      { label: "Church", cells: [ { start: 0, span: 7, text: "Open daily 07:00–19:00", accent: true } ] },
+      { label: "Morning Mass", cells: [ { start: 0, span: 2, text: "10:00" }, { start: 5, span: 1, text: "10:00" }, { start: 6, span: 1, text: "10:00" } ] },
+      { label: "Evening Mass", cells: [ { start: 3, span: 2, text: "18:30" }, { start: 5, span: 1, text: "18:30" }, { start: 6, span: 1, text: "18:30" } ] },
+      { label: "Garden", cells: [ { start: 6, span: 1, text: "Produce" } ] },
+      { label: "Restoration", cells: [ { start: 0, span: 5, text: "Phase 1 plans in development" } ] }
     ],
     process: {
       scales: ["Room", "Building", "Site", "5 years"],
-      scaleNote: "Incremental: two near-free interventions, now formalised into a masterplan.",
+      scaleNote: "Incremental: two near-free interventions, now leading to a Phase 1 plan for repairs, a reordered sanctuary and a lean-to extension with toilets.",
       typologies: ["Nave", "Former school", "Waste ground", "Precinct"],
       delivery: ["Congregation-led"],
-      deliveryNote: "Parish priest and volunteers; Dow Jones Architects on the masterplan.",
+      deliveryNote: "Parish, volunteers and artists; Dow Jones Architects on Phase 1.",
       funding: ["Volunteer effort", "Charitable giving", "Fundraising"],
-      fundingNote: "Harvest sales have raised thousands for CAFOD.",
-      planning: ["Listed building consent", "Change of use"],
-      planningNote: "Phase 1 restoration of the church interior and its artworks.",
-      notes: "When the parish primary school closed in 2002 the priest invited artists into the tall, north-lit building. In 2005 volunteers with no gardening experience turned waste ground behind the church into a productive kitchen garden. Both cost almost nothing."
+      fundingNote: "Garden produce sold by donation in support of CAFOD.",
+      planning: [],
+      planningNote: "Phase 1: repairs, a reordered sanctuary and a lean-to extension with toilets.",
+      notes: "When the parish school closed in 2002, the priest invited artists into the building. From 2005, volunteers turned derelict ground behind the church into a kitchen garden. Both cost almost nothing."
     },
     publicness: {
       rows: [
         ["Ownership",         "Low",         "Roman Catholic Archdiocese of Westminster"],
         ["Management",        "Low-Medium",  "Parish-run, with the studios as a self-organising community"],
-        ["Physical access",   "Medium",      "Steps to the church; garden and studios uneven"],
-        ["Perceptual access", "Low-Medium",  "Nothing on the street says the precinct is enterable"],
-        ["Social inclusivity","Medium",      "Warm to those who know; opaque to those who do not"],
-        ["Animation",         "Medium",      "Mass, studio life and seasonal gardening"]
+        ["Physical access",   "Medium",      "Large steps to the main door; no toilet"],
+        ["Perceptual access", "Low-Medium",  "Tall walls and a side-on sign — people walking from the west miss it"],
+        ["Social inclusivity","Medium",      "Church open daily 7am–7pm; the garden gate is usually shut"],
+        ["Animation",         "Medium",      "Mass, studios and seasonal gardening; usually empty in between"]
       ],
       overall: "Medium Publicness",
-      notes: "Publicness here is relational — it runs through people rather than through an always-open door. That is a strength for depth and a weakness for reach."
+      notes: "The church is open daily, 7am–7pm, but on repeated visits it was almost always empty. Much of its community life — studios, garden, children's corner, food bank — cannot be seen from the street."
     },
     interaction: {
       rows: [
         ["Activity mix",             "Medium-High", "Worship, making, growing, learning"],
-        ["Design for engagement",    "Medium",      "The garden gathers; the courtyard between uses is undesigned"],
-        ["Lingering opportunities",  "Medium",      "No café or shelter, but generous outdoor ground"],
-        ["Multi-faith opportunities","Medium-High", "Studios welcome practitioners of all Christian traditions and none"],
+        ["Design for engagement",    "Medium",      "A children's corner with books but no seating; the courtyard is undesigned"],
+        ["Lingering opportunities",  "Medium",      "No toilet, kitchen or seating for families"],
+        ["Multi-faith opportunities","Medium-High", "Studios welcome artists of all Christian traditions and none"],
         ["Facilitation",             "High",        "Priest, artists and gardeners all act as hosts"]
       ],
       overall: "Emerging",
-      notes: "Strong bonds among artists, gardeners and congregation; the next challenge is widening the circle to passers-by — which is exactly what the masterplan sets out to do."
+      notes: "Strong bonds among artists, gardeners and congregation. The challenge is reaching the families in the park across the road."
     },
-    scores: { publicness: .46, interaction: .58 }
+    scores: { publicness: .46, interaction: .58 },
+    /* position on the site-visit graph: familiarity → right, most locals → up (0–1, axes cross at .5) */
+    siteVisitGraph: { familiarity: 0.13, locals: 0.63 },
   },
 
   /* ------------------------------------------------------ 10 */
   "st-johns-churchyard-wapping": {
-    lastChecked: "Jul 2026",
+    lastChecked: "Sep 2026",
     siteTags: ["Tower Hamlets", "Grade II tower", "Public garden", "Churchyard", "Semi-secular"],
     interventionTags: ["Single", "Public", "Council-managed", "Permanent", "On-site", "Council & public funds"],
     annoSpace: "image",
@@ -580,54 +582,56 @@ const DETAIL = {
       { label: "Gravestones against the wall", x: 4, y: 34, w: 30, h: 16, kind: "buff" },
       { label: "The path through", x: 17, y: 54, w: 24, h: 28, kind: "green" }
     ],
-    overview: "The churchyard of Wapping's bombed parish church — a public park since 1951, framed by the surviving 1756 tower, chest tombs and the old dock wall. Open every day, and almost silent.",
+    overview: "The churchyard of Wapping's bombed parish church — a public park since 1951, near the surviving tower, with 18th-century chest tombs and headstones against the wall. Open every day, and almost always quiet.",
     sacrednessRating: "Low-Medium",
-    context: "An extraordinary surviving ensemble on Scandrett Street: tower, tombs, Coade-stone charity school and dock wall, in a neighbourhood long on history and short on shared space.",
+    context: "Near the river but without a view of it, enclosed by high brick walls and housing, close to St Patrick's and Wapping's other green spaces.",
     week: [
-      { label: "Churchyard", cells: [ { start: 0, span: 7, text: "Open daily — no gate, no programme", accent: true } ] },
+      { label: "Churchyard", cells: [ { start: 0, span: 7, text: "Open daily — free, no programme", accent: true } ] },
       { label: "Programme", cells: [ { start: 0, span: 7, text: "None: this is the gap this entry records", quiet: true } ] }
     ],
     process: {
       scales: ["Site"],
-      scaleNote: "One intervention, in 1951 — and nothing since.",
+      scaleNote: "One intervention, in 1951 — and little since.",
       typologies: ["Churchyard", "Tower", "Tombs"],
       delivery: ["Council-managed"],
       deliveryNote: "London Borough of Tower Hamlets.",
       funding: ["Council & public funds"],
       fundingNote: "Routine maintenance only.",
-      planning: ["Listed building consent"],
-      planningNote: "The tower and school are separately listed.",
-      notes: "St John's was destroyed in the Blitz, leaving the baroque-capped tower — its clock still read across the river — and a shell later converted to flats. The churchyard opposite was made a public park in 1951. The hard work of access was done then; what is missing is animation."
+      planning: [],
+      planningNote: "The tower and north wall are Grade II listed, in the Wapping Pierhead Conservation Area.",
+      notes: "Only the tower and part of a wall survived wartime bombing; they are now Grade II listed. The churchyard became a public park in 1951, and little has changed since."
     },
     publicness: {
       rows: [
         ["Ownership",         "High",        "Borough-owned public open space"],
         ["Management",        "Medium",      "Routine grounds maintenance, no active stewardship"],
-        ["Physical access",   "High",        "Level, open, step-free from the street"],
-        ["Perceptual access", "High",        "No gates or fees at any hour"],
+        ["Physical access",   "High",        "Level paths and two entrances, but cracked paving"],
+        ["Perceptual access", "High",        "Open, but little signals that it is a place to stop"],
         ["Social inclusivity","High",        "Free and unconditional"],
-        ["Animation",         "Low",         "No programming, interpretation or reason to stop"]
+        ["Animation",         "Low",         "No programming, and one bench"]
       ],
       overall: "High Publicness",
-      notes: "L5 open daily — high publicness, minimal invitation. The site's stories (tower, tombs, school, dock wall) are told nowhere on site."
+      notes: "High publicness, minimal invitation. The plaque to Thomas Rainsborough is small and set high on the wall, easily missed."
     },
     interaction: {
       rows: [
         ["Activity mix",             "Low",  "Passing through, occasional bench-sitting"],
         ["Design for engagement",    "Low",  "One bench, no gathering points, no shelter"],
-        ["Lingering opportunities",  "Low",  "Little reason and little comfort to stay"],
+        ["Lingering opportunities",  "Low",  "Little reason or comfort to stay"],
         ["Multi-faith opportunities","Low",  "None currently — a mixed neighbourhood with nothing offered"],
-        ["Facilitation",             "Low",  "No friends group, no staff, no events"]
+        ["Facilitation",             "Low",  "No friends group, staff or events"]
       ],
       overall: "Dormant",
-      notes: "The classic 'open but passive' site: fully public, historically rich and socially quiet. In a neighbourhood short of shared space, that is an opportunity rather than a failing."
+      notes: "A classic 'open but passive' site: a useful shortcut, historically rich and socially quiet. In a neighbourhood short of shared space, that is an opportunity rather than a failing."
     },
-    scores: { publicness: .86, interaction: .14 }
+    scores: { publicness: .86, interaction: .14 },
+    /* position on the site-visit graph: familiarity → right, most locals → up (0–1, axes cross at .5) */
+    siteVisitGraph: { familiarity: 0.38, locals: 0.21 },
   },
 
   /* ------------------------------------------------------ 11 */
   "paddington-old-cemetery": {
-    lastChecked: "Jul 2026",
+    lastChecked: "Sep 2026",
     siteTags: ["Brent", "Grade II chapels", "Cemetery & green space", "Cemetery", "Semi-secular"],
     interventionTags: ["Multiple", "Public", "Council-managed", "Friends & volunteers", "Evolving", "On-site", "Vacant buildings"],
     annoSpace: "image",
@@ -636,51 +640,52 @@ const DETAIL = {
       { label: "The main avenue", x: 72, y: 53, w: 25, h: 32, kind: "green" },
       { label: "Mown grass between graves", x: 32, y: 60, w: 30, h: 22, kind: "green" }
     ],
-    overview: "One of the first cemeteries built after the 1852 Burial Act, sold by Westminster to Brent for £5 in 1986. A well-loved green space whose twin Gothic chapels stand empty at its heart — with a repair-and-reuse strategy now gathering pace.",
+    overview: "A Victorian cemetery opened in 1855 and sold by Westminster to Brent for £5 in 1986. A well-used green space whose twin Gothic chapels stand empty at its heart — with a reuse plan now in development.",
     sacrednessRating: "Medium",
-    context: "A Grade II registered landscape of mature trees and wildflower areas off Willesden Lane, still an active cemetery, wrapped around two vacant listed buildings.",
+    context: "Off Willesden Lane in Kilburn, surrounded by housing and a school; a Grade II registered landscape with one entrance.",
     week: [
-      { label: "Grounds", cells: [ { start: 0, span: 7, text: "Open daily as cemetery and green space", accent: true } ] },
-      { label: "Burials", cells: [ { start: 0, span: 5, text: "Active cemetery and columbarium" } ] },
-      { label: "Friends", cells: [ { start: 5, span: 2, text: "Volunteering, apiary and seasonal events" } ] },
-      { label: "Chapels", cells: [ { start: 0, span: 7, text: "Closed — repair and reuse strategy in development", quiet: true } ] }
+      { label: "Grounds", cells: [ { start: 0, span: 7, text: "Open daily from 09:00 — closing time varies by season", accent: true } ] },
+      { label: "Burials", cells: [ { start: 0, span: 7, text: "Working cemetery with a columbarium" } ] },
+      { label: "Chapels", cells: [ { start: 0, span: 7, text: "Closed — reuse plan in development", quiet: true } ] }
     ],
     process: {
       scales: ["Building", "Site", "5 years"],
       scaleNote: "Medium scale, on-site: landscape already works, buildings do not.",
       typologies: ["Cemetery", "Twin chapels", "Lodge & gates"],
       delivery: ["Council-managed", "Friends & volunteers", "Charity partner needed"],
-      deliveryNote: "Brent with the London Historic Buildings Trust since 2023.",
+      deliveryNote: "Brent, with the London Historic Buildings Trust leading the chapel reuse plan.",
       funding: ["Council & public funds", "Grant", "Charitable giving"],
-      fundingNote: "Initial funding secured towards returning the chapels to community use.",
-      planning: ["Listed building consent", "Change of use"],
+      fundingNote: "Options appraisal (2024–25) funded by Brent, the National Lottery Heritage Fund and the Pilgrim Trust.",
+      planning: ["Listed building consent"],
       planningNote: "Both chapels are Grade II listed; the landscape is Grade II registered.",
-      notes: "Laid out in 1855 by Thomas Little for the Paddington Burial Board, the cemetery arranges horseshoe paths around a centrepiece of twin Gothic chapels in Kentish ragstone — one Anglican, one Nonconformist. The sale for £5 in 1986 sparked the community action that became the Friends group."
+      notes: "Laid out in 1855 by Thomas Little around twin Gothic chapels. Sold to Brent for £5 in 1986; the Friends group formed in 2000."
     },
     publicness: {
       rows: [
         ["Ownership",         "High",        "Brent-owned public cemetery"],
         ["Management",        "Medium-High", "Council with an organised Friends group"],
-        ["Physical access",   "High",        "Level paths throughout the grounds"],
-        ["Perceptual access", "High",        "Grounds openly enterable; chapels visibly shut"],
+        ["Physical access",   "High",        "Wheelchair-suitable paths, but one entrance and no through-route"],
+        ["Perceptual access", "High",        "Signs for walking routes and a heritage trail; the chapels are visibly shut"],
         ["Social inclusivity","High",        "Free and open to all in a diverse neighbourhood"],
-        ["Animation",         "Medium",      "Everyday walkers and Friends' events; the centre contributes nothing"]
+        ["Animation",         "Medium",      "Dog walkers, mourners and Friends; the chapels contribute nothing"]
       ],
       overall: "High Publicness",
-      notes: "A stark publicness gradient across one site: grounds at L5, chapels at L1. The gap is architectural, not attitudinal."
+      notes: "A stark gradient across one site: grounds open daily, chapels closed. With one entrance and few benches, it is visited rather than passed through."
     },
     interaction: {
       rows: [
-        ["Activity mix",             "Medium",      "Walking, remembrance, volunteering, beekeeping"],
-        ["Design for engagement",    "Low-Medium",  "No indoor space, shelter or café anywhere on site"],
-        ["Lingering opportunities",  "Medium",      "Benches and trees, but nothing weatherproof"],
+        ["Activity mix",             "Medium",      "Walking, dog walking, remembrance, beekeeping"],
+        ["Design for engagement",    "Low-Medium",  "No indoor space or café; few benches"],
+        ["Lingering opportunities",  "Medium",      "Few benches, and the toilets were closed on the site visit"],
         ["Multi-faith opportunities","Medium-High", "Anglican and Nonconformist chapels; burials of many faiths"],
-        ["Facilitation",             "Medium",      "Friends host events; no daily staffed presence"]
+        ["Facilitation",             "Medium",      "Friends volunteer; no daily staffed presence"]
       ],
       overall: "Emerging",
-      notes: "Everyday walkers, mourners and Friends' events coexist happily. The vacant chapels contribute nothing yet to social life — the single largest untapped interior in this database."
+      notes: "Dogs start conversations: near the entrance, walkers greet each other. Deeper in, it can feel empty. The vacant chapels are the largest untapped interior in this database."
     },
-    scores: { publicness: .82, interaction: .5 }
+    scores: { publicness: .82, interaction: .5 },
+    /* position on the site-visit graph: familiarity → right, most locals → up (0–1, axes cross at .5) */
+    siteVisitGraph: { familiarity: 0.13, locals: 0.41 },
   }
 };
 

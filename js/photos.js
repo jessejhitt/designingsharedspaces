@@ -428,54 +428,54 @@ const CASE_CAPTIONS = {
   "garden-museum": [
     "The west door \u2014 the medieval arch fitted with automatic glass doors",
     "The courtyard garden, looked in on from the caf\u00e9 and galleries",
-    "The inserted structure seen from above, with the caf\u00e9 below",
+    "The shop, on the way from the galleries to the garden",
     "Permanent history integrated into the space, at the altar"
   ],
   "sheriff-centre": [
-    "St James' from Sherriff Road \u2014 a working parish church",
+    "St James' from the street \u2014 a working parish church",
     "'In a church? Yes! Plus much more.' \u2014 the post office sign",
     "The Sanctuary Caf\u00e9 in the south aisle",
     "Hullabaloo soft play, two storeys in the north aisle"
   ],
   "grand-junction": [
     "St Mary Magdalene's from the green, with benches along the path",
-    "The canal-side caf\u00e9 in the new wing",
-    "This month's programme, posted at the gate",
+    "The caf\u00e9 in the new wing",
+    "The programme noticeboard on the green",
     "Inside the caf\u00e9 \u2014 the building's everyday way in"
   ],
   "paddington-old-cemetery": [
     "The main avenue \u2014 the site's clearest public route",
-    "The gates on Willesden Lane",
+    "The entrance gates, with opening times",
     "The twin chapels, closed and under repair",
     "Interpretation at the entrance"
   ],
   "tower-hamlets-cemetery-park": [
     "A path through the burial landscape, with a bench off it",
-    "Wayfinding at the boundary \u2014 the park as a through route",
+    "A Friends sign at an entrance, with opening times",
     "Graves held in ivy \u2014 remembrance and nature together",
     "'Plants & People' \u2014 interpretation for an urban nature reserve"
   ],
   "st-patricks-wapping": [
     "St Patrick's from Green Bank",
-    "The community garden announced on the gate",
+    "St Patrick's Kitchen Garden, announced beside the gate",
     "The nave, in fixed pews",
     "Children's books on the aisle wall \u2014 no seating, no signage"
   ],
   "st-johns-churchyard-wapping": [
-    "The churchyard path, running between two streets",
+    "The path through the churchyard \u2014 a shortcut",
     "Gravestones set against the wall \u2014 an evolution of sacred space",
-    "The historical plaque on the boundary wall",
+    "The Thomas Rainsborough plaque, set high on the wall",
     "Open grass, unprogrammed"
   ],
   "st-stephen-walbrook": [
     "St Stephen Walbrook in the City, beside a coffee chain",
     "The noticeboard: a warm welcome to all, to visit, to reflect, to pray",
-    "Lunchtime jazz, advertised on the pavement",
+    "Rush Hour Jazz, advertised on the pavement",
     "The churchyard garden \u2014 benches, shade and a fountain"
   ],
   "lambeth-palace-library": [
     "The library's street edge on Lambeth Palace Road",
-    "Bronze fins and a name \u2014 the public face of an institution",
+    "Metal fins and the library's name above the entrance",
     "The approach along the main road",
     "The boundary wall, holding the street"
   ]

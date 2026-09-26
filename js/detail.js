@@ -2,11 +2,11 @@
    site.html?id=<site-id>
    Laid out to the Figma frame for a site (newPWR.pdf, frame 10),
    in the Figma's order:
-     hero photo · annotated boxes · Site / Intervention tags
+     hero photo · Site / Intervention tags
      → Overview (text · ratings + sacredness triangle · map · quick links)
      → gallery → [photo + Interventions Process | Uses · Timetable · Context + Site analysis]
      → Publicness Analysis → Interaction Analysis
-     → [publicness / interaction bars + the quadrant | tall photo]
+     → [publicness / interaction bars + the site-visit graph | tall photo]
      → Community comments → Opportunity
    Then the prototype's own additions, which the Figma does not show:
      the full story · what made it work · sources · related sites.
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const o = site.opportunity;
   const title   = d.pageTitle   || site.name;
   const address = d.pageAddress || site.address;
-  document.title = `${site.shortName} — Planning with Religion`;
+  document.title = `${site.shortName} — Designing Shared Spaces Together`;
 
   const INTERACTION_SCALE = { Dormant: 1, Passive: 2, Emerging: 3, Active: 5 };
   /* "High Publicness" rates as High — without the strip it fell through to the
@@ -46,30 +46,18 @@ document.addEventListener("DOMContentLoaded", () => {
                     || INTERACTION_SCALE[r] || 3;
   const rate = (label, tone) =>
     `<span class="rate rate--${tone}" data-scale="${scaleOf(label)}">${label}</span>`;
+  /* Every site has photos 1–4; only Grand Junction has a 5th (the context shot).
+     Asking for a missing one logs a 404 before the fallback, so go straight to 1. */
+  const PHOTO_COUNT = { "grand-junction": 5 };
+  const shot = n => (n <= (PHOTO_COUNT[site.id] || 4) ? n : 1);
   const img = (n, alt = site.shortName) =>
-    `<img src="${heroImg(site, n)}" alt="${alt}" loading="lazy" onerror="this.onerror=null;this.src='${heroImg(site, 1)}'">`;
+    `<img src="${heroImg(site, shot(n))}" alt="${alt}" loading="lazy" onerror="this.onerror=null;this.src='${heroImg(site, 1)}'">`;
 
   /* the photographer's own caption for shot n, where there is one */
   const shotCap = (s, n) => {
     const caps = (typeof CASE_CAPTIONS !== "undefined" && CASE_CAPTIONS[s.id]) || null;
     return caps && caps[n - 1] ? `<figcaption>${caps[n - 1]}</figcaption>` : "";
   };
-
-  /* ---------------- hero annotations ----------------
-     Two coordinate spaces are supported.
-
-     The original Figma sets are percentages of the hero BOX, and are
-     left alone. The sets written against the photographs are
-     percentages of the IMAGE (annoSpace: "image"), because the hero
-     is object-fit: cover — it crops a different amount at every
-     viewport width, so a box percentage would drift off the thing it
-     labels. Those are mapped to box space by placeAnnotations()
-     below, on load and on resize. */
-  const annoSpace = d.annoSpace || "box";
-  const annos = (d.annotations || []).map(a => `
-    <div class="anno" data-kind="${a.kind || ""}" data-space="${annoSpace}"
-         data-x="${a.x}" data-y="${a.y}" data-w="${a.w}" data-h="${a.h}"
-         style="left:${a.x}%; top:${a.y}%; width:${a.w}%; height:${a.h}%">${a.label}</div>`).join("");
 
   /* ---------------- sacredness triangle ---------------- */
   const T = x.triangle || { sacred: .34, secular: .33, multifaith: .33 };
@@ -152,51 +140,46 @@ document.addEventListener("DOMContentLoaded", () => {
       </section>`;
   }
 
-  /* ---------------- quadrant ---------------- */
+  /* ---------------- site-visit graph ----------------
+     From the toolkit iteration "site visit analysis": two axes crossing
+     at the centre, each with the questions that place a site along it.
+     Positions (0–1) are read off that graph; sites not yet on it get
+     the axes and questions without a dot. */
   const sc = d.scores || { publicness: (site.publicness - 1) / 4, interaction: .5 };
+  const g = d.siteVisitGraph;
   const quadrant = `
-    <div class="quadrant">
-      <div class="quad-plot">
-        <i class="q-arr q-arr--y"></i><i class="q-arr q-arr--x"></i>
-        <span class="quad-label tl">Vibrant but hidden</span>
-        <span class="quad-label tr">Thriving community life</span>
-        <span class="quad-label bl">Opportunity</span>
-        <span class="quad-label br">Open but passive</span>
-        <span class="quad-dot" style="left:${(sc.publicness * 100).toFixed(1)}%; bottom:${(sc.interaction * 100).toFixed(1)}%"
-              title="${site.shortName}"></span>
+    <div class="sv-graph">
+      <div class="sv-plot" role="img" aria-label="${g
+        ? `${site.shortName} on the site-visit graph: designed for the most locals (vertical) against designed for familiarity and comfortability (horizontal).`
+        : `Site-visit graph. ${site.shortName} has not yet been placed on it.`}">
+        <i class="sv-axis sv-axis--y"></i><i class="sv-axis sv-axis--x"></i>
+        <span class="sv-title sv-title--y">Designed for the most locals</span>
+        <span class="sv-title sv-title--x">Designed for familiarity and comfortability</span>
+        ${g ? `<span class="quad-dot" style="left:${(g.familiarity * 100).toFixed(1)}%; bottom:${(g.locals * 100).toFixed(1)}%"
+              title="${site.shortName}"></span>` : ""}
       </div>
-      <span class="axis-caption x-lo">Low publicness</span>
-      <span class="axis-caption x-hi">High publicness</span>
-      <span class="axis-caption y-lo">Low interaction</span>
-      <span class="axis-caption y-hi">High interaction</span>
+      ${g ? "" : `<p class="sv-note">Not yet placed on the site-visit graph.</p>`}
+      <div class="sv-questions">
+        <div>
+          <h5>↑ Designed for the most locals</h5>
+          <ul>
+            <li>Who is the site designed for?</li>
+            <li>How many faiths is it designed for?</li>
+            <li>Are there community uses?</li>
+            <li>Is there freedom and lingering?</li>
+            <li>Are there activities or different uses at most times of the day?</li>
+          </ul>
+        </div>
+        <div>
+          <h5>→ Designed for familiarity and comfortability</h5>
+          <ul>
+            <li>Do people feel welcomed?</li>
+            <li>Are people aware of how to use the space?</li>
+            <li>Are sacred–secular distinctions clear?</li>
+          </ul>
+        </div>
+      </div>
     </div>`;
-
-  /* ---------------- site analysis: the annotated boxes as a simple plan ---------------- */
-  function siteAnalysis() {
-    const A = d.annotations || [];
-    if (!A.length) return `<p class="sa-empty">No site analysis recorded yet.</p>`;
-    const minX = Math.min(...A.map(a => a.x)), maxX = Math.max(...A.map(a => a.x + a.w));
-    const minY = Math.min(...A.map(a => a.y)), maxY = Math.max(...A.map(a => a.y + a.h));
-    const W = 280, H = 240, pad = 6;
-    const k = Math.min((W - 2 * pad) / (maxX - minX), (H - 2 * pad) / ((maxY - minY) * 852 / 1280));
-    const fill = { green: "var(--green-wash)", buff: "var(--buff)", red: "var(--red-wash)", "": "var(--ink-wash)" };
-    const stroke = { green: "var(--green)", buff: "#C9885A", red: "var(--red)", "": "var(--ink-soft)" };
-    const rects = A.map(a => {
-      const rx = pad + (a.x - minX) * k, ry = pad + (a.y - minY) * 852 / 1280 * k;
-      const rw = a.w * k, rh = Math.max(a.h * 852 / 1280 * k, 14);
-      return `<g><rect x="${rx.toFixed(1)}" y="${ry.toFixed(1)}" width="${rw.toFixed(1)}" height="${rh.toFixed(1)}"
-                 rx="3" fill="${fill[a.kind || ""]}" stroke="${stroke[a.kind || ""]}" stroke-width="1.2"/>
-              <text x="${(rx + rw / 2).toFixed(1)}" y="${(ry + rh / 2 + 4).toFixed(1)}" text-anchor="middle" class="sa-lbl">${a.label}</text></g>`;
-    }).join("");
-    return `
-      <svg class="sa-svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="Simple site analysis of ${site.shortName}">${rects}</svg>
-      <ul class="sa-key">
-        <li><i style="background:var(--green-wash);border-color:var(--green)"></i>Open space &amp; routes</li>
-        <li><i style="background:var(--red-wash);border-color:var(--red)"></i>Sacred building</li>
-        <li><i style="background:var(--buff);border-color:#C9885A"></i>New intervention</li>
-        <li><i style="background:var(--ink-wash);border-color:var(--ink-soft)"></i>Neighbouring use</li>
-      </ul>`;
-  }
 
   /* ---------------- process record ---------------- */
   const p = d.process || {};
@@ -220,15 +203,6 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="wrap hero-title">
       <h1>${title}</h1>
       <p class="addr">${address}</p>
-    </div>
-
-    <div class="hero-annos" aria-hidden="true">${annos}</div>
-
-    <div class="d-wrap anno-list">
-      <h3>What you are looking at</h3>
-      <div class="pill-row">
-        ${(d.annotations || []).map(a => `<span class="pill pill--light">${a.label}</span>`).join("")}
-      </div>
     </div>
 
     <div class="d-wrap hero-tags">
@@ -313,19 +287,13 @@ document.addEventListener("DOMContentLoaded", () => {
             ${timetableHTML()}
           </section>
 
-          <div class="duo">
-            <section class="panel ctx">
-              <figure class="ctx-fig">${img(5)}</figure>
-              <div class="ctx-body">
-                <h2 class="panel-title">Context</h2>
-                <p>${d.context || ""}</p>
-              </div>
-            </section>
-            <section class="panel sa">
-              <h2 class="panel-title">Site analysis</h2>
-              ${siteAnalysis()}
-            </section>
-          </div>
+          <section class="panel ctx">
+            <figure class="ctx-fig">${img(5)}</figure>
+            <div class="ctx-body">
+              <h2 class="panel-title">Context</h2>
+              <p>${d.context || ""}</p>
+            </div>
+          </section>
         </div>
       </div>
     </section>
@@ -427,8 +395,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const heroHead = mount.querySelector(".detail-hero .head-row");
   if (heroHead) {
     heroHead.classList.add("head-row--inverse");
-    const m = heroHead.querySelector(".mark");
-    if (m) m.classList.add("mark--inverse");
+    const m = heroHead.querySelector(".logo");
+    if (m) m.classList.add("logo--inverse");
   }
 
   /* bars grow in once visible */
@@ -474,46 +442,6 @@ document.addEventListener("DOMContentLoaded", () => {
     e.target.reset();
     draw();
   });
-
-  /* ----------------------------------------------------------
-     Map image-space annotations onto the hero box.
-
-     The hero is object-fit: cover, so the photograph is scaled up
-     until it fills the box and the overflow is cropped evenly on
-     the two long sides. An annotation written as a percentage of
-     the photograph therefore has to be pushed through the same
-     transform, or it drifts off its subject as the window changes.
-     ---------------------------------------------------------- */
-  function placeAnnotations() {
-    const hero = document.querySelector(".hero-bg");
-    if (!hero || !hero.naturalWidth) return;
-    const boxes = document.querySelectorAll('.anno[data-space="image"]');
-    if (!boxes.length) return;
-
-    const parent = boxes[0].offsetParent || hero.parentElement;
-    const bw = parent.clientWidth, bh = parent.clientHeight;
-    if (!bw || !bh) return;
-
-    const scale = Math.max(bw / hero.naturalWidth, bh / hero.naturalHeight);
-    const rw = hero.naturalWidth * scale, rh = hero.naturalHeight * scale;
-    const ox = (bw - rw) / 2, oy = (bh - rh) / 2;
-
-    boxes.forEach(el => {
-      const x = +el.dataset.x, y = +el.dataset.y, w = +el.dataset.w, h = +el.dataset.h;
-      el.style.left   = ((ox + (x / 100) * rw) / bw * 100) + "%";
-      el.style.top    = ((oy + (y / 100) * rh) / bh * 100) + "%";
-      el.style.width  = ((w / 100) * rw / bw * 100) + "%";
-      el.style.height = ((h / 100) * rh / bh * 100) + "%";
-      el.style.visibility = "visible";
-    });
-  }
-
-  const heroImgEl = document.querySelector(".hero-bg");
-  if (heroImgEl) {
-    if (heroImgEl.complete) placeAnnotations();
-    else heroImgEl.addEventListener("load", placeAnnotations);
-  }
-  window.addEventListener("resize", placeAnnotations);
 
   /* related sites */
   const related = SITES

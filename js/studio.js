@@ -1,5 +1,5 @@
 /* ============================================================
-   PLANNING WITH RELIGION — the site studio
+   DESIGNING SHARED SPACES TOGETHER — the site studio
    One page, two ways in, one reading.
    Route A  "already in use"  → publicness diagnostic
    Route B  "mostly empty"    → draw the plot + fill the week
@@ -64,8 +64,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
   /* Stakeholders the matcher tests against. Needs are 0–5 on the
-     same scale as the site profile; `use` links to TAXONOMY.uses
-     so the precedent lookup can reach into the real database. */
+     same scale as the site profile; `use` names the matching
+     entry in TAXONOMY.uses. */
   const GROUPS = [
     { name: "Parent & toddler group",      kind: "community",  use: "Play",
       needs: { size: 2, noise: 3, openness: 4, facilities: 3 } },
@@ -1365,7 +1365,7 @@ document.addEventListener("DOMContentLoaded", () => {
   buildToggles("ctx-row", CONTEXT, state.ctx);
 
   /* ==========================================================
-     THE READING — profile, tiers, matches, precedent
+     THE READING — profile, tiers, matches
      ========================================================== */
   const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
 
@@ -1542,46 +1542,6 @@ document.addEventListener("DOMContentLoaded", () => {
         <p class="m-tip">${remedy.tip} · <span class="route">${remedy.route}</span></p>
       </div>`).join("");
     return scored;
-  }
-
-  /* ---------- precedent ---------- */
-  let lastPrecedentId = null;
-  function renderPrecedent(matches, p) {
-    const box = $("precedent");
-    if (!matches.length) {
-      if (lastPrecedentId !== "empty") {
-        box.innerHTML = '<div class="studio-empty">A comparable case study appears here.</div>';
-        lastPrecedentId = "empty";
-      }
-      return null;
-    }
-    const want = matches[0].g.use;
-    const best = SITES.filter(s => s.isCaseStudy)
-      .map(s => ({
-        s,
-        sc: (s.uses.includes(want) ? 4 : 0) +
-            (3 - Math.abs(s.publicness - p.L)) +
-            (matches[0].g.kind === "commercial" && s.governance === "Social enterprise" ? 2 : 0)
-      }))
-      .sort((a, b) => b.sc - a.sc)[0].s;
-    if (best.id !== lastPrecedentId) {
-      box.innerHTML = caseCard(best);
-      lastPrecedentId = best.id;
-    }
-    /* say why it is the precedent, rather than leaving the user to guess */
-    const shared = INTERVENTIONS
-      .filter(iv => state.chosen.has(iv.id) && iv.precedents.some(pc => pc.id === best.id))
-      .map(iv => iv.precedents.find(pc => pc.id === best.id).why);
-    const gap = Math.abs(best.publicness - p.L);
-    $("precedent-why").innerHTML = shared.length
-      ? `<b>Why this one</b> ${shared[0]}`
-      : `<b>Why this one</b> It already holds ${matches[0].g.use.toLowerCase()},
-         and at ${TAXONOMY.publicnessLabels[best.publicness]} it reads
-         ${gap === 0 ? "at the same level of publicness as your site"
-           : gap === 1 ? "one step from where your site sits"
-           : "as the direction your site could travel in"}.
-         Visit it, and borrow its governance and funding model rather than its look.`;
-    return best;
   }
 
   /* ==========================================================
@@ -2034,8 +1994,7 @@ document.addEventListener("DOMContentLoaded", () => {
     renderQuadrant(p);
     const rec = renderTiers(p);
     const matches = renderMatches(p);
-    const precedent = renderPrecedent(matches, p);
-    lastReading = { p, rec, matches, precedent };
+    lastReading = { p, rec, matches };
     return p;
   }
   function render() {
@@ -2052,7 +2011,7 @@ document.addEventListener("DOMContentLoaded", () => {
      TAKE IT WITH YOU — the brief & the submission file
      ========================================================== */
   function briefHTML() {
-    const { p, rec, matches, precedent } = lastReading;
+    const { p, rec, matches } = lastReading;
     const typed = state.zones.filter(z => z.type !== "pending");
     const today = new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
     const tierName = rec ? TIERS.find(t => t.key === rec.key).name : "—";
@@ -2108,15 +2067,17 @@ document.addEventListener("DOMContentLoaded", () => {
       `<tr><td>${t.name}</td><td>${state.deep[t.key]} / 5</td><td>${t.lead}</td></tr>`).join("");
 
     return `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
-<title>Site studio brief — Planning with Religion</title>
+<title>Site studio brief — Designing Shared Spaces Together</title>
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAC/UlEQVR42u2XT2/URhjGf++MvWuzWXbVQlZEtA1KEJcECgcScUB8AdqqybmqQO21QuJCv0Th2n6EBqkIzrQciEQQKIgcEAihKK3oUhCb9e76z9oeDt6sQAqJA5vmEku+2KPxb95n5nley8W/bhl28FLs8LULsOMAVp5BJk0x5v17VQBEEKW2B6BYLmeTvwfCGEOaJMRBgEnTLYFYeVa/OHeV0PNQ60ysbAunvJfq559RO3IE5Th0O53cEBsCiAipMTyYu0pjZQWrWOw/N2+NAVCWxf7Dh5k+f46Ro5NE7XYuCJVXArdaxa1WsR23r7dIJotoje041B894saln1leWKBQKmHSdLCbMGq3+WJ6ivHTp4n8DiY1hK0Wz5eW+PvefYqlEnEQcuuXK3x75TJutUISx/0qfTDAWqnjKGLf2BiT33xNp9FAad1/t/j7HPO//kZxaAivXmfp+nVO/fgD8eoq0hv38T7Qg/BXVwmbHmGzSdC7j83OcPDEccJWC3vPHpbvLBA0myjLGqwRiQhKa0QrRGuU1n2PGJ2eIunGaNvGq9dpPv8XbdsbeshAnFBEMGlKuVZD2zqTKwxpv3qVybTdAD03wnYcRGV6myQh6nQQJTuTBQYwJl0z6v8BQIRuEGKS7OwrpbAdd0P9BwdgDKIUrf9ekCYxALpYpLTvU0ySfLwRrRc8JkmzMvcAlFb8s/gAUYqk26Vcq1EZGSGJog0t2drqSq1CAbdSwRjTNyJtWTy++SfLdxYolsv4r18zOj2FW6kQbGJE1lZWrgsFXj59ysM/rhH5fnbcgoAXT57w7PY8SmviIGBoeJiJr87SDXzYJJByAWTBI9ilEit37/Hs9jys+bsxIILtukS+j7Yszlz4iaHh4VyJmAsg9Dz8RuPdOO7t7rWgMUnCyOQkJ7//jgMTE7nj2Nqs7CLCsdmZdRsS09PfrVb55NAo+8fHEa1yfzxXBUQpvpyd2bwli2O6QdA/kgPtCUPPy9+Uigy+KRWlkG2y7N0fk12AN9LgRmAyQ8/oAAAAAElFTkSuQmCC">
 <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   * { box-sizing: border-box; margin: 0; }
   body { font-family: "Onest", "Inter", -apple-system, "Helvetica Neue", Arial, sans-serif; color: #15181B; padding: 40px; max-width: 800px; margin: 0 auto; line-height: 1.5; }
-  /* the site's boxed wordmark at its header size (see .mark in css/style.css) */
-  .mark { display: block; width: 148px; min-height: 134px; padding: 11px 11px 12px; border: 1px solid #15181B; }
-  .mark b { display: block; font-size: 18.9px; font-weight: 800; line-height: 1.06; letter-spacing: -.032em; text-transform: uppercase; }
-  .mark i { display: block; margin-top: 6px; font-style: normal; font-size: 9.45px; font-weight: 500; line-height: 1.28; letter-spacing: -.005em; white-space: nowrap; }
+  /* the site's wordmark (see .logo in css/style.css) */
+  .logo { display: inline-flex; flex-direction: column; align-items: flex-start; font-size: 22px; font-weight: 800; line-height: 1.12; letter-spacing: -.012em; text-transform: uppercase; }
+  .logo span { display: block; padding: 0 .2em; white-space: nowrap; }
+  .logo .l1, .logo .l3 { background: #74C0C1; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .logo .l3 { align-self: flex-end; }
   h1 { font-size: 28px; margin: 22px 0 6px; font-weight: 700; line-height: 1.1; letter-spacing: -.028em; }
   .sub { color: #5E656B; margin-bottom: 22px; }
   h2 { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; margin: 26px 0 10px; border-bottom: 1px solid #15181B; padding-bottom: 6px; }
@@ -2131,7 +2092,7 @@ document.addEventListener("DOMContentLoaded", () => {
   footer { margin-top: 28px; font-size: 12px; color: #5E656B; }
   @media print { body { padding: 0; } }
 </style></head><body>
-  <span class="mark"><b>Planning<br>with<br>Religion</b><i>${MARK_LINE}</i></span>
+  <span class="logo"><span class="l1">Designing</span><span>Shared Spaces</span><span class="l3">Together</span></span>
   <h1>Site studio brief</h1>
   <p class="sub">A draft for discussion — prepared ${today}. ${modeLine}.</p>
 
@@ -2161,18 +2122,15 @@ document.addEventListener("DOMContentLoaded", () => {
   <table><tr><th>Theme</th><th>Score</th><th>What it asks</th></tr>${deepRows}</table>
   <p style="font-size:12px; color:#5E656B">After The Glass-House, <em>Making Buildings Work for Your Community</em> (2011), and Empowering Design Practices, <em>Explore Design: Community Buildings</em>.</p>` : ""}
 
-  ${precedent ? `<h2>A precedent to visit</h2>
-  <p>${precedent.name} — ${precedent.borough}. ${precedent.summary}</p>` : ""}
-
   <h2>Next steps</h2>
   <p>1. Share this sheet with the PCC, trustees or Friends group and agree the first tier of action.<br>
      2. Run the cheapest taster in the table above before committing to anything permanent.<br>
-     3. Walk the precedent site; borrow its governance and funding model, not just its look.<br>
+     3. Visit one of the related case studies; borrow its governance and funding model, not just its look.<br>
      4. Take the design checklist to site with two or three other people, score it separately, and compare.<br>
      5. Seek pre-application advice from your diocesan body and the planning authority — it is free or cheap, and it will tell you what is likely to be approved.<br>
      6. File the site via the database's Submit page so that the next group can learn from it.</p>
 
-  <footer>Planning with Religion · generated by the site studio · nothing was stored or transmitted in preparing this brief.<br>
+  <footer>Designing Shared Spaces Together · generated by the site studio · nothing was stored or transmitted in preparing this brief.<br>
   Guidance drawn from The Glass-House Community Led Design, Empowering Design Practices, and Crossing the Threshold (Diocese of Hereford / HRBA).</footer>
 </body></html>`;
   }
@@ -2193,7 +2151,7 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("Describe the site first — the file follows the reading.");
       return;
     }
-    const { p, rec, matches, precedent } = lastReading;
+    const { p, rec, matches } = lastReading;
     const typed = state.zones.filter(z => z.type !== "pending");
     const out = {
       type: "Site studio session",
@@ -2249,14 +2207,13 @@ document.addEventListener("DOMContentLoaded", () => {
       compatibleUses: matches.map(m => ({
         use: m.g.name, kind: m.g.kind, fit: m.fit + "%",
         intervention: m.remedy.tip, fundingRoute: m.remedy.route
-      })),
-      precedent: precedent ? precedent.name : null
+      }))
     };
     const json = JSON.stringify(out, null, 2);
     const blob = new Blob([json], { type: "application/json" });
     const a = document.createElement("a");
     a.href = URL.createObjectURL(blob);
-    a.download = "pwr-studio-brief.json";
+    a.download = "dsst-studio-brief.json";
     a.click();
     URL.revokeObjectURL(a.href);
   });

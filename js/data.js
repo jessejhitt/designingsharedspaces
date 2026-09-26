@@ -1,5 +1,5 @@
 /* ============================================================
-   PLANNING WITH RELIGION — site database
+   DESIGNING SHARED SPACES TOGETHER — site database
    One shared source of truth for the case studies page, the
    opportunities page, the map and every detail page.
 
@@ -38,7 +38,7 @@ const SITES = [
     borough: "Westminster",
     status: "established",
     isCaseStudy: true,
-    summary: "A Grade I Victorian Gothic church beside the canal, largely closed for decades, restored as a working parish church that is also an arts venue, café and community hub.",
+    summary: "A Grade I Victorian Gothic church beside the Grand Union Canal, restored and extended as an arts venue, café and community hub while remaining a working parish church.",
     faith: "Church of England",
     sacredness: "Active worship",
     typology: "Church in use",
@@ -53,35 +53,40 @@ const SITES = [
     uses: ["Worship", "Café", "Culture & music", "Learning", "Events & hire", "Heritage"],
     tags: ["Grade I listed", "Mixed use", "Undercroft", "New wing"],
     story: [
-      "G. E. Street's church of 1867–78 is one of London's finest Victorian Gothic interiors, but by the 2000s it stood largely closed to the public and on the heritage-at-risk register, in one of Westminster's most deprived wards. Rather than sell or mothball it, the parish joined a consortium with the Diocese of London and the Paddington Development Trust, supported by Westminster City Council, to reimagine the building as both a parish church and a shared cultural venue.",
-      "The National Lottery Heritage Fund awarded £3.6 million towards a project whose total cost approached £7 million. Caroe Architecture led the conservation of the church itself — recognised with the King of Prussia Gold Medal in 2018 — while Dow Jones Architects added a compact new wing on a steep, awkward sliver of land at the west end, holding a café, education room, offices, lift and level access, and opening up the painted undercroft as a performance space. Construction ran from July 2017 to July 2019, and the Lord Mayor of Westminster declared Grand Junction open in October 2019 — roughly twelve years after planning began.",
-      "The result is a genuinely mixed economy of uses under one roof: Sunday and weekday worship continues in the nave, while the same spaces host concerts, exhibitions, school visits, wellbeing classes, heritage tours and private hire. The venue is operated by the Paddington Development Trust, a local regeneration charity, with trading income supporting a free community and education programme. Around 200 trainees, apprentices and volunteers were involved during delivery."
+      "G. E. Street's St Mary Magdalene (1867–78) is Grade I listed and considered his masterpiece. By the 2000s it had a congregation of about 25, was rarely open, and had no running water or lighting. From 2005 the parish worked with the Paddington Development Trust (PDT), a charity set up by local residents, which became the first community business in England to hold a lease on a church.",
+      "A £3.6m National Lottery Heritage Fund grant supported a project costing about £7m. Caroe Architecture restored the interior (King of Prussia Gold Medal, 2018), and Dow Jones Architects added a four-storey wing on a steep, narrow site between the church and the school, with a café, education room, lift and visitor facilities. Over 100 statements of support backed the planning application. Grand Junction opened in 2019.",
+      "Worship continues alongside concerts, inclusive club nights, classes, ESOL workshops, heritage tours and venue hire. On the site visit, the setting stood out: benches, planting and the canal path around the church, bike racks, and bold, consistent signage. The café was closed at the time, but beside the school it was easy to imagine it busy with waiting parents."
     ],
     whatMadeItWork: [
-      "A consortium model: the congregation kept its home while a development trust brought regeneration expertise, fundraising capacity and an operating business plan.",
-      "The new wing solved the practical blockers to publicness — no toilets, no level access, no warm room — rather than treating them as afterthoughts.",
-      "Sacred and secular uses were timetabled, not partitioned: worship, café and concerts share the same architecture at different hours.",
-      "Long patience: development funding in stages, with about twelve years from first plans to opening."
+      "A partnership: the parish kept its church while PDT brought fundraising, programming and a business plan.",
+      "The new wing fixed the practical barriers — toilets, level access, a warm room and a café.",
+      "Worship, café, events and learning share the building at different times rather than being walled off.",
+      "The public realm around the church — benches, planting and the canal path — carries the welcome beyond the front door."
     ],
     assessment: {
       publicnessNotes: "Open Monday to Saturday with a free café and regular free events; some spaces close for services and private hire. Clear street presence but entry is via a housing-estate close, so signage and programming do the inviting.",
       interactionNotes: "High mix of ages and cultures; paid and free activities sit side by side, and the café gives strangers a reason to linger without a ticket."
     },
     opportunity: {
-      headline: "Reopen the everyday front door",
+      headline: "Open the church more of the week",
       dimensions: ["Use"],
       oppScale: "Small",
       currentState: "In use but underused",
       whoCouldLead: "Operator in place",
-      note: "The café — the building's everyday, free, no-reason-needed way in — was closed on the site visit recorded here. Regular café hours, or a community café operator in the space, would restore the use that does most of the site's inviting, without any building work."
+      note: "The café opens every day, but the church and heritage wing are open to drop-in visitors on only a few weekdays, 10am–4pm. More open hours in the nave, and clear signs showing when spaces are booked for hire, would let the café's everyday footfall carry into the church."
     },
     quickLinks: [
       { label: "grandjunction.org.uk", url: "https://grandjunction.org.uk" }
     ],
     sources: [
-      { label: "National Lottery Heritage Fund — grant announcements", url: "https://www.heritagefund.org.uk/news/communities-unite-future-st-mary-magdalene" },
+      { label: "Grand Junction — about", url: "https://grandjunction.org.uk/about" },
+      { label: "Grand Junction — opening times", url: "https://grandjunction.org.uk/opening-times/" },
+      { label: "Grand Junction — venue hire", url: "https://grandjunction.org.uk/hire/" },
+      { label: "Grand Junction — project history", url: "https://exhibition.grandjunction.org.uk/" },
       { label: "Architects' Journal — building study of the Dow Jones wing", url: "https://www.architectsjournal.co.uk/buildings/a-broad-church-dow-joness-restoration-of-st-mary-magdalene" },
-      { label: "Grand Junction — project history", url: "https://exhibition.grandjunction.org.uk/" }
+      { label: "Power to Change — case study", url: "https://www.powertochange.org.uk/evidence-and-ideas/case-studies/grand-junction-st-mary-magdalenes-paddington/" },
+      { label: "Caroe Architecture — King of Prussia Gold Medal", url: "https://caroe.com/st-mary-magdalene-paddington-king-of-prussia-award/" },
+      { label: "National Lottery Heritage Fund — grant announcement", url: "https://www.heritagefund.org.uk/news/communities-unite-future-st-mary-magdalene" }
     ]
   },
 
@@ -95,7 +100,7 @@ const SITES = [
     borough: "Camden",
     status: "established",
     isCaseStudy: true,
-    summary: "A working Victorian parish church that took in the local post office when it closed — and grew a café, soft play, debt advice service and food project around it.",
+    summary: "A working Victorian parish church that took in West Hampstead's post office in 2014 — and grew a café, soft play, debt advice and a community fridge around it.",
     faith: "Church of England",
     sacredness: "Active worship",
     typology: "Church in use",
@@ -110,15 +115,15 @@ const SITES = [
     uses: ["Worship", "Café", "Everyday services", "Play", "Culture & music", "Events & hire"],
     tags: ["Post office", "Soft play", "Debt advice", "First of its kind"],
     story: [
-      "When West Hampstead's postmaster decided to retire in 2012 and close his branch, the vicar of St James' — Arthur Blomfield's church of 1885–88, directly opposite the tube station — spotted a tweet from a local estate agent looking for somewhere to rehouse the post office. He offered the church. What followed was two years of business planning, fundraising, consultation and legal wrangling before building work began in April 2014; the Sherriff Centre opened that July, reportedly the first full post office to operate inside a working Church of England church.",
-      "The conversion re-planned the nave rather than the whole building: pews were drawn back towards the altar for Sunday worship, the south aisle became the Sanctuary Café with underfloor heating, the north aisle a two-storey soft play called Hullabaloo, and the crossing a shop and post office counter. A soundproofed Lady Chapel stays available for private prayer through opening hours — a small move that protects quietness inside a deliberately noisy building.",
-      "The structure matters as much as the spaces. The Sherriff Centre is a registered charity with a trading subsidiary; profits from the post office, café, soft play and event hire fund a free, FCA-registered debt advice service (from 2016), Camden's first community fridge (2018), and the Food Share Project set up during Covid. The building now also hosts regular gigs, including a partnership with Sofar Sounds begun in 2019."
+      "When West Hampstead's postmaster decided to retire in 2012, the vicar, Fr Andrew Foreshew-Cain, saw a tweet from a local estate agent looking for a new home for the post office. He offered St James' — a Grade II listed church by Arthur Blomfield, built 1885–88. The post office opened inside the church in July 2014.",
+      "Caröe Architects fitted the new uses into the nave: a three-counter post office in an oak-framed pod at the west end, the Sanctuary Café in the south aisle, Hullabaloo soft play in the north aisle, and a card shop on castors that wheels away for services. The chancel is unchanged and worship seating stays at the east end. A ramp and automatic doors made the church fully accessible. The project cost about £600,000, raised from Post Office and council grants, charitable trusts, parish savings and private donors.",
+      "The Sherriff Centre is a registered charity whose businesses run as separate companies. Their profits fund free debt advice (from 2016), a community fridge (2018) and a food share project. The church has also hosted Open Table, a worship community for LGBTQIA+ Christians and all who believe in an inclusive church."
     ],
     whatMadeItWork: [
-      "It answered a real, everyday need — keeping a post office — so footfall was guaranteed from day one and no one had to be persuaded to visit a church.",
-      "Multiple income streams (post office, café, play, hire) were planned together as one business model, cross-subsidising the charitable work.",
-      "Worship was re-planned, not displaced: services continue on Sundays, and the Lady Chapel holds space for prayer all week.",
-      "Speed and pragmatism: a congregation-scale project delivered without major heritage grants, funded by loans, local fundraising and trading."
+      "It met an everyday need: a post office brings in people who would never visit a church.",
+      "The uses are compatible — children play safely while others queue, and the distinctions stay clear.",
+      "It is not just chairs and tables: there is something to look at, things to do, and a clear public use that brings locals together.",
+      "Separate trading companies protect the parish, and their profits pay for free services."
     ],
     assessment: {
       publicnessNotes: "Open Monday to Saturday, 9–5. The post office queue is a great equaliser: people who would never attend a service pass through weekly.",
@@ -130,6 +135,8 @@ const SITES = [
     ],
     sources: [
       { label: "The Sherriff Centre — our story", url: "https://thesherriffcentre.co.uk/about-us" },
+      { label: "Church of England — St James, West Hampstead case study", url: "https://www.churchofengland.org/sites/default/files/2018-12/CCB_Case-study_St-James-West-Hampstead.pdf" },
+      { label: "British Listed Buildings — Church of St James", url: "https://britishlistedbuildings.co.uk/101378657-church-of-st-james-west-hampstead-ward" },
       { label: "West Hampstead Life — reporting on the conversion, 2014", url: "https://westhampsteadlife.com/2014/04/28/new-post-office-takes-shape-in-st-james-church/12560" }
     ]
   },
@@ -144,7 +151,7 @@ const SITES = [
     borough: "Lambeth",
     status: "established",
     isCaseStudy: true,
-    summary: "A medieval and Victorian church saved from demolition in 1977 and remade as Britain's museum of gardens, with copper-clad pavilions, a cloister garden and a busy café.",
+    summary: "A medieval and Victorian church saved from demolition in the 1970s and remade as the world's first museum of garden history, with a courtyard garden and café.",
     faith: "Deconsecrated",
     sacredness: "Secular",
     typology: "Deconsecrated church",
@@ -159,15 +166,15 @@ const SITES = [
     uses: ["Culture & music", "Café", "Learning", "Nature & gardening", "Heritage", "Events & hire"],
     tags: ["Deconsecrated 1972", "Saved 1977", "Copper pavilions", "Tradescant tomb"],
     story: [
-      "St Mary-at-Lambeth, next to Lambeth Palace, was deconsecrated in 1972 and scheduled for demolition. Rosemary and John Nicholson founded a trust in 1977 to save it, drawn by the churchyard tomb of the seventeenth-century royal gardeners John Tradescant, father and son — and the world's first museum of garden history opened inside the redundant church.",
-      "In 2014 the museum was awarded £3.51 million by the Heritage Lottery Fund for a transformative second phase designed by Dow Jones Architects. After an eighteen-month closure it reopened in May 2017 with the display space for the collection doubled, new galleries and learning studios threaded reversibly into the historic interior, and a cluster of copper-clad pavilions forming a cloister garden — planted with Dan Pearson — around the Tradescant tomb. A recreated 'Ark' gallery shows objects from the Tradescants' cabinet of curiosities, loaned back by the Ashmolean.",
-      "The museum is an independent charity, sustained by admissions, a well-known café, events and fundraising. Its ambitions keep spilling outward: it has led proposals for Lambeth Green, a new public park on the surrounding land, extending the logic of the project from building to neighbourhood."
+      "St Mary-at-Lambeth, beside Lambeth Palace, has a tower of 1377 and a nave rebuilt in 1851–52. It was deconsecrated in 1972 and faced demolition until Rosemary Nicholson, drawn by the tomb of the royal gardeners John Tradescant, father and son, set up a trust to save it. The world's first museum of garden history opened there in 1977.",
+      "In 2014 the museum won £3.5m from the Heritage Lottery Fund for a second phase by Dow Jones Architects. It reopened in 2017 with new galleries and learning spaces inserted into the church, a courtyard garden by Dan Pearson, and a recreation of the Tradescants' 'Ark' collection. It is an independent charity with no government funding.",
+      "On the site visit, glass sliding doors in the medieval arch made it easy to see in and feel welcome. The ground-floor atrium, with a large shared table and arts and crafts, was free to anyone; the upper galleries were ticketed and the archive by appointment. The building still felt reflective. But the garden was hard to find through the shop, and the main signs face the river rather than the park and homes behind."
     ],
     whatMadeItWork: [
-      "A single strong idea — gardens — gave a redundant church a public purpose that honours its own churchyard history rather than erasing it.",
-      "Reversible intervention inside the listed interior kept conservators onside and keeps future options open.",
-      "The café and events business is front-of-house, not an add-on: it funds the museum and gives locals a free reason to come in.",
-      "A founder-led rescue matured into a professional charity able to win major lottery funding forty years on."
+      "One strong idea — gardens — gives the church a public purpose rooted in its own churchyard history.",
+      "Glass doors in the old arch let people see inside before they commit to entering.",
+      "New spaces are inserted into the listed interior, keeping the church's character.",
+      "A free ground floor softens the threshold of a ticketed museum."
     ],
     assessment: {
       publicnessNotes: "Open most days; the galleries are ticketed but the café, front garden and shop are free to enter, so the threshold is soft. The building reads clearly as 'for everyone' from the street.",
@@ -179,8 +186,9 @@ const SITES = [
     ],
     sources: [
       { label: "Heritage Lottery Fund — £3.5m award, 2014", url: "https://www.heritagefund.org.uk/news/garden-museum-awarded-grant-ps35million-heritage-lottery-fund" },
-      { label: "Museums Association — review of the 2017 reopening", url: "https://www.museumsassociation.org/museums-journal/reviews/2017/10/02102017-the-garden-museum-london/" },
-      { label: "Dow Jones Architects — project page", url: "https://dowjonesarchitects.com/projects/garden-museum-phase-2/" }
+      { label: "Garden Museum — visit", url: "https://gardenmuseum.org.uk/visit/" },
+      { label: "Dow Jones Architects — project page", url: "https://dowjonesarchitects.com/projects/garden-museum-phase-2/" },
+      { label: "Wikipedia — Garden Museum", url: "https://en.wikipedia.org/wiki/Garden_Museum" }
     ]
   },
 
@@ -194,7 +202,7 @@ const SITES = [
     borough: "City of London",
     status: "established",
     isCaseStudy: true,
-    summary: "A Wren-towered church left ruined by the Blitz and never rebuilt; the City opened a public garden inside its shell in 1971. Now one of London's best-loved quiet places.",
+    summary: "A church with a Wren steeple, gutted in the Blitz and never rebuilt. The City of London opened a public garden inside its ruins in 1971.",
     faith: "Deconsecrated",
     sacredness: "Semi-secular",
     typology: "Churchyard & ruin garden",
@@ -209,34 +217,34 @@ const SITES = [
     uses: ["Quiet & reflection", "Nature & gardening", "Heritage"],
     tags: ["Wren tower", "Blitz ruin", "Climbing planting", "Lunchtime refuge"],
     story: [
-      "St Dunstan in the East was patched and rebuilt for centuries — including a celebrated tower and needle spire by Christopher Wren, completed in 1701 — before German bombing in 1941 gutted the church. The tower and shell survived, but the parish was never re-formed and the building never rebuilt.",
-      "Instead of clearance, the City of London Corporation took a quietly radical decision: it kept the ruin and, in 1971, opened a public garden within it. Climbing plants were trained over the gothic window tracery, a fountain placed in the nave, and lawns and benches set among the walls. The intervention was modest in cost and touch — planting, paths, seats — but total in effect: the ruin itself became the architecture of the garden.",
-      "Half a century on it is a beloved lunchtime refuge for City workers, a ceremony and photography destination, and one of the most photographed 'secret' places in London — which brings its own pressures of crowding and wear to a very small site."
+      "St Dunstan in the East gained a steeple by Sir Christopher Wren in 1695–1701. The church was severely damaged in the Blitz in 1941, and in the post-war reorganisation of London's churches it was decided not to rebuild it.",
+      "In 1967 the City of London Corporation decided to turn the Grade I listed ruins into a public garden, which opened in 1971: a lawn and trees in the nave, a low fountain, benches and climbing plants on the walls. The tower now houses the All Hallows House Foundation, and occasional services, such as Palm Sunday processions, still take place.",
+      "Debates over church conversions made no difference to some ruins. Today St Dunstan's is a much-loved garden, busy with City workers at lunchtime, and available to hire for events."
     ],
     whatMadeItWork: [
-      "Restraint: the ruin was stabilised and inhabited rather than restored or replaced — the cheapest move was also the most powerful.",
-      "Public ownership and daily opening made it unconditionally accessible from day one.",
-      "Planting design did the emotional work, softening a war ruin into a place of calm without a single interpretive panel.",
-      "A sacred trace remains: the consecrated ground and surviving tower give the garden its particular stillness."
+      "Restraint: the ruin was kept and planted, not restored or cleared.",
+      "Free, everyday access, with entrances from two City streets.",
+      "Planting turns a war ruin into a calm place to sit.",
+      "The tower and walls keep the church's history visible."
     ],
     assessment: {
       publicnessNotes: "Fully open daily with no threshold at all — the archetype of L5 civic publicness on former church land.",
       interactionNotes: "Deliberately low-key: people come to be quiet alongside strangers rather than to meet them. Interaction is ambient, not programmed."
     },
     opportunity: {
-      headline: "Loved almost too much",
+      headline: "Busy, but unprogrammed",
       dimensions: ["Interaction", "Temporality"],
       oppScale: "Small",
       currentState: "In use but underused",
       whoCouldLead: "Council-owned",
-      note: "Visitor pressure now outstrips stewardship: the garden absorbs heavy social-media-driven footfall with no programming, interpretation or volunteer presence. Light-touch seasonal programming — early-morning quiet hours, occasional tended-garden volunteering, temporary interpretation of the Wren tower — could distribute use across the day and recruit care without breaking the spell."
+      note: "A popular lunchtime and visitor spot with no regular programme or on-site interpretation. Simple interpretation of the ruin's history and occasional community events could give people reasons to talk, not just to sit."
     },
     quickLinks: [
-      { label: "City of London — gardens", url: "https://www.cityoflondon.gov.uk" }
+      { label: "City of London — St Dunstan in the East", url: "https://www.cityoflondon.gov.uk/things-to-do/city-gardens/find-a-garden/st-dunstan-in-the-east-church-garden" }
     ],
     sources: [
-      { label: "City of London Corporation — St Dunstan in the East garden", url: "https://www.cityoflondon.gov.uk/things-to-do/parks-and-green-spaces/city-gardens" },
-      { label: "London Gardens Trust — burial ground gardens", url: "https://londongardenstrust.org/features/burial.htm" }
+      { label: "City of London — St Dunstan in the East Church Garden", url: "https://www.cityoflondon.gov.uk/things-to-do/city-gardens/find-a-garden/st-dunstan-in-the-east-church-garden" },
+      { label: "Wikipedia — St Dunstan-in-the-East", url: "https://en.wikipedia.org/wiki/St_Dunstan-in-the-East" }
     ]
   },
 
@@ -250,7 +258,7 @@ const SITES = [
     borough: "Camden",
     status: "established",
     isCaseStudy: true,
-    summary: "One of London's first detached burial grounds (1714), made a public garden in the 1880s, rescued from decline by a Friends group and a lottery-funded restoration in 2001.",
+    summary: "A burial ground bought in 1713 for two Bloomsbury parishes, opened as a public garden in the 1880s, and restored with Heritage Lottery funding in 2001.",
     faith: "Civic / non-denominational",
     sacredness: "Semi-secular",
     typology: "Burial ground garden",
@@ -265,15 +273,14 @@ const SITES = [
     uses: ["Quiet & reflection", "Nature & gardening", "Heritage"],
     tags: ["Grade II* landscape", "Friends group 1994", "Outdoor sitting room", "Still consecrated"],
     story: [
-      "Bought in 1713 and opened for burials in 1714, this was one of the first London burial grounds sited away from the churches it served — St George's Bloomsbury and St George the Martyr, Holborn — complete with a high wall against body-snatchers. Closed by overcrowding in 1855, it was converted to a public garden in the 1880s by the Kyrle Society, part of Octavia and Miranda Hill's campaign to turn dead ground into 'outdoor sitting rooms' for the poor. The ground remains consecrated.",
-      "A century of use ended in decline: by the early 1990s the gardens were overgrown and unsafe. In 1994 neighbours formed the Friends of St George's Gardens and persuaded Camden to bid to the Heritage Lottery Fund's Urban Parks Programme in 1997. The restored gardens — Grade II* on the national landscape register — reopened in spring 2001 and are maintained by Camden with the Friends as active stewards, programming open days and watching planning applications around the walls.",
-      "It is a textbook double intervention, 120 years apart: first the Victorian conversion of a burial ground to a garden, then a community-led restoration when that public inheritance was nearly lost."
+      "Bought in 1713 and opened for burials in 1714, the ground served St George's Bloomsbury and St George the Martyr, Holborn. It closed through overcrowding in 1855 and opened as a public garden in 1884, after campaigning by Miranda and Octavia Hill and the Kyrle Society for green space in poor areas where squares were locked and private. It remains consecrated ground.",
+      "By the 1990s the gardens had badly declined. Local residents formed the Friends of St George's Gardens, and Camden won Heritage Lottery Fund money through the Urban Parks Programme in 1997. The restored gardens reopened in spring 2001. Camden maintains them, with the Friends watching over the site and development around it.",
+      "The gardens are Grade II* on the national register. Memorials include a plaque to Zachary Macaulay, anti-slavery campaigner and one of the founders of UCL."
     ],
     whatMadeItWork: [
-      "A Friends group supplied what the council alone could not: constant eyes, advocacy, institutional memory and a credible community voice for the funding bid.",
-      "Restoration respected the site's dual nature — tombs, monuments and consecrated ground kept legible within an everyday park.",
-      "Enclosure works for it: walled, entered from quiet side streets, it offers protected calm in a dense district where most green squares are locked and private.",
-      "The Victorian 'open sitting room' idea is a transferable framing planners still understand."
+      "A Friends group gives constant care, local knowledge and a voice for funding bids.",
+      "Tombs and monuments stay visible within an everyday park.",
+      "Three gates from quiet side streets make it both a through-route and a place to rest."
     ],
     assessment: {
       publicnessNotes: "Open daily to all; three modest gates reward local knowledge but exclude no one. A genuinely shared space in an area of gated squares.",
@@ -285,7 +292,10 @@ const SITES = [
     ],
     sources: [
       { label: "Friends of St George's Gardens — history", url: "https://www.friendsofstgeorgesgardens.org.uk/" },
-      { label: "Parks & Gardens — register entry", url: "https://www.parksandgardens.org/places/st-georges-gardens-bloomsbury" }
+      { label: "Historic England — register entry", url: "https://historicengland.org.uk/listing/the-list/list-entry/1000832" },
+      { label: "Bloomsbury Squares & Gardens — St George's Gardens", url: "https://bloomsburysquares.com/the-squares/st-georges-gardens/" },
+      { label: "Parks & Gardens — St George's Gardens", url: "https://www.parksandgardens.org/places/st-georges-gardens-bloomsbury" },
+      { label: "Look Up London — history of St George's Gardens", url: "https://lookup.london/st-georges-garden-bloomsbury/" }
     ]
   },
 
@@ -299,7 +309,7 @@ const SITES = [
     borough: "Tower Hamlets",
     status: "established",
     isCaseStudy: true,
-    summary: "A 'Magnificent Seven' Victorian cemetery closed to burials in 1966 and re-grown as a woodland park and nature reserve, run with a charity of Friends as East London's outdoor classroom.",
+    summary: "One of London's 'Magnificent Seven' Victorian cemeteries, closed to burials in 1966 and now a woodland park and Local Nature Reserve cared for by a Friends charity.",
     faith: "Civic / non-denominational",
     sacredness: "Semi-secular",
     typology: "Cemetery park",
@@ -314,15 +324,15 @@ const SITES = [
     uses: ["Nature & gardening", "Learning", "Quiet & reflection", "Heritage", "Culture & music"],
     tags: ["Magnificent Seven", "Local Nature Reserve", "Outdoor classroom", "Volunteering"],
     story: [
-      "Opened in 1841 as the City of London and Tower Hamlets Cemetery — the last of the 'Magnificent Seven' commercial Victorian cemeteries — the ground took some 270,000 burials, most of them East Enders in public graves, before it was closed to burials in 1966 and taken into public ownership.",
-      "Rather than being cleared or manicured, the cemetery was allowed — and later deliberately managed — to become woodland. Since 1990 the Friends of Tower Hamlets Cemetery Park, now a substantial charity working alongside the borough, have stewarded it as a Local Nature Reserve: the largest woodland in the East End, threaded with monuments, wildflower meadows and trails. The Soanes Centre at the gate hosts thousands of schoolchildren a year for outdoor science, and a rolling programme of volunteering, bat walks, history tours and occasional festivals keeps the park socially alive.",
-      "It shows a different fate for sacred ground: not conversion to a new building use, but a slow, deliberate change of register — from burial landscape to living commons — in which remembrance, ecology and everyday recreation coexist."
+      "Opened in 1841 as the City of London and Tower Hamlets Cemetery — the last of the 'Magnificent Seven' — it took around 350,000 burials before closing to new burials in 1966, when the Greater London Council bought it. Tower Hamlets Council took ownership in 1986.",
+      "Left to grow wild, it became woodland. The Friends of Tower Hamlets Cemetery Park, founded in 1990 and a registered charity since 2004, now care for its 31 acres of woods, meadows and monuments. The Soanes Centre (1993) is a base for environmental education, and in 2001 the park became Tower Hamlets' first Local Nature Reserve. Volunteering, talks, tours and a summer fair keep it busy.",
+      "On the site visit, woodland grew around and between the gravestones, and wildlife was everywhere. Most entrances have a Friends sign with a map and opening times, and the paths are clearly laid out for walking. But benches cluster near the entrances, some signs are very small, and open bins attracted flies — and, unlike Paddington Old Cemetery, there is little provision for the many dog walkers."
     ],
     whatMadeItWork: [
-      "Time as a design tool: fifty years of managed re-wilding produced a landscape no capital project could buy.",
-      "A charity–council partnership gives daily care, environmental education and fundraising capacity beyond parks-department budgets.",
-      "Programming is layered gently over the sacred landscape — learning and nature first, events sized to the place.",
-      "Openness round the clock makes it true civic infrastructure for a dense, park-poor borough."
+      "Time as a design tool: decades of managed rewilding made a landscape no capital project could buy.",
+      "A Friends charity working with the council brings daily care, volunteering and education.",
+      "Several signed entrances make it a through-route, not a dead end.",
+      "Remembrance, nature and recreation share the site because it is big enough for all three."
     ],
     assessment: {
       publicnessNotes: "Free and open daily as a public park; multiple gates knit it into surrounding streets.",
@@ -333,8 +343,8 @@ const SITES = [
       { label: "fothcp.org", url: "https://www.fothcp.org" }
     ],
     sources: [
-      { label: "Friends of Tower Hamlets Cemetery Park", url: "https://www.fothcp.org" },
-      { label: "London Gardens Trust — cemetery histories", url: "https://londongardenstrust.org/features/burial.htm" }
+      { label: "Friends of Tower Hamlets Cemetery Park", url: "https://www.fothcp.org/about" },
+      { label: "Wikipedia — Tower Hamlets Cemetery Park", url: "https://en.wikipedia.org/wiki/Tower_Hamlets_Cemetery_Park" }
     ]
   },
 
@@ -348,7 +358,7 @@ const SITES = [
     borough: "Lambeth",
     status: "established",
     isCaseStudy: true,
-    summary: "The Church of England's archive rehoused in a new brick 'inhabited wall' at the edge of the Archbishop's garden — a study in carefully rationed publicness on sacred land.",
+    summary: "The Church of England's library and archive, rehoused in 2020 in a new building on the edge of the Archbishop's garden — a study in rationed publicness.",
     faith: "Church of England",
     sacredness: "Semi-secular",
     typology: "New building on faith land",
@@ -363,15 +373,14 @@ const SITES = [
     uses: ["Learning", "Heritage", "Quiet & reflection", "Events & hire"],
     tags: ["Wright & Wright", "First new building in 185 years", "Occupied wall", "BREEAM Excellent"],
     story: [
-      "Lambeth Palace Library, founded in 1610 and one of England's earliest public libraries, holds the Church of England's archive — after the Vatican's, the most important collection of religious books and manuscripts in Europe. By the 2010s the collection was outgrowing and even damaging the Palace's Tudor rooms, and the Church Commissioners held a competition, won by Wright & Wright Architects in 2015 over a shortlist that included Zaha Hadid Architects.",
-      "The £23.5 million, 5,400 m² building, completed in 2020 and opened in 2021, is the first new structure on the Grade I site in 185 years. It takes the form of a kinked, red-brick 'occupied wall' along Lambeth Palace Road, rising to a nine-storey tower with a public viewing terrace for special events. The wall does double duty: it protects the Archbishop's ten-acre garden from traffic noise and pollution, channels rainwater to a new biodiverse pond, and gives passers-by framed glimpses of the garden through the entrance — a deliberate gift to the street from one of London's largest private gardens.",
-      "Its publicness is real but rationed: the foyer and exhibition cases are free to enter, the reading room open to any registered researcher, the terrace and garden accessible on open days and events. Critics noted the absence of a café or everyday garden access — which is exactly what makes it a useful case study in how institutions calibrate openness."
+      "Founded in 1610, Lambeth Palace Library is one of England's earliest public libraries and holds the Church of England's archive. Outgrowing its rooms in the Palace, it moved into a new building by Wright & Wright Architects (selected in 2015), completed in 2020 and opened in 2021 — the first new building on the site in 185 years.",
+      "The £23.5m building, paid for in full by the Church Commissioners, has a nine-storey tower, a free entrance hall with exhibits, a reading room for 12 readers, a readers' lounge, seminar rooms and a roof terrace for events. It shields the Palace garden from the road, and a new pond by Dan Pearson Studio collects rainwater from the roofs.",
+      "On the site visit, the building was hard to read up close: the wall sits tight to the pavement, the name is only visible from a distance, and the door sensors did not open for pedestrians. Security felt unwelcoming, even for the free exhibition. The reading room requires registration, with pencils only and belongings in a clear bag, as at the British Library — but inside, it and the readers' common room were calm and beautiful."
     ],
     whatMadeItWork: [
-      "A clear institutional need (saving the collection) carried an ambitious civic by-product: a better street, a protected garden, a public foyer.",
-      "The 'wall that gives back' is a transferable idea for sacred sites with hard edges — publicness at the threshold even where the interior must stay controlled.",
-      "Environmental performance (passive archive conditions, photovoltaics, the pond) built the case with commissioners and planners alike.",
-      "Honest limits: by-appointment access is stated plainly rather than dressed up, keeping trust with visitors."
+      "A clear institutional need — protecting the collection — also produced a public entrance hall and exhibition.",
+      "Environmental design (solar panels, a rainwater pond, BREEAM Excellent) strengthened the case.",
+      "Access is limited but open to anyone who registers."
     ],
     assessment: {
       publicnessNotes: "L3 programmed publicness: free foyer and exhibitions, registered reading room, occasional open days — a controlled but genuine welcome.",
@@ -383,15 +392,16 @@ const SITES = [
       oppScale: "Small",
       currentState: "In use but underused",
       whoCouldLead: "Faith-led",
-      note: "The building already performs at its edge — the garden glimpse, the foyer, the terrace. Modest additions would widen the welcome without touching the archive: regular garden open hours at the new pond, a small kiosk café serving Archbishop's Park next door, and a standing schools programme using the exhibition space."
+      note: "The free exhibition and reading room exist, but the street edge hides them. Signs at pedestrian level, doors that open for people on foot, and a friendlier welcome at security would widen access without touching the archive."
     },
     quickLinks: [
       { label: "lambethpalacelibrary.info", url: "https://www.lambethpalacelibrary.info" }
     ],
     sources: [
+      { label: "Lambeth Palace Library — our building", url: "https://www.lambethpalacelibrary.info/about-lambeth-palace-library/our-building/" },
+      { label: "IanVisits — Lambeth Palace Library opening times", url: "https://www.ianvisits.co.uk/venues/lambeth-palace-library/" },
       { label: "Architects' Journal — building study", url: "https://www.architectsjournal.co.uk/buildings/building-study-lambeth-palace-library-by-wright-wright" },
-      { label: "RIBA Journal — review of public access", url: "https://www.ribaj.com/buildings/lambeth-palace-library-wright-and-wright-newbuild" },
-      { label: "Lambeth Palace Library — the building", url: "https://www.lambethpalacelibrary.info/about-lambeth-palace-library/our-building/" }
+      { label: "RIBA Journal — Lambeth Palace Library", url: "https://www.ribaj.com/buildings/regional-awards-2022-london-south-west-wright-and-wright-lambeth-palace-library-church-commissioners" }
     ]
   },
 
@@ -405,7 +415,7 @@ const SITES = [
     borough: "City of London",
     status: "established",
     isCaseStudy: true,
-    summary: "Wren's domed masterpiece, reordered around a Henry Moore altar, birthplace of the Samaritans — a working church that keeps reinventing how a sacred room serves the city.",
+    summary: "Wren's domed City church, centred on a Henry Moore altar and birthplace of the Samaritans — open on weekdays for visitors, music and worship.",
     faith: "Church of England",
     sacredness: "Active worship",
     typology: "Church in use",
@@ -420,15 +430,15 @@ const SITES = [
     uses: ["Worship", "Quiet & reflection", "Culture & music", "Heritage"],
     tags: ["Wren dome", "Henry Moore altar", "Samaritans 1953", "Lunchtime concerts"],
     story: [
-      "Rebuilt by Christopher Wren in 1672–79 after the Great Fire, St Stephen Walbrook carries the first true dome in an English church — Wren's rehearsal for St Paul's — over a compact City parish room. Its modern history is a sequence of small, radical acts of public service from within active worship.",
-      "In 1953 the rector, Chad Varah, answered what he called the first telephone helpline for the suicidal from the vestry here, founding the Samaritans — arguably the most consequential piece of 'social infrastructure' ever launched from a London church. Three decades later, patron Peter Palumbo commissioned Henry Moore to carve a round travertine altar, installed in 1987 after an ecclesiastical court case, with seating gathered in the round beneath the dome. The reordering turned a processional interior into a circle — a spatial argument for gathering as equals.",
-      "Today the church opens its doors on weekdays for visitors, silence and free lunchtime concerts, serving the Square Mile's workers as a pocket of reflection amid offices — a reminder that publicness can be a matter of liturgy and furniture as much as extensions and cafés."
+      "A church has stood by the Walbrook stream for over a thousand years, and on this site since the 15th century. After the Great Fire, Sir Christopher Wren rebuilt it in 1672–79 around a 63-foot dome — one of his finest church interiors.",
+      "In 1953 the rector, Dr Chad Varah, founded the Samaritans here. In 1987 a round stone altar by Henry Moore, commissioned by churchwarden Peter Palumbo, was placed at the centre of the church after a rare ruling by the Court of Ecclesiastical Causes Reserved, with seating gathered around it.",
+      "The church opens Monday to Friday. A July 2026 noticeboard listed a lunchtime recital, a community choir, a choral Eucharist, an organ recital and 'Rush Hour Jazz' after work — a programme shaped around City workers rather than residents."
     ],
     whatMadeItWork: [
-      "Reordering, not extension: moving the altar and seats — a furniture-scale intervention — transformed how the room holds people.",
-      "An open-door weekday policy matches the rhythms of its actual public: City workers on lunch breaks, not Sunday parishioners.",
-      "Cultural programming (concerts, art) is free and frequent, folding secular visitors into a sacred room without conversion pressure.",
-      "The Samaritans story shows a church inventing a service the state hadn't imagined — a benchmark for what faith infrastructure can seed."
+      "Reordering, not extension: moving the altar and seats changed how the room gathers people.",
+      "Weekday opening, with lunchtime and after-work music, matches the rhythms of City workers.",
+      "Free events bring in visitors of any faith or none.",
+      "The Samaritans show a church starting a service the state had not yet imagined."
     ],
     assessment: {
       publicnessNotes: "Open weekdays to anyone; the door on Walbrook is genuinely unlatched. Weekend closure reflects its non-residential parish.",
@@ -439,7 +449,8 @@ const SITES = [
       { label: "ststephenwalbrook.net", url: "https://ststephenwalbrook.net" }
     ],
     sources: [
-      { label: "St Stephen Walbrook — history and visiting", url: "https://ststephenwalbrook.net" },
+      { label: "St Stephen Walbrook — visiting and history", url: "https://ststephenwalbrook.net" },
+      { label: "Wikipedia — St Stephen Walbrook", url: "https://en.wikipedia.org/wiki/St_Stephen_Walbrook" },
       { label: "Samaritans — our history", url: "https://www.samaritans.org/about-samaritans/our-history/" }
     ]
   },
@@ -454,7 +465,7 @@ const SITES = [
     borough: "Tower Hamlets",
     status: "emerging",
     isCaseStudy: true,
-    summary: "A Grade II 'Tuscan barn' parish church growing public life organically — artists' studios in the old school, a volunteer kitchen garden — with a restoration masterplan now underway.",
+    summary: "A Grade II Catholic church in Wapping with artists' studios in its old school and a volunteer kitchen garden — much of its community life hidden from the street.",
     faith: "Roman Catholic",
     sacredness: "Active worship",
     typology: "Church precinct",
@@ -469,15 +480,14 @@ const SITES = [
     uses: ["Worship", "Culture & music", "Nature & gardening", "Learning"],
     tags: ["Grade II listed", "Artists' studios", "Kitchen garden", "Masterplan phase 1"],
     story: [
-      "Built in 1879 to Francis Tasker's designs — a plain Tuscan-barn exterior hiding a North Italian Renaissance interior — St Patrick's has served Wapping's Catholic community for nearly 150 years. Its recent story is one of organic, congregation-scale adaptation rather than a single capital project.",
-      "When the parish primary school closed in 2002, the parish priest invited artists into the tall, north-lit old school building: St Patrick's Studios has grown into a community of working artists of different disciplines, with workshops and shared prayer, welcoming practitioners of all Christian traditions and none. In 2005 a group of volunteers with no gardening experience turned waste ground behind the church into a productive kitchen garden whose harvests have raised thousands of pounds for the development charity CAFOD.",
-      "The parish is now working with Dow Jones Architects on a precinct masterplan whose first phase — restoring the tired church interior and its artworks — aims to make the whole site more inclusive, accessible, sustainable and welcoming. St Patrick's is therefore both case study and opportunity: proof of what incremental, almost-free interventions can do, and a live site whose next phases are still being shaped."
+      "Built in 1879 to Francis Tasker's designs — a plain 'Tuscan barn' outside, a North Italian Renaissance interior inside — St Patrick's has served Wapping's Catholic community for nearly 150 years.",
+      "When the parish school closed in 2002, the parish priest, Fr Digby Samuels, turned the Old School into St Patrick's Studios, for artists of all Christian traditions and none. Since 2005 volunteers have grown fruit and vegetables on derelict ground behind the church, sold by donation after Sunday Mass in support of CAFOD. Dow Jones Architects' Phase 1 proposals would repair and reorder the church and add a lean-to extension with toilets, to make it 'more inclusive, accessible, sustainable, and welcoming'.",
+      "On repeated visits the church was open but almost always empty. It faces a busy park and playground, but tall walls, large steps and a sign set side-on to the street mean people walking from the west simply miss it, and the garden gate is usually shut. Inside are history banners about the church and the area, a children's corner with books, artwork and a food bank table, and a baby-changing room — but no toilet or kitchen, and little sign of any of it from outside."
     ],
     whatMadeItWork: [
-      "Cost-nothing beginnings: an empty school and a scrap of waste ground were offered, not developed — the community did the rest.",
-      "Each use fits the sacred setting: contemplative studios, a giving garden — publicness in the key of the parish rather than against it.",
-      "Two decades of small successes built the confidence and case for a formal masterplan.",
-      "Faith networks (CAFOD, the Archdiocese) provided purpose and support that purely secular meanwhile projects often lack."
+      "Cost-nothing beginnings: an empty school and waste ground were offered to the community.",
+      "Each use suits the parish — studios, a giving garden, a children's corner.",
+      "Faith networks such as CAFOD give the projects purpose and support."
     ],
     assessment: {
       publicnessNotes: "L3: the church opens for services and events, the studios and garden by arrangement and open days. Publicness here is relational — through people — more than through an always-open door.",
@@ -489,15 +499,17 @@ const SITES = [
       oppScale: "Medium",
       currentState: "Restoration underway",
       whoCouldLead: "Faith-led",
-      note: "Phase 1 restores the church; later phases could open the precinct itself. Candidate moves: regular public open hours once restoration completes, a shared courtyard between church, studios and garden, studio open-weekends tied to Wapping's growing visitor trail, and community growing plots extending the kitchen garden."
+      note: "Phase 1 would add toilets and repair the church. Low-cost moves could start now: signs visible from both directions, advertising the history banners, set open hours for the garden, seating for families in the children's corner, and opening times coordinated with nearby churches."
     },
     quickLinks: [
       { label: "parish.rcdow.org.uk/wapping", url: "https://parish.rcdow.org.uk/wapping/" },
       { label: "stpatricksstudios.com", url: "https://stpatricksstudios.com/" }
     ],
     sources: [
-      { label: "Dow Jones Architects — St Patrick's Wapping masterplan", url: "https://dowjonesarchitects.com/projects/st-patricks-wapping/" },
+      { label: "Dow Jones Architects — St Patrick's Wapping", url: "https://dowjonesarchitects.com/projects/st-patricks-wapping/" },
+      { label: "St Patrick's Wapping — Mass and opening times", url: "https://parish.rcdow.org.uk/wapping/mass-times/" },
       { label: "St Patrick's Studios — history", url: "https://stpatricksstudios.com/" },
+      { label: "St Patrick's Wapping — kitchen garden", url: "https://parish.rcdow.org.uk/wapping/parish-groups/kitchen-garden/" },
       { label: "Independent Catholic News — the kitchen garden", url: "https://www.indcatholicnews.com/news/46072" }
     ]
   },
@@ -512,7 +524,7 @@ const SITES = [
     borough: "Tower Hamlets",
     status: "opportunity",
     isCaseStudy: false,
-    summary: "The churchyard of Wapping's bombed parish church — a public park since 1951, framed by the surviving 1756 tower, chest tombs and the old dock wall — open every day, and almost silent.",
+    summary: "The churchyard of Wapping's bombed parish church, a public park since 1951 — a shortcut with gravestones against the wall, one bench and little reason to stay.",
     faith: "Civic / non-denominational",
     sacredness: "Semi-secular",
     typology: "Churchyard garden",
@@ -527,8 +539,9 @@ const SITES = [
     uses: ["Quiet & reflection", "Heritage"],
     tags: ["Bombed church", "1756 tower", "Park since 1951", "Dock wall"],
     story: [
-      "St John's was Wapping's parish church from 1694; rebuilt in 1756 by Joel Johnson, it was destroyed in the Blitz, leaving the baroque-capped tower — its working clock still read across the river — and a shell later converted to flats. Across Scandrett Street, the old churchyard was made a public park in 1951, keeping its eighteenth-century chest tombs and backing onto the high wall of the former London Docks. The old charity school beside it, with its Coade-stone bluecoat figures, completes an extraordinary surviving ensemble.",
-      "Today the churchyard is the classic 'open but passive' site: fully public, historically rich, and socially quiet. There is no programming, little interpretation, and few reasons to stop beyond a bench and a view of the tower. In a neighbourhood short of shared space and long on history, that is an opportunity rather than a failing — the hard work of assembly and access was done in 1951; what is missing is animation."
+      "St John's began as a chapel in 1615–17 and became Wapping's parish church in 1694; Joel Johnson rebuilt it in 1756. Bombed in the Second World War, only the tower and part of a wall survived. The tower was restored in 1964 and the rest converted to flats in the 1990s. Since July 2023, services have been held in a chapel at the base of the tower.",
+      "The churchyard became a public park in 1951. It keeps two 18th-century chest tombs, with headstones set against its high brick walls — a visible change in how sacred ground is used. A plaque unveiled in 2013 marks the burial here in 1648 of Thomas Rainsborough, a spokesman for the Levellers; it is small and set high on the wall.",
+      "On the site visit it worked mainly as a shortcut: two entrances on a diagonal let people walk through, but there was one bench, a cracked path and little to hold anyone. It is not yet a place to linger or meet by chance, but it has the space and history for community events."
     ],
     whatMadeItWork: [],
     assessment: {
@@ -541,12 +554,12 @@ const SITES = [
       oppScale: "Small",
       currentState: "Open but passive",
       whoCouldLead: "Council-owned",
-      note: "Small, reversible moves would change this place's temperature: interpretation linking tower, tombs, school and dock wall; a friends-style group seeded from surrounding streets; seasonal meanwhile uses — an annual open-tower day, a summer story-trail with the primary school, community planting along the dock wall. Costs sit firmly in the 'under £100k, under two years' band, making it an ideal first project for a new stakeholder group."
+      note: "Small, reversible moves could change this place: more seating, repaired paths, interpretation placed where people can read it, and a heritage walk linking it to St Patrick's and nearby churches. A Friends-style group could run seasonal events. Costs fit the 'under £100k, under two years' band."
     },
     quickLinks: [],
     sources: [
       { label: "Wikipedia — St John's Church, Wapping", url: "https://en.wikipedia.org/wiki/St_John%27s_Church,_Wapping" },
-      { label: "Know Your London — St John, Scandrett Street", url: "https://knowyourlondon.wordpress.com/2018/06/08/st-john-scandrett-street-wapping/" }
+      { label: "London Gardens Trust — St John's Gardens inventory", url: "https://londongardenstrust.org/conservation/inventory/site-record/?ID=THM043" }
     ]
   },
 
@@ -560,7 +573,7 @@ const SITES = [
     borough: "Brent",
     status: "opportunity",
     isCaseStudy: false,
-    summary: "One of the first cemeteries after the 1852 Burial Act, sold to Brent for £5 in 1986 — a well-loved green space whose twin Gothic chapels stand empty at its heart, with reuse plans gathering pace.",
+    summary: "A Victorian cemetery sold by Westminster to Brent for £5 in 1986 — a well-used green space for dog walkers, with twin listed chapels empty at its centre and plans for their reuse.",
     faith: "Civic / non-denominational",
     sacredness: "Semi-secular",
     typology: "Cemetery & chapels",
@@ -575,9 +588,9 @@ const SITES = [
     uses: ["Quiet & reflection", "Nature & gardening", "Heritage"],
     tags: ["Opened 1855", "Twin chapels", "Sold for £5", "Apiary"],
     story: [
-      "Laid out in 1855 by Thomas Little for the Paddington Burial Board — one of the first public cemeteries after the 1852 Metropolitan Interment Act — the cemetery arranges horseshoe paths around a centrepiece of twin Gothic chapels in Kentish ragstone, one Anglican, one Nonconformist, both Grade II listed. When burials dwindled, Westminster sold the whole cemetery to the London Borough of Brent in 1986 for £5, sparking the community action that became the Friends of Paddington Old Cemetery.",
-      "The grounds today are a Grade II registered landscape and a genuine local green space: still an active cemetery, but also a place of mature trees, wildflower areas, a war memorial, an apiary producing 'Tombstone honey' and, since 2021, a columbarium. The gap at its heart is architectural: the chapels have been vacant long-term and need substantial repair. Since 2023 the London Historic Buildings Trust has been working with Brent on a viable repair and reuse strategy, with funding secured towards returning the chapels to community use.",
-      "The site distils a common London condition: high-quality, well-used sacred landscape wrapped around empty sacred buildings — with an organised Friends group, a willing council and a heritage trust already at the table."
+      "Laid out in 1855 by Thomas Little for the Paddington Burial Board, the cemetery has horseshoe-shaped, tree-lined paths around twin Gothic chapels — one Anglican, one Nonconformist — both Grade II listed, in a Grade II registered landscape. Westminster sold it to Brent for £5 in 1986, and the Friends of Paddington Old Cemetery formed in 2000.",
+      "It is still a working cemetery, with a columbarium added in 2021 and an apiary producing 'Tombstone honey'. The chapels are on the Heritage at Risk Register. An options appraisal by the London Historic Buildings Trust (2024–25), funded by Brent, the National Lottery Heritage Fund and the Pilgrim Trust, found 'a worthwhile future' for them in community use, starting with repairs to one chapel.",
+      "On the site visit, scaffolding was up on the chapels. Dog walkers were well served, with water points and bins, and greeted each other near the entrance. But with one entrance you cannot walk through it, benches and signs are few, and the toilets were closed. It is surrounded by housing and a school, yet sits outside everyday routes."
     ],
     whatMadeItWork: [],
     assessment: {
@@ -590,15 +603,17 @@ const SITES = [
       oppScale: "Medium",
       currentState: "Vacant building",
       whoCouldLead: "Charity partner needed",
-      note: "The pieces are aligned: listed chapels, an engaged Friends group, Brent's backing and the London Historic Buildings Trust leading a repair-and-reuse strategy with initial funding secured. Compatible uses tested elsewhere in this database — café and community room (Grand Junction), nature-learning base (Tower Hamlets' Soanes Centre), quiet cultural programming (St Stephen Walbrook) — all fit a working cemetery's register of respect."
+      note: "The pieces are in place: listed chapels, a Friends group, Brent's backing and a reuse plan led by the London Historic Buildings Trust. Alongside the chapels, a second entrance, more benches and signs, and reopened toilets would make the grounds part of everyday local routes."
     },
     quickLinks: [
       { label: "fopoc.com", url: "https://www.fopoc.com/" }
     ],
     sources: [
       { label: "London Historic Buildings Trust — chapels project", url: "https://londonhistoricbuildings.org.uk/paddington-old-chapels/" },
+      { label: "Brent Council — Paddington Old Cemetery", url: "https://www.brent.gov.uk/births-deaths-marriages-nationality/deaths-and-funeral-services/brent-cemeteries/paddington-old-cemetery" },
       { label: "Friends of Paddington Old Cemetery — history", url: "https://www.fopoc.com/new-page-4-1" },
-      { label: "Historic England — register entry", url: "https://historicengland.org.uk/listing/the-list/list-entry/1001542" }
+      { label: "Historic England — register entry", url: "https://historicengland.org.uk/listing/the-list/list-entry/1001542" },
+      { label: "Wikipedia — Paddington Old Cemetery", url: "https://en.wikipedia.org/wiki/Paddington_Old_Cemetery" }
     ]
   }
 ];

@@ -1,5 +1,5 @@
 /* ============================================================
-   PLANNING WITH RELIGION — the intervention board
+   DESIGNING SHARED SPACES TOGETHER — the intervention board
    A photo board you scroll, keep from, and then read back as a
    set: what works together, what pulls against what.
    Needs data.js, detail-data.js, evidence.js, photos.js,
@@ -128,6 +128,9 @@ document.addEventListener("DOMContentLoaded", () => {
     $("board").innerHTML = hits.map(tile).join("");
     $("board").querySelectorAll("[data-open]").forEach(b =>
       b.addEventListener("click", () => openRecord(b.dataset.open)));
+    /* the name and caption open the record too — on a phone that is where people tap */
+    $("board").querySelectorAll(".tile-foot").forEach(f =>
+      f.addEventListener("click", () => openRecord(f.closest(".tile").dataset.iv)));
     $("board").querySelectorAll("[data-keep]").forEach(b =>
       b.addEventListener("click", e => { e.stopPropagation(); toggleKeep(b.dataset.keep); }));
   }

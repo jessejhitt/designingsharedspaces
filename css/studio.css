@@ -1,5 +1,5 @@
 /* ============================================================
-   PLANNING WITH RELIGION — the site studio
+   DESIGNING SHARED SPACES TOGETHER — the site studio
    Additive stylesheet: loads after style.css on studio.html only.
    Everything derives from the existing palette and type system.
    ============================================================ */
@@ -39,11 +39,32 @@
 /* ---------- workbench layout ---------- */
 .studio-layout {
   display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 48px;
-  align-items: start; padding: 40px 0 90px;
+  align-items: start; padding: 40px 0 48px;
 }
 @media (max-width: 980px) { .studio-layout { grid-template-columns: minmax(0, 1fr); } }
 .studio-rail { position: sticky; top: 86px; display: flex; flex-direction: column; gap: 18px; }
 @media (max-width: 980px) { .studio-rail { position: static; } }
+/* the reading runs longer than the tools beside it; left to its full
+   height it pushed the intervention deck a screen or more down the page,
+   so on wide screens it is held to the window and scrolls on its own */
+@media (min-width: 981px) {
+  .studio-rail { max-height: calc(100vh - 104px); overflow-y: auto; overscroll-behavior: contain;
+    scrollbar-width: thin; padding: 2px 6px 2px 2px; margin: -2px -6px -2px -2px; }
+}
+
+/* the hand-off from the tools to the intervention deck below */
+.next-step {
+  display: flex; align-items: center; justify-content: space-between; gap: 18px;
+  padding: 20px 24px; border-radius: var(--radius); text-decoration: none;
+  background: var(--yew); color: #fff;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.next-step:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(0,0,0,.12); }
+.next-step small { display: block; font-family: var(--sans); font-size: 11px; font-weight: 700;
+  letter-spacing: .13em; text-transform: uppercase; opacity: .8; margin-bottom: 4px; }
+.next-step b { display: block; font-family: var(--sans); font-size: 19px; font-weight: 700; line-height: 1.2; }
+.next-step span { display: block; font-size: 14px; opacity: .9; margin-top: 4px; }
+.next-step i { font-style: normal; font-size: 26px; line-height: 1; flex: none; }
 
 .tool-block { border: 1px solid var(--stone-2); border-radius: var(--radius);
   background: #FFFFFF; padding: 24px; margin-bottom: 22px; }
@@ -191,7 +212,6 @@
 .match .m-tip { font-family: var(--sans); font-size: 13px; color: var(--ink-2); margin-top: 5px; line-height: 1.5; }
 .match .m-tip .route { color: var(--ink); font-weight: 600; }
 
-.precedent .card { max-width: none; }
 .studio-actions { display: flex; flex-wrap: wrap; gap: 10px; }
 
 .seeker-results { padding-bottom: 90px; }
@@ -351,6 +371,8 @@
 /* --------------------------------------------------- the palette */
 .plot-tools { align-items: flex-start; }
 .zone-palette { display: flex; flex-wrap: wrap; gap: 6px; flex: 1; }
+/* on phones the label sits above the zones, so the buttons get the full width */
+@media (max-width: 560px) { .plot-tools { flex-direction: column; align-items: stretch; } }
 .zone-palette .zone-btn {
   display: inline-flex; align-items: center; gap: 6px;
   padding: 5px 10px; font-size: 12.5px; border-radius: 999px;
@@ -575,6 +597,14 @@
 }
 .tt-row:hover .tt-del { opacity: 1; }
 .tt-del:hover { color: var(--red-strong); }
+/* touch screens have no hover, so the delete control must always show */
+@media (hover: none) { .tt-del { opacity: .7; } }
+/* on phones the grid scrolls sideways; keep each row's name in view */
+@media (max-width: 760px) {
+  .tt .tt-row { grid-template-columns: 150px repeat(28, 1fr); }
+  .tt-row > .tt-label { position: sticky; left: 0; z-index: 2; background: var(--paper); box-shadow: 6px 0 6px -6px rgba(0,0,0,.18); }
+  .tt-head > .tt-label { align-self: stretch; }   /* full height, so day names pass underneath */
+}
 
 /* four bands per day, with a gap between days */
 .tt-row { --band: 4; }
@@ -635,7 +665,7 @@
 /* --------------------------------------------------- go deeper */
 .deep-body { margin-top: 6px; }
 .deep-grid {
-  display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
 }
 .dq {
   border: 1px solid var(--stone-2); border-left: 3px solid var(--tone, var(--stone-2));
@@ -687,7 +717,7 @@
   font-family: var(--sans); font-size: 11.5px; font-weight: 700; letter-spacing: .09em;
   text-transform: uppercase; color: var(--ink-2); margin: 30px 0 12px;
 }
-.deep-picks { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.deep-picks { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); }
 .dpick {
   text-align: left; cursor: pointer; border: 1px solid var(--stone-2);
   border-left: 3px solid var(--pc2, var(--stone-2)); border-radius: 10px;
@@ -773,7 +803,7 @@
 .vcase-why li { font-size: 13.5px; line-height: 1.5; margin-bottom: 7px; }
 .vcase-why em { font-style: normal; font-weight: 600; }
 
-.vres { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); margin-top: 14px; }
+.vres { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(min(270px, 100%), 1fr)); margin-top: 14px; }
 .vres-item {
   border: 1px solid var(--stone-2); border-radius: 10px; padding: 14px 16px;
   text-decoration: none; display: flex; flex-direction: column; gap: 4px;
@@ -784,10 +814,6 @@
 .vres-item span { font-size: 12.5px; line-height: 1.45; color: var(--ink-2); }
 .vres-note { font-size: 14px; margin-top: 16px; color: var(--ink-2); }
 .vres-note a { color: var(--yew); text-decoration: underline; text-underline-offset: 2px; }
-
-.precedent-why { font-size: 13.5px; line-height: 1.55; color: var(--ink-2); margin-top: 12px; }
-.precedent-why b { display: block; font-family: var(--sans); font-size: 10px; letter-spacing: .08em;
-  text-transform: uppercase; color: var(--ink-2); margin-bottom: 4px; }
 
 /* --------------------------------------------------- deck card photo */
 .dphoto { margin: -18px -20px 2px; position: relative; }

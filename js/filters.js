@@ -30,7 +30,8 @@ function createBrowse({ mount, data, groups, renderCard, emptyHint, onResults })
         <h3>${g.title}</h3>
         ${g.hint ? `<p class="hint">${g.hint}</p>` : ""}
         ${g.subs.map(facetHTML).join("")}
-      </div>`).join("")}`;
+      </div>`).join("")}
+    <button class="rail-done" data-rail-done type="button">Show results</button>`;
 
   function facetHTML(f) {
     const kindLabel = { single: "single select", multi: "multi select", range: "scroll scale" }[f.type || "multi"];
@@ -138,6 +139,8 @@ function createBrowse({ mount, data, groups, renderCard, emptyHint, onResults })
            <p style="margin-top:12px"><a class="rule-link" href="submit.html">Know one? Submit it.</a></p>
          </div>`;
     if (countEl) countEl.innerHTML = `Showing <b>${results.length}</b> of ${data.length} sites`;
+    const done = railBody.querySelector("[data-rail-done]");
+    if (done) done.textContent = `Show ${results.length} ${results.length === 1 ? "site" : "sites"}`;
     renderChips();
     updateToggle();
     if (onResults) onResults(results);     // lets a map follow the filters
@@ -183,6 +186,12 @@ function createBrowse({ mount, data, groups, renderCard, emptyHint, onResults })
       railToggle.setAttribute("aria-expanded", open ? "true" : "false");
     });
   }
+  /* on phones the panel is long: this button closes it and jumps to what it found */
+  railBody.querySelector("[data-rail-done]")?.addEventListener("click", () => {
+    rail.classList.remove("open");
+    if (railToggle) railToggle.setAttribute("aria-expanded", "false");
+    (rail.nextElementSibling || grid).scrollIntoView({ behavior: "smooth", block: "start" });
+  });
   function activeCount() {
     return facets.reduce((n, f) =>
       n + (f.type === "range" ? (state[f.key] > 1 ? 1 : 0) : state[f.key].size), 0);

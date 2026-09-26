@@ -12,19 +12,12 @@ const NAV_ITEMS = [
   { href: "studio.html",        label: "Site studio" }
 ];
 
-/* One line under the wordmark, everywhere it appears. The header used to carry
-   a different, questioning version ("Why do we need a creative database of case
-   studies?"); the mark now says the same thing on every page. */
-/* The line breaks are fixed so the tagline wraps identically at every size. */
-const MARK_LINE = "The creative database for<br>designing interaction in<br>underused religious<br>spaces.";
-const MARK_TAGLINE = { home: MARK_LINE, inner: MARK_LINE };
-
-/* ---------- the boxed wordmark ---------- */
-function markHTML({ large = false, inverse = false, tagline = MARK_TAGLINE.inner, href = "index.html" } = {}) {
-  const cls = ["mark", large ? "mark--lg" : "", inverse ? "mark--inverse" : ""].filter(Boolean).join(" ");
-  const inner = `<b>Planning<br>with<br>Religion</b><span>${tagline}</span>`;
+/* ---------- the wordmark: DESIGNING / SHARED SPACES / TOGETHER ---------- */
+function markHTML({ large = false, inverse = false, href = "index.html" } = {}) {
+  const cls = ["logo", large ? "logo--lg" : "", inverse ? "logo--inverse" : ""].filter(Boolean).join(" ");
+  const inner = `<span class="logo-l1">Designing</span><span class="logo-l2">Shared Spaces</span><span class="logo-l3">Together</span>`;
   return href
-    ? `<a class="${cls}" href="${href}" aria-label="Planning with Religion — home">${inner}</a>`
+    ? `<a class="${cls}" href="${href}" aria-label="Designing Shared Spaces Together — home">${inner}</a>`
     : `<div class="${cls}">${inner}</div>`;
 }
 
@@ -47,7 +40,7 @@ function headerHTML(page, inverse, large) {
 function footerHTML() {
   return `
     <div class="wrap footer-cta">
-      ${markHTML({ large: true, tagline: MARK_TAGLINE.home })}
+      ${markHTML({ large: true })}
       <div>
         <h2 class="h-display">Think you know a site<br>that belongs here?</h2>
         <div class="btn-row">
@@ -58,7 +51,7 @@ function footerHTML() {
     </div>
     <div class="wrap">
       <div class="colophon">
-        <span>Planning with Religion — a design research database of London's underused religious infrastructure.</span>
+        <span>Designing Shared Spaces Together — a design research database of London's underused religious infrastructure.</span>
         <span>
           <a href="case-studies.html">Case studies</a> ·
           <a href="opportunities.html">Opportunities</a> ·
@@ -105,12 +98,29 @@ function renderChrome() {
 
   if (!navToggleBound) {
     navToggleBound = true;
+    const closeNavs = except => document.querySelectorAll(".site-nav.open").forEach(nav => {
+      if (nav === except) return;
+      nav.classList.remove("open");
+      nav.parentElement.querySelector(".nav-toggle")?.setAttribute("aria-expanded", "false");
+    });
     document.addEventListener("click", e => {
       const t = e.target.closest(".nav-toggle");
-      if (!t) return;
+      if (!t) {
+        /* a tap anywhere outside the open menu closes it */
+        if (!e.target.closest(".site-nav")) closeNavs();
+        return;
+      }
       const nav = t.parentElement.querySelector(".site-nav");
+      closeNavs(nav);
       const open = nav.classList.toggle("open");
       t.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    document.addEventListener("keydown", e => {
+      if (e.key !== "Escape") return;
+      const open = document.querySelector(".site-nav.open");
+      if (!open) return;
+      closeNavs();
+      open.parentElement.querySelector(".nav-toggle")?.focus();
     });
   }
 }

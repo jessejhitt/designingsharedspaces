@@ -1,5 +1,5 @@
 /* ==========================================================================
-   PLANNING WITH RELIGION
+   DESIGNING SHARED SPACES TOGETHER
    Design system — built to the Figma frames (1408px artboard).
 
    Layout, spacing and type sizes are transcribed from the Figma.
@@ -33,6 +33,8 @@
   --red:   var(--english-red);
   --green: var(--cerulean);
   --buff:  #F7C6A8;
+  --logo-teal:      #74C0C1;       /* the wordmark blocks */
+  --logo-teal-deep: #5EB1B2;
 
   /* deeper steps of each hue, for white text on colour. The brand values give
      only ~3.6:1 against white; these pass AA at small sizes. */
@@ -135,67 +137,34 @@ ul { padding: 0; list-style: none; }
 }
 .rule-link:hover { color: var(--red); text-decoration-color: var(--red); }
 
-/* --------------------------------------------------- 5. the mark (boxed wordmark) */
-/* One design, drawn at different sizes. Everything is in em, and the box's
-   font-size is 1% of its width, so setting --mark-w scales the whole mark
-   in proportion: the same padding, the same type ratio and — with the fixed
-   line breaks in the tagline — the same four lines everywhere it appears. */
-.mark {
-  --mark-w: 148px;
-  display: block;
-  width: var(--mark-w);
-  font-size: calc(var(--mark-w) / 100);
-  min-height: 90.3em;
-  padding: 7.4em 7.4em 8em;
-  border: 1px solid currentColor;
+/* --------------------------------------------------- 5. the wordmark */
+/* DESIGNING / SHARED SPACES / TOGETHER — the first and last lines sit on teal
+   blocks, the last one right-aligned. Everything is in em, so --logo-size
+   scales the whole mark. */
+.logo {
+  --logo-size: 1.5rem;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: none;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;   /* as drawn in the design */
+  font-size: var(--logo-size);
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: -.03em;
+  text-transform: uppercase;
   color: var(--ink);
   text-decoration: none;
-  flex: none;
-  position: relative;
-  overflow: hidden;
-  isolation: isolate;
-  transition: color .3s var(--ease);
 }
-.mark b {
-  display: block;
-  font-size: 12.75em;
-  font-weight: 800;
-  line-height: 1.06;
-  letter-spacing: -.032em;
-  text-transform: uppercase;
-}
-.mark span {
-  display: block;
-  margin-top: .63em;
-  font-size: 6.38em;
-  font-weight: 500;
-  line-height: 1.28;
-  letter-spacing: -.005em;
-  white-space: nowrap;                      /* breaks come from the markup only */
-}
-.mark::after {                              /* colour wash on hover */
-  content: "";
-  position: absolute; inset: 0;
-  background: var(--cerulean);
-  transform: scaleY(0);
-  transform-origin: bottom;
-  transition: transform .38s var(--ease);
-  z-index: -1;
-}
-a.mark:hover::after, a.mark:active::after, a.mark:focus-visible::after { transform: scaleY(1); }
-a.mark:hover, a.mark:active, a.mark:focus-visible { color: var(--ink); }
-
-.mark--lg { --mark-w: 298px; }
-
-.mark--inverse { color: #fff; }
-.mark--inverse::after { background: var(--cerulean); }
-a.mark.mark--inverse:hover,
-a.mark.mark--inverse:active,
-a.mark.mark--inverse:focus-visible { color: #fff; }   /* stays white over the photo */
-
-@media (max-width: 640px) {
-  .mark--lg { --mark-w: 232px; }
-}
+.logo span { display: block; padding: 0 .3em; white-space: nowrap; }
+.logo span + span { margin-top: .06em; }
+.logo-l1, .logo-l3 { background: var(--logo-teal); color: var(--ink); transition: background .25s var(--ease); }
+.logo-l3 { align-self: flex-end; }
+a.logo:hover .logo-l1, a.logo:hover .logo-l3, a.logo:focus-visible .logo-l1, a.logo:focus-visible .logo-l3 { background: var(--logo-teal-deep); }
+.logo--lg { --logo-size: 2.125rem; }
+.logo--inverse { color: #fff; }                 /* over a photo: the middle line turns white */
+@media (max-width: 640px) { .logo--lg { --logo-size: 1.875rem; } }
+@media (max-width: 480px) { .logo { --logo-size: 1.25rem; } .head-row { gap: 16px; } }
 
 /* --------------------------------------------------- 6. header */
 .site-header { position: relative; z-index: 40; }
@@ -253,6 +222,7 @@ a.mark.mark--inverse:focus-visible { color: #fff; }   /* stays white over the ph
 @media (max-width: 1080px) { .site-nav, .head-row--large .site-nav { column-gap: 34px; } }
 @media (max-width: 900px) {
   :root { --head-top: 52px; }
+  .head-row { position: relative; }          /* the dropdown lines up under the Menu button */
   .site-nav {
     position: absolute; top: 100%; right: 0;
     flex-direction: column; gap: 14px;
@@ -271,12 +241,12 @@ a.mark.mark--inverse:focus-visible { color: #fff; }   /* stays white over the ph
 }
 
 /* --------------------------------------------------- 7. page head block */
-/* On the Figma the page title sits in the same horizontal band as the
-   wordmark box, its baseline level with the bottom of the box. */
+/* The page title sits beside the wordmark, just below the nav — tucked up
+   into the header band, with clear space under the links. */
 .page-head { position: relative; }
 .page-head .h-page { margin-top: 40px; }
 @media (min-width: 901px) {
-  .page-head .h-page { margin-top: -56px; }
+  .page-head .h-page { margin-top: -32px; }
 }
 
 .utility-row {
@@ -460,7 +430,7 @@ a.mark.mark--inverse:focus-visible { color: #fff; }   /* stays white over the ph
   border-top: 1px solid var(--ink);
   padding-top: 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(212px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(212px, 100%), 1fr));
   gap: 28px 34px;
   align-items: start;
 }
@@ -476,6 +446,18 @@ a.mark.mark--inverse:focus-visible { color: #fff; }   /* stays white over the ph
   text-decoration: underline; text-underline-offset: 3px;
 }
 .clear-filters:hover { color: var(--red); }
+
+/* "Show N sites" — only needed on phones, where the open panel pushes results far down */
+.rail-done { display: none; }
+@media (max-width: 760px) {
+  .rail-done {
+    display: block; grid-column: 1 / -1; position: sticky; bottom: 14px; z-index: 5;
+    width: 100%; padding: 13px 18px; border: 0; border-radius: 999px;
+    background: var(--ink); color: #fff; font-size: .9375rem; font-weight: 600; cursor: pointer;
+    box-shadow: var(--shadow);
+  }
+}
+.active-chips, [data-results] { scroll-margin-top: 20px; }
 
 .filter-group { padding: 0; }
 .filter-group > h3 { font-size: 1.0625rem; font-weight: 700; letter-spacing: -.015em; }
@@ -553,6 +535,14 @@ a.mark.mark--inverse:focus-visible { color: #fff; }   /* stays white over the ph
   align-items: center;
   margin-top: 96px;
 }
+/* short lines under the page title pointing each kind of reader to their way in;
+   the first split moves up to make room, so the photo stays on the first screen */
+.hiw-ways {
+  margin-top: 10px;
+  font-size: 1.0625rem; line-height: 1.45; text-align: right; color: var(--ink-soft);
+}
+.hiw-ways span { display: block; }   /* one description per line */
+.split--first { margin-top: 16px; }
 .split-copy { max-width: 500px; }
 .split--flip .split-copy { order: 2; margin-left: auto; }
 .split-copy .body-lg { margin-top: 20px; }
@@ -562,6 +552,8 @@ a.mark.mark--inverse:focus-visible { color: #fff; }   /* stays white over the ph
 .split-figure:hover img { transform: scale(1.04); }
 @media (max-width: 900px) {
   .split { grid-template-columns: 1fr; gap: 30px; margin-top: 60px; }
+  .split--first { margin-top: 16px; }
+  .hiw-ways { font-size: .9375rem; line-height: 1.45; }
   .split--flip .split-copy { order: 0; margin-left: 0; }
 }
 
@@ -593,23 +585,80 @@ a.mark.mark--inverse:focus-visible { color: #fff; }   /* stays white over the ph
 .colophon a { text-decoration: underline; text-underline-offset: 3px; }
 .colophon a:hover { color: var(--red); }
 
-/* --------------------------------------------------- 14. landing splash */
-.splash {
-  min-height: 100svh;
+/* --------------------------------------------------- 14. landing */
+/* The first screen: wordmark, menu and one line of purpose above a full-width
+   photograph. The photo's top-left corner is cut away as a tab that holds the
+   wordmark, with rounded inner corners where the cut meets the photo. */
+.landing {
+  --gut: clamp(10px, 1.1vw, 16px);   /* the margin round the photo: left, right and bottom */
+  --tab-w: 375px;          /* width of the cut-out holding the wordmark */
+  --tab-h: 50px;           /* how far the cut-out drops into the photo */
+  --head-h: 124px;         /* photo top on the right-hand side */
+  --r: 26px;               /* photo corner radius — the cut-out uses the same */
+  padding: 0 var(--gut);
+}
+.landing-head {
+  position: relative; z-index: 3;
   display: grid;
-  place-items: center;
+  grid-template-columns: var(--tab-w) minmax(0, 1fr);
+  grid-template-rows: auto 1fr;
+  height: var(--head-h);
+}
+.landing-logo { grid-row: 1 / span 2; padding: 30px 0 0 25px; }
+.landing-menu { grid-column: 2; position: relative; display: flex; padding: 26px 60px 0; }
+.landing-menu .site-nav { flex: 1; flex-wrap: nowrap; justify-content: space-between; gap: 0 24px; padding-top: 0; }
+.landing-menu .site-nav a { font-size: 1.0625rem; }
+.landing-tagline {
+  grid-column: 2;
+  padding: 13px 50px 0 21px;
+  font-size: 1.0625rem; line-height: 1.47; letter-spacing: -.005em; color: var(--ink);
+}
+.landing-hero {
   position: relative;
+  /* fills the rest of the screen, so the whole first view fits without scrolling */
+  height: max(420px, calc(100svh - var(--head-h) - var(--gut)));
+  margin-bottom: var(--gut);
+  /* the wordmark's cut-out is drawn by a clip path set in index.html,
+     from the photo's size, so the outline is one continuous curve */
 }
-.splash .mark--lg::after { transform: scaleY(1); background: var(--paper); }
-.scroll-cue {
-  position: absolute; left: 50%; bottom: 46px; transform: translateX(-50%);
-  display: flex; flex-direction: column; align-items: center; gap: 10px;
-  font-size: .6875rem; letter-spacing: .18em; text-transform: uppercase; color: var(--muted-2);
-  text-decoration: none;
+/* the photo carries the rounded corners itself, so the box has no clipped edge
+   left to show as a hairline inside the cut-out */
+.landing-hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 39%; border-radius: var(--r); background: var(--ink-wash); }   /* crop 39% from the top, 61% from the bottom: the chairs stay in, with more of the screen above */
+
+@media (max-width: 1199px) {
+  .landing { --tab-w: 320px; }
+  .landing-logo { padding: 28px 0 0 20px; }
+  .landing-logo .logo--lg { --logo-size: 1.875rem; }
+  .landing-menu { padding: 26px 32px 0 36px; }
+  .landing-menu .site-nav a, .landing-tagline { font-size: 1rem; }
+  .landing-tagline { padding: 11px 32px 0 16px; }
 }
-.scroll-cue:hover { color: var(--red); }
-.scroll-cue i { display: block; width: 1px; height: 34px; background: currentColor; animation: cue 2.4s var(--ease) infinite; transform-origin: top; }
-@keyframes cue { 0%,100% { transform: scaleY(.3); opacity: .35; } 50% { transform: scaleY(1); opacity: 1; } }
+/* small laptops and tablets in landscape: the six links no longer fit on one
+   line, so they fold into the Menu button while the cut-out layout stays */
+@media (min-width: 901px) and (max-width: 1099px) {
+  .landing-menu { justify-content: flex-end; padding-top: 22px; }
+  .landing-menu .nav-toggle { display: block; }
+  .landing-menu .site-nav {
+    position: absolute; top: calc(100% + 6px); right: 32px; z-index: 10;
+    display: none; flex: none; flex-direction: column; justify-content: flex-start; gap: 14px;
+    padding: 20px 26px; text-align: right;
+    background: var(--paper-pure); border: 1px solid var(--hair); border-radius: var(--radius); box-shadow: var(--shadow);
+  }
+  .landing-menu .site-nav.open { display: flex; }
+  .landing-tagline { padding-top: 8px; }
+}
+/* phones and small tablets: wordmark and Menu on one row, the line of
+   purpose below, then the photo with plain rounded corners */
+@media (max-width: 900px) {
+  .landing-head { grid-template-columns: minmax(0, 1fr) auto; grid-template-rows: auto auto; height: auto; padding-top: 28px; }
+  .landing-logo { grid-row: auto; padding: 0; }
+  .landing-logo .logo--lg { --logo-size: 1.625rem; }
+  .landing-menu { padding: 0; align-items: flex-start; }
+  .landing-menu .site-nav { flex: none; gap: 14px; padding: 20px 26px; justify-content: flex-start; }   /* back to the dropdown */
+  .landing-tagline { grid-column: 1 / -1; padding: 20px 0 22px; }
+  .landing-hero { --r: 20px; height: auto; aspect-ratio: 3 / 2; }   /* phones: the whole photo, it already fits */
+}
+@media (max-width: 480px) { .landing-logo .logo--lg { --logo-size: 1.375rem; } }
 
 /* --------------------------------------------------- 15. narrative page */
 .narrative { padding-top: 40px; }
@@ -625,24 +674,9 @@ a.mark.mark--inverse:focus-visible { color: #fff; }   /* stays white over the ph
 .statement--red   { color: var(--red); }
 .statement--green { color: var(--green-ink); }
 .statement--buff  { color: var(--buff-ink); }
-/* the hand-drawn skyline is part of the masthead: it rises beside the wordmark
-   box, its ground line level with the box's bottom edge, with the "London"
-   title standing in the sky on the right.
-   image ratio 2373 x 525 → height = width x .2212; the negative margin lifts
-   the drawing so its baseline meets the box bottom (header 133px top + 271px
-   box, minus the narrative's 40px padding). */
-.skyline-band {
-  position: relative;
-  padding-left: 336px;                      /* clears the 298px box + gap */
-  margin-top: calc(-40px - (min(var(--wrap), 100vw - 96px) - 336px) * .2212);
-  pointer-events: none;
-}
-.skyline-band img {
-  width: 100%;
-  height: auto;
-  mix-blend-mode: multiply;
-}
-.skyline-cap { position: absolute; right: 0; top: 0; text-align: right; }
+/* the "London" title opens the narrative below the landing photograph */
+.skyline-band { margin-top: clamp(24px, 5vw, 72px); }
+.skyline-cap { text-align: right; }
 .skyline-cap b {
   display: block;
   font-size: clamp(2.375rem, 4.26vw, 3.75rem);
@@ -657,10 +691,7 @@ a.mark.mark--inverse:focus-visible { color: #fff; }   /* stays white over the ph
   letter-spacing: -.015em;
   color: var(--ink-soft);
 }
-@media (max-width: 900px) {
-  .skyline-band { margin-top: 48px; padding-left: 0; }
-  .skyline-cap { position: static; margin-bottom: 20px; }
-}
+@media (max-width: 900px) { .skyline-band { margin-top: 32px; } }
 
 .narrative-row { margin-top: clamp(80px, 14vw, 200px); }
 .narrative-row:first-child { margin-top: clamp(110px, 25vw, 360px); }
@@ -686,8 +717,8 @@ a.mark.mark--inverse:focus-visible { color: #fff; }   /* stays white over the ph
 
 .detail-hero {
   position: relative;
-  margin: 100px 64px 0;
-  min-height: 852px;
+  min-height: 100vh;
+  min-height: 100svh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -705,21 +736,6 @@ a.mark.mark--inverse:focus-visible { color: #fff; }   /* stays white over the ph
 .hero-title h1 { font-size: 2rem; font-weight: 700; letter-spacing: -.025em; line-height: 1.1; text-align: right; }
 .hero-title .addr { margin-top: 3px; font-size: 1.25rem; line-height: 1.2; text-align: right; color: rgba(255,255,255,.95); }
 
-/* the annotated boxes, placed as % of the hero exactly as drawn */
-.hero-annos { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
-.anno {
-  position: absolute; pointer-events: auto;
-  border: 1px solid rgba(255,255,255,.92);
-  display: grid; place-items: center;
-  font-size: .8125rem; font-weight: 500; letter-spacing: -.005em; line-height: 1.1;
-  color: #fff; text-align: center; padding: 2px 6px;
-  transition: background .3s var(--ease), border-color .3s var(--ease);
-}
-.anno:hover { background: rgba(255,255,255,.16); border-color: #fff; }
-.anno[data-kind="green"]:hover { background: rgba(0,147,165,.55); }
-.anno[data-kind="buff"]:hover  { background: rgba(247,198,168,.55); color: var(--buff-text); }
-.anno[data-kind="red"]:hover   { background: rgba(217,102,41,.5); }
-
 .hero-tags { margin-top: auto; padding: 40px 0 47px; position: relative; z-index: 2; }
 .hero-tags h2 { font-size: 1.875rem; font-weight: 700; letter-spacing: -.025em; line-height: 1; margin-bottom: 21px; }
 .tag-groups { display: grid; grid-template-columns: 378px 540px; column-gap: 16px; }
@@ -733,13 +749,7 @@ a.mark.mark--inverse:focus-visible { color: #fff; }   /* stays white over the ph
 }
 @media (max-width: 1000px) { .tag-groups { grid-template-columns: 1fr; row-gap: 22px; } }
 
-/* on narrow screens the boxes can't sit on the photo, so they become a list */
-.anno-list { display: none; position: relative; z-index: 2; }
-.anno-list h3 { font-size: .9375rem; font-weight: 400; color: rgba(255,255,255,.85); margin-bottom: 12px; }
 @media (max-width: 760px) {
-  .detail-hero { margin: 60px 12px 0; min-height: 560px; }
-  .hero-annos { display: none; }
-  .anno-list { display: block; margin-top: 40px; }
   .detail-hero .wrap, .detail-hero .d-wrap { width: min(var(--wrap), 100% - 40px); }
   .tag-pill { min-width: 0; }
 }
@@ -814,7 +824,10 @@ a.mark.mark--inverse:focus-visible { color: #fff; }   /* stays white over the ph
   .ov-map { margin: 22px 0 0; min-height: 260px; }
   .ov-links { padding-top: 18px; }
 }
-@media (max-width: 520px) { .ov-axes { grid-template-columns: 1fr; row-gap: 20px; } }
+@media (max-width: 520px) {
+  .ov-axes { grid-template-columns: 1fr; row-gap: 20px; }
+  .link-pill { height: auto; min-height: 26px; padding: 5px 18px; white-space: normal; line-height: 1.25; }
+}
 
 /* ---- gallery */
 .gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 34px; }
@@ -823,15 +836,13 @@ a.mark.mark--inverse:focus-visible { color: #fff; }   /* stays white over the ph
 .gallery figure:hover img { transform: scale(1.04); }
 @media (max-width: 760px) { .gallery { grid-template-columns: 1fr; gap: 18px; } }
 
-/* ---- the middle band: photo + process | uses, timetable, context + site analysis */
+/* ---- the middle band: photo + process | uses, timetable, context */
 .detail-cols { display: grid; grid-template-columns: 466px minmax(0, 1fr); gap: 42px; align-items: stretch; margin-top: 31px; }
 .col-left, .col-right { display: flex; flex-direction: column; min-width: 0; }
 .col-left { gap: 40px; }
 .col-right { gap: 28px; }
 .col-left .proc { flex: 1; }
-.col-right .duo { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 21px; }
 @media (max-width: 980px) { .detail-cols { grid-template-columns: 1fr; } }
-@media (max-width: 560px) { .col-right .duo { grid-template-columns: 1fr; } }
 
 .fig-3 { position: relative; margin: 0; border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 466/310; background: var(--ink-wash); }
 .fig-3 img { width: 100%; height: 100%; object-fit: cover; }
@@ -853,7 +864,7 @@ a.mark.mark--inverse:focus-visible { color: #fff; }   /* stays white over the ph
 
 .uses { padding: 24px 24px 22px 25px; }
 .uses-rows { margin-top: 12px; display: grid; gap: 12px; }
-.uses-row { display: flex; gap: 13px; }
+.uses-row { display: flex; flex-wrap: wrap; gap: 13px; }   /* rows are sized for the full panel; wrap when it is narrower */
 .uses-row .use-pill { flex: 1 1 0; min-width: max-content; }
 .uses-row.is-single .use-pill { flex: 0 0 auto; }
 .use-pill {
@@ -865,7 +876,12 @@ a.mark.mark--inverse:focus-visible { color: #fff; }   /* stays white over the ph
   transition: transform .2s var(--ease), border-color .2s var(--ease), background .2s var(--ease);
 }
 .use-pill:hover { transform: translateY(-2px); border-color: var(--buff); background: var(--buff); color: var(--buff-text); }
-@media (max-width: 700px) { .uses-row { flex-wrap: wrap; } .uses-row .use-pill { min-width: 0; } }
+@media (max-width: 700px) {
+  .uses-row { flex-wrap: wrap; }
+  .uses-row .use-pill { flex: 0 1 auto; min-width: 0; max-width: 100%; }
+  /* long names like "Educational and wellbeing classes" wrap rather than run off the screen */
+  .use-pill { height: auto; min-height: 40px; padding: 8px 20px; border-radius: 20px; white-space: normal; text-align: center; line-height: 1.2; }
+}
 
 .timetable { margin-top: 10px; overflow-x: auto; }
 .timetable table { width: 100%; min-width: 560px; border-collapse: collapse; table-layout: fixed; }
@@ -881,22 +897,16 @@ a.mark.mark--inverse:focus-visible { color: #fff; }   /* stays white over the ph
 .tt-bar--accent { background: var(--buff); border-color: var(--buff); color: var(--buff-text); }
 .tt-bar--quiet { background: transparent; border-style: dashed; color: var(--muted-2); }
 
-.ctx { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
-.ctx-fig { margin: 0; aspect-ratio: 327/218; background: var(--ink-wash); flex: none; }
+.ctx { flex: 1; padding: 0; overflow: hidden; display: grid; grid-template-columns: 1fr 1fr; }
+.ctx-fig { margin: 0; min-height: 218px; background: var(--ink-wash); }
+@media (max-width: 560px) { .ctx { grid-template-columns: 1fr; } .ctx-fig { aspect-ratio: 327/218; min-height: 0; } }
 .ctx-fig img { width: 100%; height: 100%; object-fit: cover; }
 .ctx-body { padding: 17px 22px 26px; }
 .ctx-body p { margin-top: 50px; font-size: .78rem; line-height: 1.4; color: var(--ink); }
-.sa { padding: 22px 22px 24px; display: flex; flex-direction: column; }
-.sa-svg { width: 100%; height: auto; margin-top: 20px; display: block; }
-.sa-lbl { font-size: 9.5px; font-weight: 600; fill: var(--ink); }
-.sa-key { margin-top: 16px; display: grid; gap: 6px; font-size: .75rem; color: var(--ink-soft); }
-.sa-key li { display: flex; align-items: center; gap: 8px; }
-.sa-key i { width: 16px; height: 11px; border: 1.2px solid; border-radius: 2px; flex: none; }
-.sa-empty { margin-top: 16px; font-size: .8125rem; color: var(--muted); }
 
 /* ---- the two analysis tables */
 .analysis { display: grid; grid-template-columns: minmax(0, 1fr) 293px; gap: 22px; margin-top: 20px; }
-@media (max-width: 900px) { .analysis { grid-template-columns: 1fr; } }
+@media (max-width: 900px) { .analysis { grid-template-columns: minmax(0, 1fr); } }
 .analysis table { width: 100%; border-collapse: collapse; }
 .analysis th { text-align: left; font-size: 1.0625rem; font-weight: 700; letter-spacing: -.015em; padding-bottom: 10px; }
 .analysis td { padding: 7px 14px 7px 0; vertical-align: middle; font-size: .78rem; }
@@ -907,7 +917,16 @@ a.mark.mark--inverse:focus-visible { color: #fff; }   /* stays white over the ph
 .analysis-notes h4 { font-size: 1.0625rem; font-weight: 700; margin-bottom: 14px; }
 .analysis-notes p { font-size: .78rem; line-height: 1.4; color: var(--ink); }
 @media (max-width: 900px) { .analysis-notes { border-left: 0; border-top: 1px solid rgba(21,24,27,.16); padding-left: 0; padding-top: 20px; } }
-@media (max-width: 700px) { .analysis td:first-child, .analysis td:nth-child(2) { width: auto; white-space: normal; } }
+/* on phones a three-column table can't fit, so each row stacks:
+   dimension and rating on one line, the reason beneath */
+@media (max-width: 700px) {
+  .analysis thead { display: none; }
+  .analysis table, .analysis tbody { display: block; }
+  .analysis tr { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 6px 12px; padding: 10px 0; border-bottom: 1px solid rgba(21,24,27,.1); }
+  .analysis td { padding: 0; }
+  .analysis td:first-child, .analysis td:nth-child(2) { width: auto; white-space: normal; }
+  .analysis td:last-child { grid-column: 1 / -1; }
+}
 .overall-row { display: flex; align-items: center; justify-content: center; gap: 26px; margin-top: 14px; }
 .overall-row .lbl { font-size: 1rem; font-weight: 500; }
 .overall-row .rate { min-width: 148px; }
@@ -924,29 +943,36 @@ a.mark.mark--inverse:focus-visible { color: #fff; }   /* stays white over the ph
 .bar + .bar { margin-top: 12px; }
 .bar--green { background: var(--green); }
 .bar--red { background: var(--red); }
-.quad-card { flex: 1; padding: 0; position: relative; min-height: 505px; }   /* the photo beside it sets the row height */
-.quadrant { position: absolute; inset: 0; }
-.quad-plot { position: absolute; inset: 34px 47px 69px 61px; border-left: 1.5px solid var(--ink); border-bottom: 1.5px solid var(--ink); }
-.quad-plot::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: repeating-linear-gradient(to right, var(--hair) 0 4px, transparent 4px 8px); }
-.quad-plot::after  { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; width: 1px; background: repeating-linear-gradient(to bottom, var(--hair) 0 4px, transparent 4px 8px); }
-.q-arr { position: absolute; width: 8px; height: 8px; border: solid var(--ink); border-width: 1.5px 1.5px 0 0; }
-.q-arr--y { left: -5.5px; top: -1px; transform: rotate(-45deg); }
-.q-arr--x { right: -1px; bottom: -5.5px; transform: rotate(45deg); }
-.quad-label { position: absolute; font-size: .875rem; color: var(--ink-soft); }
-.quad-label.tl { left: 16px; top: 13px; }
-.quad-label.tr { right: 1px; top: 13px; }
-.quad-label.bl { left: 16px; bottom: 12px; }
-.quad-label.br { right: 1px; bottom: 12px; }
+.quad-card { flex: 1; padding: 26px 28px 24px; display: flex; min-height: 505px; }
+
+/* the site-visit graph: two axes crossing at the centre */
+.sv-graph { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+.sv-plot { position: relative; flex: 1; min-height: 330px; margin: 6px 6px 0; }
+.sv-axis { position: absolute; background: var(--ink); }
+.sv-axis--y { left: 50%; top: 0; bottom: 0; width: 1.5px; transform: translateX(-50%); }
+.sv-axis--x { top: 50%; left: 0; right: 0; height: 1.5px; transform: translateY(-50%); }
+.sv-axis::after { content: ""; position: absolute; width: 8px; height: 8px; border: solid var(--ink); border-width: 1.5px 1.5px 0 0; }
+.sv-axis--y::after { left: 50%; top: -1px; transform: translateX(-50%) rotate(-45deg); }
+.sv-axis--x::after { right: -1px; top: 50%; transform: translateY(-50%) rotate(45deg); }
+.sv-title { position: absolute; font-size: .9375rem; font-weight: 700; line-height: 1.2; }
+.sv-title--y { top: 0; right: calc(50% + 14px); max-width: min(150px, calc(50% - 14px)); text-align: right; }
+.sv-title--x { top: calc(50% + 12px); right: 0; max-width: min(190px, calc(50% - 12px)); text-align: right; }   /* never across the vertical axis */
+.sv-note { margin-top: 10px; font-size: .8125rem; color: var(--muted); text-align: center; }
+.sv-questions { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 28px; margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--hair); }
+.sv-questions h5 { font-size: .875rem; font-weight: 700; line-height: 1.25; margin-bottom: 8px; }
+.sv-questions ul { display: grid; gap: 5px; font-size: .8125rem; line-height: 1.35; color: var(--ink-soft); }
+@media (max-width: 560px) {
+  .sv-questions { grid-template-columns: 1fr; }
+  .quad-card { padding: 20px 18px; }
+  .sv-plot { min-height: 400px; }          /* taller, so wrapped axis titles clear the dots */
+  .sv-title { font-size: .8125rem; }
+}
+
 .quad-dot {
   position: absolute; width: 11px; height: 11px; border-radius: 999px;
   background: var(--red); transform: translate(-50%, 50%);
   box-shadow: 0 0 0 5px rgba(217,102,41,.16);
 }
-.axis-caption { position: absolute; font-size: .9375rem; font-weight: 700; }
-.axis-caption.x-lo { left: 64px; bottom: 26px; }
-.axis-caption.x-hi { right: 43px; bottom: 26px; }
-.axis-caption.y-lo { left: 30px; bottom: 75px; writing-mode: vertical-rl; transform: rotate(180deg); }
-.axis-caption.y-hi { left: 30px; top: 34px; writing-mode: vertical-rl; transform: rotate(180deg); }
 .charts-fig { position: relative; margin: 0; border-radius: var(--radius-lg); overflow: hidden; background: var(--ink-wash); min-height: 690px; }
 /* absolute, so the photo fills the row instead of setting its height */
 .charts-fig img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
@@ -1324,6 +1350,10 @@ ol.q-body li { padding-left: 0; }
   .map-panel { top: auto; left: 10px; right: 10px; bottom: 10px; width: auto; max-height: 62%; }
   .map-panel img { height: 120px; }
   .map-hint { top: 10px; right: 10px; }
+  /* a one-line legend, so it covers less of a narrow map */
+  .opp-legend { left: 10px; bottom: 10px; padding: 8px 12px; display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; }
+  .opp-legend b { width: 100%; margin-bottom: 0; }
+  .opp-legend div { margin-top: 0; gap: 6px; }
 }
 
 /* --------------------------------------------------- photo captions
@@ -1339,4 +1369,9 @@ ol.q-body li { padding-left: 0; }
 .fig-3 { position: relative; }
 @media (max-width: 560px) {
   .gallery figure figcaption, .fig-3 figcaption { font-size: 12.5px; padding: 24px 12px 10px; }
+}
+
+/* iOS zooms the page in on any field set below 16px; on phones every field is 16px */
+@media (max-width: 760px) {
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]), select, textarea { font-size: 16px !important; }
 }

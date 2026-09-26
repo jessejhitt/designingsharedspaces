@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const json = JSON.stringify(submission, null, 2);
-    const filename = `pwr-submission-${submission.site.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}.json`;
+    const filename = `dsst-submission-${submission.site.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}.json`;
 
     result.hidden = false;
     result.innerHTML = `

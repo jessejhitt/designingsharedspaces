@@ -121,7 +121,7 @@ function initOppMap(data) {
     return window.innerWidth > 760
       /* left: zoom buttons end at 44px + half the widest name label (~85px) + margin */
       ? { tl: L.point(150, 110), br: L.point(460, 60) }
-      : { tl: L.point(140, 100), br: L.point(30, 320) };
+      : { tl: L.point(140, 90), br: L.point(30, 385) };   // the bottom sheet takes up to 62% of the map
   }
 
   /* Move only as far as needed to put the pin in the free area. This is a fly,
@@ -180,7 +180,7 @@ function initOppMap(data) {
          leave the map framing the wrong sites. A fly can always be replaced. */
       /* with a site open, frame the results in the space the panel leaves */
       const pad = selected ? { paddingTopLeft: freePadding().tl, paddingBottomRight: freePadding().br }
-                           : { padding: [70, 70] };
+                           : { padding: window.innerWidth > 760 ? [70, 70] : [28, 28] };   // phones: less margin, closer framing
       if (first) {
         pts.length === 1 ? map.setView(pts[0], 15) : map.fitBounds(pts, { ...pad, maxZoom: 15 });
       } else if (pts.length === 1) {

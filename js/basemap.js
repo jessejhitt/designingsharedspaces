@@ -1,5 +1,5 @@
 /* ============================================================
-   PLANNING WITH RELIGION — the basemap
+   DESIGNING SHARED SPACES TOGETHER — the basemap
    ------------------------------------------------------------
    Every map on this site — the case study and opportunity map,
    the opportunities page, the mini map on a site page and the
